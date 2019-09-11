@@ -8,7 +8,7 @@
   <h1 class="h1 text-center">
     {{ bauer.getAar() }}
   </h1>
-  <p>Påsken ligger den {{ bauer.pdg }}/{{ bauer.pmd }} </p>
+  <p class="alert-danger" role="" >Påsken ligger den {{ bauer.pdg }}/{{ bauer.pmd }} </p>
 
 	<div class="table-responsive-sm">
   <table class="table table-light table-sm small">
@@ -30,12 +30,26 @@
       {% for d in 1..31 %}
         <tr>
             {% for mm in 1..12 %}
-              {% if bauer.setDato(d, mm) == true %}
-                <div {% if bauer.getUgedag() == 6 %} class="alert alert-dark" role="alert"  {% endif %} >
-                <th class="alert alert-dark" role="alert"scope="row"> {{ bauer.getUgedag() }} </th> 
+
+            
+            	{# Herfra er der 4 muligheder
+            	   - Almindelig hverdag
+            	   - Lørdag
+            	   - Søn eller helligdag
+            	   - Ugyldig dag (f.eks 31. Juli) #}
+            
+              {% if bauer.setDato(d, mm) and bauer.getAdatoClass == 1 %}
+                <th scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
                 <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
-								</div>
+              {% elseif bauer.getAdatoClass == 2 %}
+                <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
+                <td class="text-right">{{ d }}</td>
+                <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
+              {% elseif bauer.getAdatoClass == 4 %}
+                <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
+                <td class="text-right alert-secondary">{{ d }}</td>
+                <td class="text-nowrap alert-secondary" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
               {% else %}
                 <td colspan= 3 />
               {% endif %}

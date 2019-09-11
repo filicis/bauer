@@ -27,7 +27,16 @@ class Bauer
 	private $amd;
 	private $ajtal;
 	private $dagiaar;
-	private $description= "Midsommer"; 
+	private $description= "Midsommer";
+	private $augedag; 
+	
+	  /**
+	    *	adgClass
+	    *
+	    *  
+	    */
+	
+	private $adatoClass;
 	
 
   public function __construct($nytaar)
@@ -264,6 +273,12 @@ class Bauer
   }
   
   
+  public function getAdatoClass() : int
+  {
+  	return $this->adatoClass;
+  }
+  
+  
   public function getDagiaar() : int
   {
   	return $this->dagiaar;
@@ -316,12 +331,32 @@ class Bauer
 
   public function setDato($d, $m) : bool
   {
-  	$this->adg= $d;
-  	$this->amd= $m;
-  	$this->ajtal= self::_jdag($this->aar, $m, $d);
+  	$this->adg= 			$d;
+  	$this->amd= 			$m;
+  	$this->ajtal= 		self::_jdag($this->aar, $m, $d);
+  	$this->augedag=   $this->getUgedag(); 
   	$this->description= "";
   	
   	$this->dagiaar= $this->_dagiaar($d, $m);
+  	
+  	if (self::_validDato($d, $m))
+  	{
+  	  switch($this->_getUgedag())
+  	  {
+  		  case 5:
+          $this->adatoClass=2;
+          break;
+             		
+  		  case 6:
+          $this->adatoClass=3;
+          break;
+             		
+  		  default:
+          $this->adatoClass=1;
+          break;
+      }   		
+  	}
+  	  else $this->adatoClass= 0;
   	
   	/* Check for forskydelige dage i forhold til Påskedag */
   	

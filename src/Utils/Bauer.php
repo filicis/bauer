@@ -30,6 +30,14 @@ class Bauer
 	private $description= "Midsommer";
 	private $augedag; 
 	
+	  /**
+	    *	adgClass
+	    *
+	    *  
+	    */
+	
+	private $adatoClass;
+	
 
   public function __construct($nytaar)
 	{
@@ -265,6 +273,12 @@ class Bauer
   }
   
   
+  public function getAdatoClass() : int
+  {
+  	return $this->adatoClass;
+  }
+  
+  
   public function getDagiaar() : int
   {
   	return $this->dagiaar;
@@ -325,6 +339,25 @@ class Bauer
   	
   	$this->dagiaar= $this->_dagiaar($d, $m);
   	
+  	if (self::_validDato($d, $m))
+  	{
+  	  switch($this->_getUgedag())
+  	  {
+  		  case 5:
+          $this->adatoClass=2;
+          break;
+             		
+  		  case 6:
+          $this->adatoClass=3;
+          break;
+             		
+  		  default:
+          $this->adatoClass=1;
+          break;
+      }   		
+  	}
+  	  else $this->adatoClass= 0;
+  	
   	/* Check for forskydelige dage i forhold til Påskedag */
   	
   	switch($this->ajtal - $this->pjtal)
@@ -348,15 +381,18 @@ class Bauer
   							 break;
 
   		case   -3: $this->description= "Skærtorsdag";
+  		           $this->adatoClass=3;
   							 break;
 
   		case   -2: $this->description= "Langfredag";
+  		           $this->adatoClass=3;
   							 break;
   							 
   	  case    0: $this->description= "Påskedag";
   	  					 break;
   	  					
   	  case    1: $this->description= "2. Påskedag";
+  		           $this->adatoClass=3;
   	  					 break;
   	  					 
   	  case    7: $this->description= "Quasimodogeniti";
@@ -364,15 +400,18 @@ class Bauer
   	  					 
 
   	  case   26: $this->description= "Store bededag";
+  		           $this->adatoClass=3;
   	  					 break;
   	  						
   	  case   39: $this->description= "Kristi Himmelfart";
+  		           $this->adatoClass=3;
   	  					 break;
 
   	  case   49: $this->description= "Pinsedag";
   	  					 break;
 
   	  case   50: $this->description= "2. Pinsedag";
+  		           $this->adatoClass=3;
   	  					 break;
 
   	  case   56: $this->description= "Trinitatis";
@@ -384,6 +423,7 @@ class Bauer
   	switch ($d * 100 + $m )
   	{
   		case  101: $this->description= "Nytår";
+  		           $this->adatoClass=3;
   		           break;
   		          
   		case  202: $this->description= "Kyndelmisse";
@@ -408,9 +448,11 @@ class Bauer
   		           break;
   		           
   		case 2512: $this->description= "Juledag";
+  		           $this->adatoClass=3;
   		           break;
   		           
   		case 2612: $this->description= "2. Juledag";
+  		           $this->adatoClass=3;
   		           break;
   		          
   		default:   break;
