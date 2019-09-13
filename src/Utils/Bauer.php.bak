@@ -11,6 +11,21 @@ class Bauer
 	
 	const MINAAR= 600;
 	const MAXAAR= 3199;
+	
+	
+	const _NYTAAR=    0;
+	const _H3KONG=    1;
+	
+
+	
+	public $nytarray = array (
+	  '_NYTAAR' => ["Nytår", "", "" ],
+	  '_H3KONG' => ["Hellig 3 Konger", "", ""],
+	);
+	
+	
+	protected $latin= False;
+		    
 
   protected $aar= 0;
   protected $aartype= 0;
@@ -39,9 +54,10 @@ class Bauer
 	private $adatoClass;
 	
 
-  public function __construct($nytaar)
+  public function __construct($nytaar, $latin)
 	{
 		$this->setAar($nytaar);
+		$this->latin= $latin;
 	}
 	
 
@@ -284,10 +300,20 @@ class Bauer
   	return $this->dagiaar;
   }
   
-  
+  /**
+   *	getDescription()
+   *
+   *  Dansk eller Latinsk betegnelse afhængig af variablen isLatin;
+   */
+    
   public function getDescription() : String
   {
-  	return $this->description;
+  	return $this->isLatin() ? $this->description[1] : $this->description[0];
+  }
+  
+  public function getTooltip() : String
+  {
+  	return $this->description[2];
   }
   
   public function _getUgedag() : int
@@ -299,6 +325,12 @@ class Bauer
   public function getUgedag() : String
   {
   	return self::UGEDAG_DA[$this->_getUgedag()];
+  }
+  
+  
+  public function isLatin(): boolean
+  {
+  	return $this->latin;
   }
   
   
@@ -335,7 +367,7 @@ class Bauer
   	$this->amd= 			$m;
   	$this->ajtal= 		self::_jdag($this->aar, $m, $d);
   	$this->augedag=   $this->getUgedag(); 
-  	$this->description= "";
+  	$this->description= ["", "", ""];
   	
   	$this->dagiaar= $this->_dagiaar($d, $m);
   	
@@ -362,88 +394,153 @@ class Bauer
   	
   	switch($this->ajtal - $this->pjtal)
   	{
-  		case	-63: $this->description= "Septuagesima";
+  		case	-63: $this->description = ["2. S f Fastelavn", "Septuagesima", ""];
+  								$gamme= '_NYTAAR';
   		           break;
   		
-  		case	-56: $this->description= "Sexagesima";
+  		case	-56: $this->description = ["1. S f Fastelavn", "Sexagesima",  ""];
   							 break;
   		
-  		case  -49: $this->description= "Fastelavn";
+  		case  -49: $this->description = ["Fastelavn", "Dom Esto mihi", ""];
   							 break;
   							 
-  		case  -46: $this->description= "Askeonsdag";
+  		case  -46: $this->description = [ "Askeonsdag", "Dies Pulveris", "Askeonsdag, Dies Ater, Dies Cinerum, Dies Pulveris"];
   							 break;
   							 
-  		case  -42: $this->description= "Dom Invocavit";
+  		case  -42: $this->description = ["", "Dom Invocavit", ""];
   							 break;
   							 
-  		case   -7: $this->description= "Palmesøndag";
+  		case   -7: $this->description = ["Palmesøndag", "Dom Palmarum", ""];
   							 break;
 
-  		case   -3: $this->description= "Skærtorsdag";
+  		case   -3: $this->description = ["Skærtorsdag", "Dom Viridium", ""];
+  		           $this->adatoClass=3;
   							 break;
 
-  		case   -2: $this->description= "Langfredag";
+  		case   -2: $this->description = ["Langfredag", "", ""];
+  		           $this->adatoClass=3;
   							 break;
   							 
-  	  case    0: $this->description= "Påskedag";
+  	  case    0: $this->description = ["Påskedag", "Dom Pasces", ""];
   	  					 break;
   	  					
-  	  case    1: $this->description= "2. Påskedag";
+  	  case    1: $this->description = ["2. Påskedag", "", ""];
+  		           $this->adatoClass=3;
   	  					 break;
   	  					 
-  	  case    7: $this->description= "Quasimodogeniti";
+  	  case    7: $this->description = ["1. S. e Påske", "Quasimodogeniti", ""];
   	  					 break;
   	  					 
-
-  	  case   26: $this->description= "Store bededag";
+  	  case   14: $this->description = ["2. S. e Påske", "Dom Misericordia", ""];
+  	  					 break;
+  	  					 
+  	  case   21: $this->description = ["3. S. e Påske", "Dom Jubilate", ""];
+  	  					 break;
+  	  					 
+  	  case   26: $this->description = ["Store bededag", "", ""];
+  		           $this->adatoClass=3;
+  	  					 break;
+  	  						  	  					 
+  	  case   28: $this->description = ["4. S. e Påske", "Dom Cantate", ""];
+  	  					 break;
+  	  					 
+  	  case   35: $this->description = ["5. S e Påske", "Dom Rogate", ""];
   	  					 break;
   	  						
-  	  case   39: $this->description= "Kristi Himmelfart";
+  	  case   39: $this->description = ["Kristi Himmelfart", "Fest Ascensio Christi", ""];
+  		           $this->adatoClass=3;
   	  					 break;
 
-  	  case   49: $this->description= "Pinsedag";
+  	  case   42: $this->description = ["6. S e Påske", "Dom Exaudi", ""];
+  	  					 break;
+  	  						
+  	  case   49: $this->description = ["Pinsedag", "Pentecoste", ""];
   	  					 break;
 
-  	  case   50: $this->description= "2. Pinsedag";
+  	  case   50: $this->description = ["2. Pinsedag", "", ""];
+  		           $this->adatoClass=3;
   	  					 break;
 
-  	  case   56: $this->description= "Trinitatis";
+  	  case   56: $this->description = ["Trinitatis", "Trinitatis", ""];
   	             break;
+
+  	  case   63: $this->description = ["1. Søn Trin", "Dom 1 p Trinit", ""];
+  	             break;
+  	             
+  	  case   70: $this->description = ["2- Søn Trin", "Dom 2 p Trinit", ""];
+  	             break;
+  	             
+  	  case   77: $this->description = ["3. Søn Trin", "Dom 3 p Trinit", ""];
+  	             break;
+
+  	  case   84: $this->description = ["4. Søn Trin", "Dom 4 p Trinit", ""];
+  	             break;
+
+  	  case   91: $this->description = ["5. Søn Trin", "Dom 5 p Trinit", ""];
+  	             break;
+
+  	  case   98: $this->description = ["6. Søn Trin", "Dom 6 p Trinit", ""];
+  	             break;
+
+  	  case  105: $this->description = ["7. Søn Trin", "Dom 7 p Trinit", ""];
+  	             break;
+
+  	  case  112: $this->description = ["8. Søn Trin", "Dom 8 p Trinit", ""];
+  	             break;
+
+  	  case  119: $this->description = ["9. Søn Trin", "Dom 9 p Trinit", ""];
+  	             break;
+
+  	  case  126: $this->description = ["10. Søn Trin", "Dom 10 p Trinit", ""];
+  	             break;
+
+  	  case  161: $this->description = ["15. Søn Trin", "Dom 15 p Trinit", ""];
+  	             break;
+
+  	  case  196: $this->description = ["20. Søn Trin", "Dom 20 p Trinit", ""];
+  	             break;
+
+  	  case  231: $this->description = ["25. Søn Trin", "Dom 25 p Trinit", ""];
+  	             break;
+  	             
+
   	}
   	
   	/* Check for faste datoer */
   	
   	switch ($d * 100 + $m )
   	{
-  		case  101: $this->description= "Nytår";
+  		case  101: $this->description = ["Nytår", "Circumcisio Christi", ""];
+  		           $this->adatoClass=3;
   		           break;
   		          
-  		case  202: $this->description= "Kyndelmisse";
+  		case  202: $this->description = ["Kyndelmisse", "Purificatio Mariae", ""];
   		           break;
 
-  		case  501: $this->description= "Hellig 3 konger";
+  		case  501: $this->description = ["Hellig 3 konger", "Epiphanias", ""];
   		           break;
   		          
-  		case  105: $this->description= "1. Maj";
+  		case  105: $this->description = ["1. Maj", "", ""];
   		           break; 
   		           
- // 		case 2503: $this->description= "Maria bebudelse";
+ // 		case 2503: $this->description = ["Maria bebudelse", "", ""];
  // 		           break;	
   		          
-  		case  506: $this->description= "Grundlovsdag";
+  		case  506: $this->description = ["Grundlovsdag", "", ""];
   		           break; 
   		          
-  		case 2406: $this->description= "Sct Hans";
+  		case 2406: $this->description = ["Sct Hans", "Fest Nat St Johs Baptistae", ""];
   		           break; 
   		          
-  		case 2412: $this->description= "Juleaftensdag";
+  		case 2412: $this->description = ["Juleaftensdag", "", ""];
   		           break;
   		           
-  		case 2512: $this->description= "Juledag";
+  		case 2512: $this->description = ["Juledag", "Natalis Domini", ""];
+  		           $this->adatoClass=3;
   		           break;
   		           
-  		case 2612: $this->description= "2. Juledag";
+  		case 2612: $this->description = ["2. Juledag", "Fest St Stephanus Promartyris", ""];
+  		           $this->adatoClass=3;
   		           break;
   		          
   		default:   break;

@@ -8,22 +8,19 @@
   <h1 class="h1 text-center">
     {{ bauer.getAar() }}
   </h1>
-  <p class="alert-danger" role="" >Påsken ligger den {{ bauer.pdg }}/{{ bauer.pmd }} </p>
 
-	<div class="table-responsive-sm">
+	<div class="table-responsive">
   <table class="table table-light table-sm small">
-  
-  {# read and display just one flash message type #}
-  {% for message in app.flashes('notice') %}
-    <div class="flash-notice">
-        {{ message }}
-    </div>
-  {% endfor %}
+
+
+	
 
   <thead class="thead-light">
+    <div class="row">
     {% for i in bauer.months() %}
-      <th colspan=3 scope="col" class="text-center" width=8%> {{i}} </th>
+      <th colspan="3" scope="col-xl" class="col text-center" > {{i}} </th>
     {% endfor %}
+    </div>
   </thead>
 
     <tbody>
@@ -41,15 +38,15 @@
               {% if bauer.setDato(d, mm) and bauer.getAdatoClass == 1 %}
                 <th scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
+                <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% elseif bauer.getAdatoClass == 2 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
-              {% elseif bauer.getAdatoClass == 4 %}
+                <td class="text-nowrap" data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+              {% elseif bauer.getAdatoClass == 3 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right alert-secondary">{{ d }}</td>
-                <td class="text-nowrap alert-secondary" data-toggle="tooltip" data-placement="top" title="Latinsk betegnelse"> {{ bauer.getDescription() }} </td>
+                <td class="text-nowrap alert-secondary" data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% else %}
                 <td colspan= 3 />
               {% endif %}
