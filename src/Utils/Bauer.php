@@ -334,9 +334,9 @@ class Bauer
   }
   
   
-  public function isValid() : boolean
+  public function isValid() : bool
   {
-  	return true;
+  	return ($this->aartype != 0);
   }
   
 

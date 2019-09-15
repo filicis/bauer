@@ -336,7 +336,7 @@ class Bauer
   
   public function isValid() : boolean
   {
-  	return true;
+  	return ($this->aartype != 0);
   }
   
 
@@ -526,7 +526,7 @@ class Bauer
   	  case   63: $this->description = ["1. Søn Trin", "Dom 1 p Trinit", ""];
   	             break;
   	             
-  	  case   70: $this->description = ["2- Søn Trin", "Dom 2 p Trinit", ""];
+  	  case   70: $this->description = ["2. Søn Trin", "Dom 2 p Trinit", ""];
   	             break;
   	             
   	  case   77: $this->description = ["3. Søn Trin", "Dom 3 p Trinit", ""];
@@ -625,13 +625,19 @@ class Bauer
   		             $this->adatoClass=3;
   		           break;
   		          
-  		case  105: $this->description = ["1. Maj", "", ""];
+  		case  105: if (1890 < $this->aar)
+  		           {
+  								 $this->description = ["1. Maj", "", ""];
+  							 }	 
   		           break; 
   		           
  // 		case 2503: $this->description = ["Maria bebudelse", "", ""];
  // 		           break;	
   		          
-  		case  506: $this->description = ["Grundlovsdag", "", ""];
+  		case  506: if (1848 < $this->aar)
+  		           {
+  		             $this->description = ["Grundlovsdag", "", ""];
+  		           }  
   		           break; 
   		          
   		case  207: if ($this->aar < 1771)

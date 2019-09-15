@@ -99,6 +99,9 @@ class CalendarController extends AbstractController
     public function index1(Request $request)
     {
     	$bauer= new Bauer($this->session->get('Bauer', 1960), $this->session->get('isLatin', 'False'));
+    	if ($bauer->isValid() == False)
+        return $this->redirectToRoute('about');
+    	
 
         $test= ['message' => 'Entest'];
         $form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
