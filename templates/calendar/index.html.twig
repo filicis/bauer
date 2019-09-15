@@ -31,18 +31,18 @@
             	   - Søn eller helligdag
             	   - Ugyldig dag (f.eks 31. Juli) #}
             
-              {% if bauer.setDato(d, mm) and bauer.getAdatoClass == 1 %}
+              {% if bauer.setDato(d, mm) and bauer.getAdatoClass() == 1 %}
                 <th scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
-              {% elseif bauer.getAdatoClass == 2 %}
+                <td class="text-left" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+              {% elseif bauer.getAdatoClass() == 2 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
-              {% elseif bauer.getAdatoClass == 3 %}
+                <td class="text-left" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+              {% elseif bauer.getAdatoClass() == 3 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right alert-secondary">{{ d }}</td>
-                <td class="alert-secondary" data-toggle="tooltip" data-placement="top" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                <td class="text-left alert-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% else %}
                 <td colspan= 3 />
               {% endif %}
