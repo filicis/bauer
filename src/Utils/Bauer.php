@@ -392,11 +392,11 @@ class Bauer
   	  
   	  /* Søndagene efter Hellig 3 Konger */
   	
-  	if ($this->adatoClass == 3)
+  	if ($this->adatoClass == 3 && 5 < $this->dagiaar )
   	{
   	    /* Søndagene efter Hellig 3 Konger */
   	    
-  	  switch (intdiv(($this->dagiaar - 6), 7))
+  	  switch (intdiv(($this->dagiaar - 5), 7))
   	  {
   	    case 0: $this->description= ["1. S e H3K", "Dom 1 p Epiph", ""];
   	            break;
@@ -431,7 +431,7 @@ class Bauer
   		case	-56: $this->description = ["1. S f Fastelavn", "Sexagesima",  ""];
   							 break;
   		
-  		case  -49: $this->description = ["Fastelavn", "Dom Esto mihi", ""];
+  		case  -49: $this->description = ["Fastelavn", "Dom Esto mihi", "<h6>Fastelavn</h6><p class='text-left'>Dom. Esto mihi<br>Dom. ad Carnes Lavandes<br>Dom. Quinquagesima</p>"];
   							 break;
   							 
   		case  -46: $this->description = [ "Askeonsdag", "Dies Pulveris", "<h6>Askeonsdag</h6><p class='text-left'>Dies Ater<br/>Dies Cinerum<br/>Dies Pulveris</p><p>Markerer begyndelsen på de 40 dages faste op til påske</p>"];
