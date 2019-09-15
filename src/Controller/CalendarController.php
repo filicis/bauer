@@ -43,6 +43,11 @@ class CalendarController extends AbstractController
           
           ->add('send', SubmitType::class )
           ->getForm();
+
+        $form->get('year')->setData($this->session->get('Bauer', 1960));
+        $form->get('latin')->setData($this->session->get('isLatin'));
+        
+        
         
         $form->handleRequest($request);
         
@@ -101,6 +106,10 @@ class CalendarController extends AbstractController
 					->add('latin', CheckboxType::class, ['required' => false])
           ->add('send', SubmitType::class , ['attr' => ['label' => 'Vælg']] )
           ->getForm();
+          
+        $form->get('year')->setData($this->session->get('Bauer', 1960));
+        $form->get('latin')->setData($this->session->get('isLatin'));
+          
    	
     	$form->handleRequest($request);
     	

@@ -389,6 +389,36 @@ class Bauer
       }   		
   	}
   	  else $this->adatoClass= 0;
+  	  
+  	  /* Søndagene efter Hellig 3 Konger */
+  	
+  	if ($this->adatoClass == 3)
+  	{
+  	    /* Søndagene efter Hellig 3 Konger */
+  	    
+  	  switch (intdiv(($this->dagiaar - 6), 7))
+  	  {
+  	    case 0: $this->description= ["1. S e H3K", "Dom 1 p Epiph", ""];
+  	            break;
+  	            
+  	    case 1: $this->description= ["2. S e H3K", "Dom 2 p Epiph", ""];
+  	            break;
+
+  	    case 2: $this->description= ["3. S e H3K", "Dom 3 p Epiph", ""];
+  	            break;
+
+  	    case 3: $this->description= ["4. S e H3K", "Dom 4 p Epiph", ""];
+  	            break;
+
+  	    case 4: $this->description= ["5. S e H3K", "Dom 5 p Epiph", ""];
+  	            break;
+
+  	    case 5: $this->description= ["6. S e H3K", "Dom 6 p Epiph", ""];
+  	            break;
+    
+  	  }
+  	  
+  	}  
   	
   	/* Check for forskydelige dage i forhold til Påskedag */
   	
@@ -645,6 +675,27 @@ class Bauer
   		          
   		default:   break;
   	}
+  	
+  	if ($this->_getUgedag() == 6)
+  	{
+  		$dummy= ($this->_dagiaar(25,12) - $this->dagiaar);
+  		switch(intdiv($dummy, 7))
+  		{
+  			
+  			case 0: $this->description= ["4. S i Advent", "Dom 4 Advent", ""];
+  			        break;
+
+  			case 1: $this->description= ["3. S i Advent", "Dom 3 Advent", ""];
+  			        break;
+
+  			case 2: $this->description= ["2. S i Advent", "Dom 2 Advent", ""];
+  			        break;
+
+  			case 3: $this->description= ["1. S i Advent", "Dom 1 Advent", ""];
+  			        break;
+  		}
+  	}
+  	  
   	
   	return $this->_validDato($d, $m);
   }
