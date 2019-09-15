@@ -682,13 +682,13 @@ class Bauer
   		switch(intdiv($dummy, 7))
   		{
   			
-  			case 0: $this->description= ["4. S i Advent", "Dom 1 Advent", ""];
+  			case 0: $this->description= ["4. S i Advent", "Dom 4 Advent", ""];
   			        break;
 
-  			case 1: $this->description= ["3. S i Advent", "Dom 1 Advent", ""];
+  			case 1: $this->description= ["3. S i Advent", "Dom 3 Advent", ""];
   			        break;
 
-  			case 2: $this->description= ["2. S i Advent", "Dom 1 Advent", ""];
+  			case 2: $this->description= ["2. S i Advent", "Dom 2 Advent", ""];
   			        break;
 
   			case 3: $this->description= ["1. S i Advent", "Dom 1 Advent", ""];

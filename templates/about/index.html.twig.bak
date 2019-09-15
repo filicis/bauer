@@ -13,6 +13,8 @@
     <div class="flash-notice">
         {{ message }}
     </div>
+  {% endfor %}
+
   </p>
 
 {% endblock %}
