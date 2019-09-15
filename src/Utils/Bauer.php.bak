@@ -334,7 +334,7 @@ class Bauer
   }
   
   
-  public function isValid() : boolean
+  public function isValid() : bool
   {
   	return ($this->aartype != 0);
   }
@@ -506,10 +506,10 @@ class Bauer
   	  case   42: $this->description = ["6. S e Påske", "Dom Exaudi", ""];
   	  					 break;
   	  						
-  	  case   49: $this->description = ["Pinsedag", "Pentecoste", ""];
+  	  case   49: $this->description = ["Pinsedag", "Dom Pentecostes", ""];
   	  					 break;
 
-  	  case   50: $this->description = ["2. Pinsedag", "", ""];
+  	  case   50: $this->description = ["2. Pinsedag", "Dies Pentecostes", ""];
   		           $this->adatoClass=3;
   	  					 break;
 
@@ -520,11 +520,17 @@ class Bauer
   		           }
   	  					 break;
 
-  	  case   56: $this->description = ["Trinitatis", "Trinitatis", ""];
+  	  case   56: $this->description = ["Trinitatis", "Dom Trinitatis", ""];
   	             break;
 
   	  case   63: $this->description = ["1. Søn Trin", "Dom 1 p Trinit", ""];
   	             break;
+  	             
+  	  case   67: if ($this->aar < 1771)
+  	             {
+  	             	 $this->description = ["Kristi Legemsfest", "Festo Eucharistio", ""];
+  	             }
+  	             break;            
   	             
   	  case   70: $this->description = ["2. Søn Trin", "Dom 2 p Trinit", ""];
   	             break;
@@ -631,8 +637,10 @@ class Bauer
   							 }	 
   		           break; 
   		           
- // 		case 2503: $this->description = ["Maria bebudelse", "", ""];
- // 		           break;	
+  		case 2503: if ($this->aar < 1771)
+  		            $this->description = ["Maria bebudelse", "Annuntiatio Mariae Virginis", ""];
+  		            $this->adatoClass=3;
+  		           break;	
   		          
   		case  506: if (1848 < $this->aar)
   		           {
