@@ -328,7 +328,7 @@ class Bauer
   }
   
   
-  public function isLatin(): boolean
+  public function isLatin(): bool
   {
   	return $this->latin;
   }
@@ -407,7 +407,19 @@ class Bauer
   		case  -46: $this->description = [ "Askeonsdag", "Dies Pulveris", "Askeonsdag, Dies Ater, Dies Cinerum, Dies Pulveris"];
   							 break;
   							 
-  		case  -42: $this->description = ["", "Dom Invocavit", ""];
+  		case  -42: $this->description = ["1. S i Fasten", "Dom Invocavit", ""];
+  							 break;
+  							 
+  		case  -35: $this->description = ["2. S i Fasten", "Dom Reminiscere", ""];
+  							 break;
+  							 
+  		case  -28: $this->description = ["3. S i Fasten", "Dom Oculi", ""];
+  							 break;
+  							 
+  		case  -21: $this->description = ["4. S i Fasten", "Dom Laetare", ""];
+  							 break;
+  							 
+  		case  -14: $this->description = ["5. S i Fasten", "Dom Judica", ""];
   							 break;
   							 
   		case   -7: $this->description = ["Palmesøndag", "Dom Palmarum", ""];
@@ -428,7 +440,14 @@ class Bauer
   		           $this->adatoClass=3;
   	  					 break;
   	  					 
-  	  case    7: $this->description = ["1. S. e Påske", "Quasimodogeniti", ""];
+  	  case    2: if ($this->aar < 1771)
+  	             { 
+  	  						 $this->description = ["3. Påskedag", "", "Helligdag frem til 1770"];
+  		             $this->adatoClass=3;
+  		           }  
+  	  					 break;
+  	  					 
+  	  case    7: $this->description = ["1. S. e Påske", "Quasimodogeniti", "Dagen kaldes også for Hvide søndag. Hvide søndag er en gammel betegnelse for søndagen efter Påske (lat. Dominica in albis depositis = de aflagte hvide klæders søndag). I Oldkirken blev dåben ofte henlagt til påskenat, hvorefter de nydøbte bar deres hvide dåbsklædning hele påskeugen, og derefter, nemlig til hvide søndag, aflagde den."];
   	  					 break;
   	  					 
   	  case   14: $this->description = ["2. S. e Påske", "Dom Misericordia", ""];
@@ -437,8 +456,11 @@ class Bauer
   	  case   21: $this->description = ["3. S. e Påske", "Dom Jubilate", ""];
   	  					 break;
   	  					 
-  	  case   26: $this->description = ["Store bededag", "", ""];
-  		           $this->adatoClass=3;
+  	  case   26: if (1685 < $this->aar)		// Store Bededag indføres 27/3 1686 
+  	  					 {	
+  	  					 	 $this->description = ["Store Bededag", "Feria Precat Extraord", ""];
+  		             $this->adatoClass=3;
+  		           }
   	  					 break;
   	  						  	  					 
   	  case   28: $this->description = ["4. S. e Påske", "Dom Cantate", ""];
@@ -459,6 +481,13 @@ class Bauer
 
   	  case   50: $this->description = ["2. Pinsedag", "", ""];
   		           $this->adatoClass=3;
+  	  					 break;
+
+  	  case   51: if ($this->aar < 1771)
+  	             {
+  	               $this->description = ["3. Pinsedag", "", "Helligdag frem til 1770"];
+  		             $this->adatoClass=3;
+  		           }
   	  					 break;
 
   	  case   56: $this->description = ["Trinitatis", "Trinitatis", ""];
@@ -494,13 +523,55 @@ class Bauer
   	  case  126: $this->description = ["10. Søn Trin", "Dom 10 p Trinit", ""];
   	             break;
 
+  	  case  133: $this->description = ["11. Søn Trin", "Dom 11 p Trinit", ""];
+  	             break;
+
+  	  case  140: $this->description = ["12. Søn Trin", "Dom 12 p Trinit", ""];
+  	             break;
+
+  	  case  147: $this->description = ["13. Søn Trin", "Dom 13 p Trinit", ""];
+  	             break;
+
+  	  case  154: $this->description = ["14. Søn Trin", "Dom 14 p Trinit", ""];
+  	             break;
+
   	  case  161: $this->description = ["15. Søn Trin", "Dom 15 p Trinit", ""];
+  	             break;
+
+  	  case  168: $this->description = ["16. Søn Trin", "Dom 16 p Trinit", ""];
+  	             break;
+
+  	  case  175: $this->description = ["17. Søn Trin", "Dom 17 p Trinit", ""];
+  	             break;
+
+  	  case  182: $this->description = ["18. Søn Trin", "Dom 18 p Trinit", ""];
+  	             break;
+
+  	  case  189: $this->description = ["19. Søn Trin", "Dom 19 p Trinit", ""];
   	             break;
 
   	  case  196: $this->description = ["20. Søn Trin", "Dom 20 p Trinit", ""];
   	             break;
 
+  	  case  203: $this->description = ["21. Søn Trin", "Dom 21 p Trinit", ""];
+  	             break;
+
+  	  case  210: $this->description = ["22. Søn Trin", "Dom 22 p Trinit", ""];
+  	             break;
+
+  	  case  217: $this->description = ["23. Søn Trin", "Dom 23 p Trinit", ""];
+  	             break;
+
+  	  case  224: $this->description = ["24. Søn Trin", "Dom 24 p Trinit", ""];
+  	             break;
+
   	  case  231: $this->description = ["25. Søn Trin", "Dom 25 p Trinit", ""];
+  	             break;
+
+  	  case  238: $this->description = ["26. Søn Trin", "Dom 26 p Trinit", ""];
+  	             break;
+
+  	  case  245: $this->description = ["27. Søn Trin", "Dom 27 p Trinit", ""];
   	             break;
   	             
 
@@ -514,10 +585,14 @@ class Bauer
   		           $this->adatoClass=3;
   		           break;
   		          
-  		case  202: $this->description = ["Kyndelmisse", "Purificatio Mariae", ""];
+  		case  501: $this->description = ["Hellig 3 konger", "Epiphanias", "Helligdag frem til 1770"];
+  							 if ($this->aar < 1771)
+  		             $this->adatoClass=3;
   		           break;
 
-  		case  501: $this->description = ["Hellig 3 konger", "Epiphanias", ""];
+  		case  202: $this->description = ["Kyndelmisse", "Purificatio Mariae", ""];
+  		           if ($this->year < 1771)
+  		             $this->adatoClass=3;
   		           break;
   		          
   		case  105: $this->description = ["1. Maj", "", ""];
@@ -529,8 +604,25 @@ class Bauer
   		case  506: $this->description = ["Grundlovsdag", "", ""];
   		           break; 
   		          
-  		case 2406: $this->description = ["Sct Hans", "Fest Nat St Johs Baptistae", ""];
+  		case  207: if ($this->aar < 1771)
+  		           { 
+  								 $this->description = ["Mariæ besøgelsesdag", "Visitationes Mariae", ""];
+  		             $this->adatoClass=3;
+  		           }
   		           break; 
+  		          
+  		case 2406: $this->description = ["Sct Hans", "Fest Nat St Johs Baptistae", "Helligdag frem til 1770"];
+  							 if ($this->aar < 1771)
+  		             $this->adatoClass=3;
+  		           break; 
+
+  		case 2310: if (1728 < $this->aar && $this->aar < 1771)
+  		           { 
+  								 $this->description = ["Taksigelsesdag", "Festum Gratiarum 1725", "Taksigelse for afslutningen af Københavns brand 1728"];
+  		             $this->adatoClass=3;
+  		           }
+  		           break; 
+ 	          
   		          
   		case 2412: $this->description = ["Juleaftensdag", "", ""];
   		           break;
@@ -542,6 +634,14 @@ class Bauer
   		case 2612: $this->description = ["2. Juledag", "Fest St Stephanus Promartyris", ""];
   		           $this->adatoClass=3;
   		           break;
+  		           
+  		case 2712: if ($this->aar < 1771)
+  		           { 
+  								 $this->description = ["3. Juledag", "Fest St. Johannis Evangelistae", "Helligdag frem til 1770"];
+  		             $this->adatoClass=3;
+  		           }
+  		           break;
+  		           
   		          
   		default:   break;
   	}
