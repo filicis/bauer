@@ -6,8 +6,10 @@ namespace App\Utils;
 class Bauer
 {
 	const MONTHS_DA= ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+	const MONTHS_LA= ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "September", "Oktober", "November", "December"];
 
 	const UGEDAG_DA= ["Ma", "Ti", "On", "To", "Fr", "Lø", "Sø"];
+	const UGEDAG_LA= ["LU", "MA", "ME", "Io", "Ve", "Sa", "So"];
 	
 	const MINAAR= 600;
 	const MAXAAR= 3199;
@@ -279,7 +281,9 @@ class Bauer
 
   public function months() : iterable
   {
-  	return self::MONTHS_DA;
+  	return $this->isLatin() ? self::MONTHS_LA : self::MONTHS_DA;
+
+    //return self::MONTHS_LA;
   }
   
   
@@ -324,7 +328,7 @@ class Bauer
   
   public function getUgedag() : String
   {
-  	return self::UGEDAG_DA[$this->_getUgedag()];
+  	return $this->isLatin() ? self::UGEDAG_LA[$this->_getUgedag()] : self::UGEDAG_DA[$this->_getUgedag()];
   }
   
   
@@ -679,7 +683,7 @@ class Bauer
   		          
   		case 2909: if ($this->aar < 1771)
   		           { 
-  								 $this->description = ["Mikkelsdag", "Festum archangeli Michaelis", "<h6>Mikkelsdag</h6><p>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>"];
+  								 $this->description = ["Mikkelsdag", "Festum archangeli Michaelis", "<h6>Mikkelsdag</h6><p>Michaelisdag<br>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>"];
   		             $this->adatoClass=3;
   		           }
   		           break; 

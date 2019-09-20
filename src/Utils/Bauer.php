@@ -6,8 +6,10 @@ namespace App\Utils;
 class Bauer
 {
 	const MONTHS_DA= ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+	const MONTHS_LA= ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "September", "Oktober", "November", "December"];
 
 	const UGEDAG_DA= ["Ma", "Ti", "On", "To", "Fr", "Lø", "Sø"];
+	const UGEDAG_LA= ["Lu", "Ma", "Me", "Io", "Ve", "Sa", "So"];
 	
 	const MINAAR= 600;
 	const MAXAAR= 3199;
@@ -279,7 +281,9 @@ class Bauer
 
   public function months() : iterable
   {
-  	return self::MONTHS_DA;
+  	return $this->isLatin() ? self::MONTHS_LA : self::MONTHS_DA;
+
+    //return self::MONTHS_LA;
   }
   
   
@@ -324,7 +328,7 @@ class Bauer
   
   public function getUgedag() : String
   {
-  	return self::UGEDAG_DA[$this->_getUgedag()];
+  	return $this->isLatin() ? self::UGEDAG_LA[$this->_getUgedag()] : self::UGEDAG_DA[$this->_getUgedag()];
   }
   
   
