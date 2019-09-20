@@ -1,59 +1,62 @@
 {% extends 'base.html.twig' %}
 
+
+
+
 {% block title %}Bauers Kalender{% endblock %}
 
 {% block body %}
 
-
-  <h1 class="h1 text-center">
+	<h1 class="h1 text-center">
     {{ bauer.getAar() }}
   </h1>
 
-	<div class="table-responsive">
-  <table class="table table-fixed table-light table-sm small">
-
-
-  <thead class="thead-light">
-    {% for i in bauer.months() %}
-      <th colspan="3" scope="col" class="text-center" > {{i}} </th>
-    {% endfor %}
-  </thead>
-
-    <tbody>
-      {% for d in 1..31 %}
-        <tr  class= 'small'>
+  <div class='d-flex justify-content-center'>
+		<div class="table-responsive" style='width: 1200px'>
+    	<table class="table table-fixed table-light table-sm small" style='width: 2400px' >
+    		<thead class="thead-light">
+    			<tr>
+      			{% for i in bauer.months() %}
+        			<th style='width: 200px' colspan='3' scope='col' class='text-center'> {{i}} </th>
+      			{% endfor %}
+    			</tr>
+  			</thead>
+			<body>
+        {% for d in 1..31 %}
+          <tr class= 'small'>
             {% for mm in 1..12 %}
-
             
             	{# Herfra er der 4 muligheder
             	   - Almindelig hverdag
             	   - Lørdag
             	   - Søn eller helligdag
             	   - Ugyldig dag (f.eks 31. Juli) #}
-            
+
               {% if bauer.setDato(d, mm) and bauer.getAdatoClass() == 1 %}
                 <th scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="text-left text-nowrap" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                <td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% elseif bauer.getAdatoClass() == 2 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right">{{ d }}</td>
-                <td class="text-left text-nowrap" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                <td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% elseif bauer.getAdatoClass() == 3 %}
                 <th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th> 
                 <td class="text-right alert-secondary">{{ d }}</td>
-                <td class="text-left text-nowrap alert-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                <td style='width: 160px' class="text-left text-truncate alert-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% else %}
                 <td colspan= 3 />
               {% endif %}
-          {% endfor %}
-        </tr>
-      {% endfor %}
-
-    </tbody>
-  </table>
+          	{% endfor %}
+        	</tr>
+      	{% endfor %}
+    	</tbody>
+  	</table>
+  </div>
   </div>
   
+
+
 
 
 {% endblock %}
