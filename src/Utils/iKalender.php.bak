@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Utils;
+
+/**
+ *	interface iKalender 
+ *
+ *	Beskriver deb grænseflade som alle Kelendere skal tilbyde. 
+ */
+
+interface iKalender
+{
+	public function jdag($d, $m, $y) : integer;  	
+}
