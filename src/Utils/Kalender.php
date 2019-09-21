@@ -5,12 +5,12 @@ namespace App\Utils;
 /**
  *	CLass Kalender 
  *
- *	Beskriver deb grænseflade som alle Kelendere skal tilbyde. 
+ *	Beskriver den grænseflade som alle Kalendere skal tilbyde. 
  */
 
 abstract class Kalender implements iKalender
 {
-	abstract public function jdag($d, $m, $y) : integer; 
+	abstract public function jdag(Dato $param) : integer; 
 	
 		/**
 		 *

@@ -5,10 +5,10 @@ namespace App\Utils;
 /**
  *	interface iKalender 
  *
- *	Grundlæggende klasse for alle kalendrer der rod i den Julianske kalender
+ *	Generisk klasse for alle kalendere 
  */
 
 interface iKalender
 {
-	public function jdag($d, $m, $y) : integer;  	
+	public function jdag(Dato $param) : integer;  	
 }
