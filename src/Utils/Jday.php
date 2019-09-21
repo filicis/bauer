@@ -5,7 +5,12 @@ namespace App\Utils;
   /**
    * class Jday
    *
+   * - Den Julianske dagtælling 
    * - Angiver antallet af dage fra dag nr 0 den 1. Januar -4712, juliansk kalender
+   *   som er de-facto international standard for fortløbende dagtælling.
+   * 
+   *   Defineret af Joseph Justus Scaliger i værket 'De emendatione temporum' fra 1583,
+   *   er iøvrigt navngivet efter hans fader Julius Caesar Scaliger.  
    *   
    **/
    

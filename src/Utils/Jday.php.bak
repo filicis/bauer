@@ -18,7 +18,7 @@ class Jday
      *
      */
      
-  __contruct($jd)
+  public function __contruct($jd)
   {
     $this->setJd($jd);
   }

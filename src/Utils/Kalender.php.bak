@@ -5,7 +5,7 @@ namespace App\Utils;
 /**
  *	CLass Kalender 
  *
- *	Beskriver den grænseflade som alle Kelendere skal tilbyde. 
+ *	Beskriver den grænseflade som alle Kalendere skal tilbyde. 
  */
 
 abstract class Kalender implements iKalender

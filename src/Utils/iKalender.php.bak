@@ -5,7 +5,7 @@ namespace App\Utils;
 /**
  *	interface iKalender 
  *
- *	Generisk klasse for alle kalendrer der rod i den Julianske kalender
+ *	Generisk klasse for alle kalendere 
  */
 
 interface iKalender
