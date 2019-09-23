@@ -30,7 +30,7 @@ class Dato
      *
      */
 
-  public function getDay() : integer
+  public function getDay() : int
   {
     return $this->day;
   }
@@ -41,7 +41,7 @@ class Dato
      *
      */
 
-  public function getMonth() : integer
+  public function getMonth() : int
   {
     return $this->month;
   }
@@ -52,7 +52,7 @@ class Dato
      *
      */
 
-  public function getYear() : integer
+  public function getYear() : int
   {
     return $this->year;
   }
@@ -85,7 +85,7 @@ class Dato
      *
      */
 
-  public function setYear($d)
+  public function setYear($y)
   {
     $this->year= $y;
   }

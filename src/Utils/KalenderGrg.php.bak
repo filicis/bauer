@@ -1,0 +1,150 @@
+<?php
+
+namespace App\Utils;
+
+/**
+ *	CLass KalenderGrg 
+ *
+ *	Gregoriansk kalender
+ *	- Gyldig fra årene 600 - 	
+ */
+
+class KalenderGrg extends KalenderJul
+{
+	const NULDAG= 1721119;
+	const CYKLGD= 146097;
+
+
+  	/**
+  	 *	cyklgd()
+  	 *
+  	 **/
+  
+  protected function cyklgd() : int
+  {
+  	return self::CYKLGD;
+  }
+  
+  
+  	  /**
+	   *	epakt()
+	   *
+	   *	Betegner for en dato Månens alder, dvs hvor mange dage der er gået frasidste nymåne til den pågældende dato.
+	   *	Værdier mellem 1 og 30.
+	   **/ 
+	
+	protected function epakt($y) : int
+	{
+		$e= (11 * $this->gyldental($y) + 19 + $this->_moon($y) - $this->_sun($y)) % 30 + 1;
+
+			/* Korriger de 2 gregorianske undtagelser */	
+		if (($e == 25 && 11 < $this->gyldental($y)) or $e == 24)
+		  $e+= 1;
+		return $e;  		
+	}
+	
+
+
+	
+	  	/**
+  	 *	nuldag()
+  	 *
+  	 **/
+  
+  protected function nuldag() : int
+  {
+  	return self::NULDAG;
+  }
+  
+  
+  	  /**
+	   *	pascha()
+	   *
+	   *	Beregner Påskedag for det givne årstal - Og her efter den Julianske kalender. 
+	   **/ 
+	
+	public function pascha($y) : Dato
+	{
+		return (1582 < $y) ? $this->_paschaGrg($y) : $this->_paschaJul($y);
+	}
+	
+	
+		  /**
+	   *	_pascha()
+	   *
+	   *	Beregner Påskedag for det givne årstal - Og her efter den Gregorianske kalender. 
+	   **/ 
+	
+	public function _paschaGrg($y) : Dato
+	{
+		$dg;
+		$md= 3;
+		
+		$pborder= 44 - $this->epakt($y);
+		if ($pborder < 21)
+		  $pborder+= 30;
+		$dg= $pborder + 7 - (($this->ugedagpos($y) + $pborder) % 7);
+		if (31 < $dg)
+		{
+			$md= 4;
+			$dg-= 31;
+		} 
+		return new Dato($dg, $md, $y);
+	}
+	
+
+
+  
+  
+ 	  /**
+	   *	ugedagpos()
+	   *
+	   **/ 
+	
+	protected function ugedagpos($y) : int
+	{
+		return $this->ugedagposJul($y) - 10 -$this->_sun($y);
+	}
+	
+
+  
+
+    /**
+     *	_sekel()
+     *
+     *	Beregner århundrede
+     *
+     **/
+  
+  private function _sekel($y)
+  {
+		return intdiv ($y, 100);
+  }
+
+
+    /**
+     *	_moon()
+     *
+     *	Beregner månejævning
+     *
+     **/
+  
+  private function _moon($y)
+  {
+		return intdiv (8 * $this->_sekel($y) - 112, 25);
+  }
+
+
+    /**
+     *	_sun()
+     *
+     *	Beregner soljævning
+     *
+     **/
+  
+  private function _sun($y)
+  {
+		return intdiv(3 * $this->_sekel($y) - 45, 4);
+  }
+
+}	

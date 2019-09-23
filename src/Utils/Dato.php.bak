@@ -15,9 +15,9 @@ class Dato
   private $month=   0;
   private $year=    0;  
   
-  public function __construct() {}
+  // public function __construct() {}
   
-  public function __construct($d, $m, $y) 
+  public function __construct($d= 0, $m= 0, $y= 0) 
   {
     $this->setDay($d);
     $this->setMonth($m);
@@ -85,7 +85,7 @@ class Dato
      *
      */
 
-  public function setYear($d)
+  public function setYear($y)
   {
     $this->year= $y;
   }

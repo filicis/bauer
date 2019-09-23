@@ -9,7 +9,7 @@ class Bauer
 	const MONTHS_LA= ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "September", "Oktober", "November", "December"];
 
 	const UGEDAG_DA= ["Ma", "Ti", "On", "To", "Fr", "Lø", "Sø"];
-	const UGEDAG_LA= ["LU", "MA", "ME", "Io", "Ve", "Sa", "So"];
+	const UGEDAG_LA= ["Lu", "Ma", "Me", "Io", "Ve", "Sa", "So"];
 	
 	const MINAAR= 600;
 	const MAXAAR= 3199;
@@ -769,5 +769,29 @@ class Bauer
   	
   	return $this->_validDato($d, $m);
   }
+  
+  
+  	//
+  	//	Diverse debugging og test functioner
+  	//
+  	//
+
+	public function testDay() : int
+	{
+		$x= new KalenderGrg;
+		$z= $x->pascha($this->aar);
+		
+		return $z->getDay();
+	  //return 12;
+	}
+
+	public function testMonth() : int
+	{
+		//$x= new KalenderGrg;
+		//$z= $x->pascha($this->aar);
+
+		//return $z->getMonth();
+		return 12;
+	}
 
 }

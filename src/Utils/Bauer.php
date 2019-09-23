@@ -769,5 +769,29 @@ class Bauer
   	
   	return $this->_validDato($d, $m);
   }
+  
+  
+  	//
+  	//	Diverse debugging og test functioner
+  	//
+  	//
+
+	public function testDay() : int
+	{
+		$x= new KalenderGrg;
+		$z= $x->pascha($this->aar);
+		
+		return $z->getDay();
+	  //return 12;
+	}
+
+	public function testMonth() : int
+	{
+		$x= new KalenderGrg;
+		$z= $x->pascha($this->aar);
+
+		return $z->getMonth();
+		// return 12;
+	}
 
 }

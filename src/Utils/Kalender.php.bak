@@ -10,8 +10,10 @@ namespace App\Utils;
 
 abstract class Kalender implements iKalender
 {
-	abstract public function jdag(Dato $param) : integer; 
-	
+    
+  abstract public function dato(Jday $param) : Dato;
+
+  abstract public function jday(Dato $param) : Jday;
 		/**
 		 *
 		 *
