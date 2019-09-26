@@ -15,21 +15,13 @@ class KalenderGrg extends KalenderJul
 	const CYKLGD= 146097;
 
 
-  	/**
-  	 *	cyklgd()
-  	 *
-  	 **/
-  
-  protected function cyklgd() : int
-  {
-  	return self::CYKLGD;
-  }
+
   
   
   	  /**
 	   *	epaktGrg()
 	   *
-	   *	Betegner for en dato Månens alder, dvs hvor mange dage der er gået frasidste nymåne til den pågældende dato.
+	   *	Betegner for en dato Månens alder, dvs hvor mange dage der er gået fra sidste nymåne til den pågældende dato.
 	   *	Værdier mellem 1 og 30.
 	   **/ 
 	
@@ -43,19 +35,38 @@ class KalenderGrg extends KalenderJul
 		return $e;  		
 	}
 	
+	
+	
+	
+	  /**
+	   *	jday()
+	   *
+	   *  Beregner juliansk dagtal for datoen i den Julianske kalender.
+	   *  - Dvs antallet af dag der er passeret siden 1. Januar -4712
+	   **/ 
+
+  public function jday(Dato $param) : Jday
+  {
+    return $this->jdayGrg($param);
+    
+    //return ($param->getYear() < 1582) 
+    //? parent::_jday($param) 
+    //: parent::_jday($param, self::NULDAG, self::CYKLGD);
+    //return parent::jday($param);
+    //$x= new Jday(262626);
+    //$x->setJd(232323);
+    //return $x;
+  }  
+
+
+  public function jdayGrg(Dato $param) : Jday
+  {
+    return parent::_jday($param, self::NULDAG, self::CYKLGD);
+  }  
 
 
 	
-	  	/**
-  	 *	nuldag()
-  	 *
-  	 **/
-  
-  protected function nuldag() : int
-  {
-  	return self::NULDAG;
-  }
-  
+
   
   	  /**
 	   *	pascha()
@@ -146,5 +157,19 @@ class KalenderGrg extends KalenderJul
   {
 		return intdiv(3 * $this->_sekel($y) - 45, 4);
   }
+  
+  
+  
+  	
+	  /**
+	   *    validateYear()
+	   *
+	   **/
+	   
+  public function validateYear($y) : int
+  {  
+    return ($y % 4) ? Kalender::YEARNORMAL : ($y % 100) ? Kalender::YEARLEAP : ($y % 400) ? YEARNORMAL : YEARLEAP;
+  }
+
 
 }	

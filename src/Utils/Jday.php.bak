@@ -5,22 +5,27 @@ namespace App\Utils;
   /**
    * class Jday
    *
+   * - Den Julianske dagtælling 
    * - Angiver antallet af dage fra dag nr 0 den 1. Januar -4712, juliansk kalender
+   *   som er de-facto international standard for fortløbende dagtælling.
+   * 
+   *   Defineret af Joseph Justus Scaliger i værket 'De emendatione temporum' fra 1583,
+   *   er iøvrigt navngivet efter hans fader Julius Caesar Scaliger.  
    *   
    **/
    
 class Jday
 {
-  private $jd;
+  protected $jd= 0;
   
     /**
      *
      *
      */
      
-  public function __contruct($jd)
+  function __construct($param)
   {
-    $this->setJd($jd);
+    $this->jd= $param;
   }
   
 
@@ -29,7 +34,7 @@ class Jday
      *
      */
      
-  public function getJd() : integer
+  public function getJd() : int
   {
     return $this->jd;
   }    
@@ -40,9 +45,9 @@ class Jday
      *
      */
      
-  public function setJd($jd)
+  public function setJd($parem)
   {
-    $this->jd= $jd;
+    $this->jd= $parem;
   }    
   
 

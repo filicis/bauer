@@ -16,16 +16,16 @@ namespace App\Utils;
    
 class Jday
 {
-  private $jd;
+  protected $jd= 0;
   
     /**
      *
      *
      */
      
-  public function __contruct($jd)
+  function __construct($param)
   {
-    $this->setJd($jd);
+    $this->setJd($param);
   }
   
 
@@ -34,7 +34,7 @@ class Jday
      *
      */
      
-  public function getJd() : integer
+  public function getJd() : int
   {
     return $this->jd;
   }    
@@ -45,9 +45,9 @@ class Jday
      *
      */
      
-  public function setJd($jd)
+  public function setJd($parem)
   {
-    $this->jd= $jd;
+    $this->jd= $parem;
   }    
   
 

@@ -3,7 +3,6 @@
 namespace App\Utils;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
-use App\Utils\DateInfo;
 
 class Bauer
 {
@@ -797,6 +796,21 @@ class Bauer
 
 		return $z->getMonth();
 		// return 12;
+	}
+	
+	public function getPjtal() : int
+	{
+	    return $this->pjtal;
+	}
+	
+	
+	public function jtaltest() : int
+	{
+	    $x= new KalenderGrg;
+	    
+	    $y= $x->jday(new Dato($this->pdg, $this->pmd, $this->aar));
+	    return $y->getJd();
+	    //return 252525;
 	}
 
     public function index(TranslatorInterface $translator)

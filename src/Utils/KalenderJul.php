@@ -3,7 +3,7 @@
 namespace App\Utils;
 
 /**
- *	CLass KalenderJul 
+ *	Class KalenderJul 
  *
  *	Juliansk kalender
  *	- Gyldig fra årene 600 - 	
@@ -16,15 +16,7 @@ class KalenderJul extends Kalender
 
  
 
-  	/**
-  	 *	cyklgd()
-  	 *
-  	 **/
-  
-  protected function cyklgd() : int
-  {
-  	return self::CYKLGD;
-  }
+
 
 
 		/**
@@ -78,7 +70,8 @@ class KalenderJul extends Kalender
 		return ($y % 19) + 1;
 	}
 	
-		  /**
+	
+	  /**
 	   *	jday()
 	   *
 	   *  Beregner juliansk dagtal for datoen i den Julianske kalender.
@@ -87,6 +80,20 @@ class KalenderJul extends Kalender
 
   public function jday(Dato $param) : Jday
   {
+    return $this->jdayJul($param);
+  }
+  
+    public function jdayJul(Dato $param) : Jday
+  {
+    return $this->_jday($param);
+  }
+  
+    
+
+    
+   protected function _jday(Dato $param, $nuldag= self::NULDAG, $cyklgd= self::CYKLGD ) : Jday
+  {
+   
   	$cykantal;
   	$aaricyk;
   	$centicyk;
@@ -97,38 +104,31 @@ class KalenderJul extends Kalender
 		$m= $param->getMonth();
 		$y= $param->getYear();
   	
-  	  /* Januar og Februar henregnes til åpret før */
+  	  /* Januar og Februar henregnes til året før */
   	if ($m < 3)
   	{
   		$m+= 12;
   		$y-= 1;
   	}
   	
-  	$cykantal= entdiv($y, 400);									 /* Antal cyklusser à 400 år */
+  	$cykantal= intdiv($y, 400);									 /* Antal cyklusser à 400 år */
   	$aaricyk= $y % 400;
   	$centicyk= intdiv($aaricyk, 100);
-  	$aarrest= aaricyk % 100;
+  	$aarrest= $aaricyk % 100;
   	
-  	$jd= $this->nuldag() + $cykantal * $this->cyklgd()
-  	     + intdiv(($centicyk * $this->cyklgd()), 4)
+  	$jd= $nuldag 
+  	     + $cykantal * $cyklgd
+  	     + intdiv(($centicyk * $cyklgd), 4)
   	     + intdiv(($aarrest * 1461), 4)
-  	     + intdiv((153 * $md - 457), 5)
-  	     + 4;
+  	     + intdiv((153 * $m - 457), 5)
+  	     + $d;
 
-  	return new Jday(jd);
+  	return new Jday($jd);
+  	
+  	// return new Jday(242424);
   }
   
   
-  	/**
-  	 *	nuldag()
-  	 *
-  	 **/
-  
-  protected function nuldag() : int
-  {
-  	return self::NULDAG;
-  }
-
 	
 	
 
@@ -179,5 +179,62 @@ class KalenderJul extends Kalender
 		} 
 		return new Dato($dg, $md, $y);
 	}
+	
+	
+	 /**
+   *	_validDato()														** Parallel til Algorime 2 **
+   *
+   *	Forudsætter at vi har et gyldigt år
+   */
+   
+  public function validateDato($d, $mmm) : bool
+  {
+    if ($this->aartype != 0)
+   	{
+   	  if (0 < $mmm && $mmm < 13)
+   	  {
+   	    if (0 < $d && $d < 32)
+   	 	{
+   	 	  switch($mmm)
+   	 	  {
+   	 	    case 2: switch ($this->aartype)
+   	 	 	 	 	{
+   	 	 	 	 	  case 1: if (28 < $d) return False;
+   	 	 	 	 	 		  break;
+   	 	 	 	 	 				 	 
+   	 	 	 	 	  case 2: if (29 < $d) return False;
+   	 	 	 	 	 		  break;  
+   	 	 	 	 	 				 	 
+   	 	 	 	 	  case 3: if (18 < $d) return False;
+   	 	 	 	 	}
+   	 	 	 	 	break;	
+   	 	 	 	 	 
+   	 	    case 4:
+   	 	 	case 6:
+   	 	 	case 9:
+   	 	 	case 11: if (30 < $d) return False;
+   	 	  }
+   	 	  return True;
+   	 	 	 	 
+   	 	}
+   	  }
+   	 	
+   	}
+   	return False;
+  }
+   
+
+	
+	  /**
+	   *    validateYear()
+	   *
+	   **/
+	   
+  public function validateYear($y) : int
+  {  
+    return ($y % 4) ? Kalender::YEARNORMAL : Kalender::YEARLEAP;
+  }
+
+	
 	
 }

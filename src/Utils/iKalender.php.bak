@@ -10,6 +10,6 @@ namespace App\Utils;
 
 interface iKalender
 {
-    public function dato(Jday $param) : Dato;
+  public function dato(Jday $param) : Dato;
 	public function jday(Dato $param) : Jday;  	
 }

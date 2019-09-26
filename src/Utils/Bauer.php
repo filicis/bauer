@@ -797,6 +797,21 @@ class Bauer
 		return $z->getMonth();
 		// return 12;
 	}
+	
+	public function getPjtal() : int
+	{
+	    return $this->pjtal;
+	}
+	
+	
+	public function jtaltest() : int
+	{
+	    $x= new KalenderDA;
+	    
+	    $y= $x->jday(new Dato($this->pdg, $this->pmd, $this->aar));
+	    return $y->getJd();
+	    //return 252525;
+	}
 
     public function index(TranslatorInterface $translator)
 {
