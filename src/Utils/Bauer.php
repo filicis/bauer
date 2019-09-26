@@ -2,6 +2,7 @@
 
 namespace App\Utils;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class Bauer
 {
@@ -27,7 +28,7 @@ class Bauer
 	
 	
 	protected $latin= False;
-		    
+			    
 
   protected $aar= 0;
   protected $aartype= 0;
@@ -304,6 +305,8 @@ class Bauer
   	return $this->dagiaar;
   }
   
+  
+  
   /**
    *	getDescription()
    *
@@ -374,6 +377,8 @@ class Bauer
   	$this->description= ["", "", ""];
   	
   	$this->dagiaar= $this->_dagiaar($d, $m);
+  	
+  	// this->index();
   	
   	if (self::_validDato($d, $m))
   	{
@@ -765,7 +770,6 @@ class Bauer
   		  }
   	  }
   	}
-  	  
   	
   	return $this->_validDato($d, $m);
   }
@@ -793,5 +797,12 @@ class Bauer
 		return $z->getMonth();
 		// return 12;
 	}
+
+    public function index(TranslatorInterface $translator)
+{
+    $translated = $translator->trans('Symfony is great');
+
+    // ...
+}
 
 }

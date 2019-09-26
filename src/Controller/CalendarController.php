@@ -4,6 +4,9 @@ namespace App\Controller;
 
 // use App\Form\AarstalType;
 
+use Symfony\Contracts\Translation\TranslatorInterface;
+
+
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -96,8 +99,9 @@ class CalendarController extends AbstractController
      * @Route("/", name="calendar")
      */
      
-    public function index1(Request $request)
+    public function index1(TranslatorInterface $translator, Request $request)
     {
+        $translator->setLocale('la');
     	$bauer= new Bauer($this->session->get('Bauer', 1960), $this->session->get('isLatin', 'False'));
     	if ($bauer->isValid() == False)
         return $this->redirectToRoute('about');

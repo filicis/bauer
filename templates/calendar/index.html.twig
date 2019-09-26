@@ -10,6 +10,9 @@
 	<h1 class="h1 text-center">
     {{ bauer.getAar() }}
   </h1>
+  <p>
+    Påsken falder på: {{ bauer.testDay()}} / {{ bauer.testMonth()}} 
+  </p>
 
   <div class='d-flex justify-content-center'>
 		<div class="table-responsive" style='width: 1200px'>
@@ -17,7 +20,7 @@
     		<thead class="thead-light">
     			<tr>
       			{% for i in bauer.months() %}
-        			<th style='width: 200px' colspan='3' scope='col' class='text-center'> {{i}} </th>
+        			<th style='width: 200px' colspan='3' scope='col' class='text-center'> {% trans %} %i% {% endtrans %} </th>
       			{% endfor %}
     			</tr>
   			</thead>
@@ -33,7 +36,7 @@
             	   - Ugyldig dag (f.eks 31. Juli) #}
 
               {% if bauer.setDato(d, mm) and bauer.getAdatoClass() == 1 %}
-                <th scope="row"> {{ bauer.getUgedag() }} </th> 
+                <th scope="row">{{ bauer.getUgedag() }}  </th> 
                 <td class="text-right">{{ d }}</td>
                 <td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% elseif bauer.getAdatoClass() == 2 %}
@@ -45,7 +48,7 @@
                 <td class="text-right alert-secondary">{{ d }}</td>
                 <td style='width: 160px' class="text-left text-truncate alert-secondary" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
               {% else %}
-                <td colspan= 3 />
+                <td colspan= 3 /> 
               {% endif %}
           	{% endfor %}
         	</tr>
