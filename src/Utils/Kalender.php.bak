@@ -13,6 +13,9 @@ abstract class Kalender implements iKalender, iKalenderaar
   private const DAYMAX= 7;
   private const MONTHMAX= 12;  
   
+  const MONTHS= ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
+  const weekdays= ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"];
+
   protected const YEARINVALID= 0;
   protected const YEARNORMAL= 1;
   protected const YEARLEAP= 2;
@@ -31,8 +34,12 @@ abstract class Kalender implements iKalender, iKalenderaar
   abstract public function dato(Jday $param) : Dato;
 
   abstract public function jday(Dato $param) : Jday;
+  
+  abstract public function ugedag(Jday $param) : int;
 
-  abstract public function validateDato($y) : bool;
+
+
+  abstract public function validateDato($d, $m) : bool;
 
   abstract public function validateYear($y) : int;
   

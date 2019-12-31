@@ -806,7 +806,7 @@ class Bauer
 	
 	public function jtaltest() : int
 	{
-	    $x= new KalenderGrg;
+	    $x= new KalenderDA;
 	    
 	    $y= $x->jday(new Dato($this->pdg, $this->pmd, $this->aar));
 	    return $y->getJd();

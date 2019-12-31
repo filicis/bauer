@@ -181,6 +181,19 @@ class KalenderJul extends Kalender
 	}
 	
 	
+	/**
+	 *  ugedag()
+	 *
+	 *
+	 **/ 
+	 
+  public function ugedag(Jday $param) : int
+  {
+    return $param->getJd() % 7;
+  }
+
+	
+	
 	 /**
    *	_validDato()														** Parallel til Algorime 2 **
    *

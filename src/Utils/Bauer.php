@@ -813,11 +813,5 @@ class Bauer
 	    //return 252525;
 	}
 
-    public function index(TranslatorInterface $translator)
-{
-    $translated = $translator->trans('Symfony is great');
-
-    // ...
-}
 
 }

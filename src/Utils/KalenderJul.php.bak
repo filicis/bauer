@@ -80,9 +80,16 @@ class KalenderJul extends Kalender
 
   public function jday(Dato $param) : Jday
   {
-    return _jday($param);
+    return $this->jdayJul($param);
   }
   
+    public function jdayJul(Dato $param) : Jday
+  {
+    return $this->_jday($param);
+  }
+  
+    
+
     
    protected function _jday(Dato $param, $nuldag= self::NULDAG, $cyklgd= self::CYKLGD ) : Jday
   {
@@ -172,6 +179,18 @@ class KalenderJul extends Kalender
 		} 
 		return new Dato($dg, $md, $y);
 	}
+	
+	/**
+	 *  ugedag()
+	 *
+	 *
+	 */ 
+	 
+  public function ugedag(Jday $param) : int
+  {
+    return $param->getJday() % 7;
+  }
+
 	
 	
 	 /**
