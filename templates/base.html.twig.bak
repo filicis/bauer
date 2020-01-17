@@ -22,7 +22,7 @@
     {% endblock %}
 
   </head>
-  <body style='padding-top: 20px;'>
+  <body style='padding-top: 25px;'>
 
       <!-- Programmets Hovedmenu -->
 
