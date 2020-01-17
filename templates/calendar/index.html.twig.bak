@@ -5,12 +5,14 @@
 
 {% block body %}
 
-	<h1 class="h1 text-center">
+  <p></p>
+	<h1 class="h1 text-center"><br>
     {{ bauer.getAar() }}
   </h1>
-  <p>
+  <!-- p>
     Påsken falder på: {{ bauer.testDay()}} / {{ bauer.testMonth()}} - Påske Jtal: {{ bauer.getPjtal() }} - {{ bauer.jtaltest() }}
-  </p>
+  </p -->
+
 
   <div class='container-flex d-flex justify-content-center'>
 		<div class="table-responsive-xl">
