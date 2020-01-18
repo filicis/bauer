@@ -22,7 +22,9 @@
     {% endblock %}
 
   </head>
-  <body style='padding-top: 25px;'>
+  <body
+  	style='padding-top: 25px;'
+  	>
 
       <!-- Programmets Hovedmenu -->
 
@@ -37,30 +39,39 @@
     	<div class="collapse navbar-collapse" id="navbarNav">
     		<a class="navbar-brand" href="https://github.com/filicis">Filicis</a>
 
-      	<!-- div class="navbar-nav mr-auto">
-          <a class="nav-item nav-link" href="/about">Hjem<span class="sr-only">(current)</span></a>
+      	<div class="navbar-nav mr-auto">
+          <!-- a class="nav-item nav-link" href="/about">Hjem<span class="sr-only">(current)</span></a -->
           <div class= 'nav-item dropdown'>
-          	<a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
+          	<a class="nav-item nav-link dropdown-toggle disabled" href="#" id="navbarDropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
           	<div class="dropdown-menu" aria-labelledby="navbarDropdown01">
             	<a class="dropdown-item" href="#">Juliansk</a>
             	<a class="dropdown-item" href="#">Gregoriansk</a>
             	<a class="dropdown-item" href="#">Dansk / Norsk</a>
             	<a class="dropdown-item" href="#">Svensk</a>
             	<a class="dropdown-item" href="#">Italiensk</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" data-toggle='modal' data-target="#aboutModal" href="#">Om..</a>
           	</div>
           </div>
           <div class= 'nav-item dropdown'>
-          	<a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown02" role="button"	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hjælp</a>
+          	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown02" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sprog</a>
           	<div class="dropdown-menu" aria-labelledby="navbarDropdown02">
+            	<a class="dropdown-item" href="/sprog/dansk">Dansk</a>
+            	<a class="dropdown-item disabled" href="#">Svensk</a>
+            	<a class="dropdown-item disabled" href="#">Norsk</a>
+            	<a class="dropdown-item disabled" href="#">Engelsk</a>
+            	<a class="dropdown-item" href="/sprog/latin">Latin</a>
+            	<div class="dropdown-divider"></div>
+          	</div>
+          </div>
+          <div class= 'nav-item dropdown'>
+          	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown03" role="button"	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hjælp</a>
+          	<div class="dropdown-menu" aria-labelledby="navbarDropdown03">
             	<a class="dropdown-item" href="#">Action</a>
             	<a class="dropdown-item" href="#">Baggrunds materiale</a>
             	<div class="dropdown-divider"></div>
             	<a class="dropdown-item" data-toggle='modal' data-target="#aboutModal" href="#">Om..</a>
           	</div>
           </div>
-      	</div -->
+      	</div>
     	</div>
       {{ form_start(our_form, {'attr': {'class': 'form-inline  my-2 my-lg-0'} }) }}
     		<div class="custom-control custom-switch px-3" >

@@ -42,13 +42,13 @@ class CalendarController extends AbstractController
         $form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
           ->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']] */ )
           
-					->add('latin', CheckboxType::class, ['required' => false])
+					//->add('latin', CheckboxType::class, ['required' => false])
           
           ->add('send', SubmitType::class )
           ->getForm();
 
         $form->get('year')->setData($this->session->get('Bauer', 1960));
-        $form->get('latin')->setData($this->session->get('isLatin'));
+        //$form->get('latin')->setData($this->session->get('isLatin'));
         
         
         
@@ -58,7 +58,7 @@ class CalendarController extends AbstractController
         {
             $data= $form->getData();
             $this->session->set('Bauer', $data['year']); 
-            $this->session->set('isLatin', $data['latin']); 
+            // $this->session->set('isLatin', $data['latin']); 
             
              return $this->redirectToRoute('calendar');
             
@@ -110,12 +110,12 @@ class CalendarController extends AbstractController
         $test= ['message' => 'Entest'];
         $form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
           ->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']]*/ )
-					->add('latin', CheckboxType::class, ['required' => false])
+					//->add('latin', CheckboxType::class, ['required' => false])
           ->add('send', SubmitType::class , ['attr' => ['label' => 'Vælg']] )
           ->getForm();
           
         $form->get('year')->setData($this->session->get('Bauer', 1960));
-        $form->get('latin')->setData($this->session->get('isLatin'));
+        //$form->get('latin')->setData($this->session->get('isLatin'));
           
    	
     	$form->handleRequest($request);
@@ -126,7 +126,7 @@ class CalendarController extends AbstractController
     	{
             $data= $form->getData();
             $this->session->set('Bauer', $data['year']); 
-            $this->session->set('isLatin', $data['latin']); 
+            // $this->session->set('isLatin', $data['latin']); 
 
              return $this->redirectToRoute('calendar');
 

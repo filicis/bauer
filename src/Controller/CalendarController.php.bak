@@ -101,6 +101,7 @@ class CalendarController extends AbstractController
      
     public function index1(TranslatorInterface $translator, Request $request)
     {
+        $translator->setLocale('la');
     	$bauer= new Bauer($this->session->get('Bauer', 1960), $this->session->get('isLatin', 'False'));
     	if ($bauer->isValid() == False)
         return $this->redirectToRoute('about');
