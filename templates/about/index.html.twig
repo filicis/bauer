@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bauers Kalender{% endblock %}
+{% block title %}Om dette program{% endblock %}
 
 {% block body %}
 
-  <h1 class="h1 text-center">Bauers Calender</h1>
-  <h2 class="h2 text-center">for årene 600 til 3199 gældende for Danmark og Norge</h2>
-  
-  
-  {# read and display just one flash message type #}
-  {% for message in app.flashes('notice') %}
-    <div class="flash-notice">
-        {{ message }}
-    </div>
-  {% endfor %}
+<div class= 'd-flex justify-content-center'>
+	<div class= 'card w-50 bg-light mb-3 center'>
+  	<div class= 'card-body'>
+			<h6 class= 'card-title'>Om Bauers Kalender</h6>
+			<h1 class= 'card-subtitle text-center'>Bauers Kalender</h1>
+			<p class= 'card-text text-center'>Version 2020</p>
+			<hr>
+			<p class= 'card-text text-center'>(c) 2000 Michael Rasmussen</p>
 
-  
+		</div>
+	</div>
+</div>
+
 
 {% endblock %}

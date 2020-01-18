@@ -23,6 +23,10 @@ class SprogController extends AbstractController
      */
     public function index()
     {
+
+        return $this->redirectToRoute('calendar');
+
+
         return $this->render('sprog/index.html.twig', [
             'controller_name' => 'SprogController',
         ]);
