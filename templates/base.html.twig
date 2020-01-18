@@ -73,6 +73,10 @@
           </div>
       	</div>
     	</div>
+
+    	{% if our_form is defined %}
+
+
       {{ form_start(our_form, {'attr': {'class': 'form-inline  my-2 my-lg-0'} }) }}
 {#
     		<div class="custom-control custom-switch px-3" >
@@ -84,6 +88,7 @@
         {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'btn btn-outline-primary my-2 my-sm-0'} })}}
    			{{ form_rest(our_form) }}
       {{ form_end(our_form )}}
+      {% endif %}
     </div>
   </nav>
 

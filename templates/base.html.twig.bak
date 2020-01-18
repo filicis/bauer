@@ -73,15 +73,23 @@
           </div>
       	</div>
     	</div>
+
+    	{% if our_form is defined %}
+
+    	<span class= 'navbar-text'> {{ our_form.year.offsetGet('year') }} </span>
+
       {{ form_start(our_form, {'attr': {'class': 'form-inline  my-2 my-lg-0'} }) }}
+{#
     		<div class="custom-control custom-switch px-3" >
       		{{ form_widget(our_form.latin, {'type': 'checkbox', 'attr': {'class': 'custom-control-input', type: 'checkbox', empty_data: 'false'  }}) }}
       		<label class="custom-control-label" for="form_latin">Latin</label>
     		</div>
+#}
     		{{ form_widget(our_form.year, {'attr': {'class': 'form-control mr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
         {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'btn btn-outline-primary my-2 my-sm-0'} })}}
    			{{ form_rest(our_form) }}
       {{ form_end(our_form )}}
+      {% endif %}
     </div>
   </nav>
 
