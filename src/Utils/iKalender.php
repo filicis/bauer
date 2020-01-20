@@ -2,12 +2,15 @@
 
 namespace App\Utils;
 
+use App\Utils\Jday;
+use App\Utils\Dato;
+
 /**
- *	interface iKalender 
+ *	interface iKalender
  *
- *	Generisk klasse for alle kalendere 
+ *	Generisk klasse for alle kalendere
  *  - En kalender er inddelt i dage, uger, måneder og år
- *  
+ *
  *  - Ugedage nummereres fra 1..
  *  - Måneder nummereres fra 1..
  *
@@ -16,5 +19,5 @@ namespace App\Utils;
 interface iKalender
 {
   public function dato(Jday $param) : Dato;
-  public function jday(Dato $param) : Jday;  	
+  public function jday(Dato $param) : Jday;
 }
