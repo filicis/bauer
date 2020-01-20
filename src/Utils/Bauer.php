@@ -285,7 +285,6 @@ class Bauer
   {
   	return $this->isLatin() ? self::MONTHS_LA : self::MONTHS_DA;
 
-    //return self::MONTHS_LA;
   }
 
 
