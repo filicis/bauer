@@ -28,49 +28,6 @@ class CalendarController extends AbstractController
     }
 
 
-    /**
-     *  about()
-     *
-     * @ R o u t e ("/about", name="about")
-     *
-     */
-
-    public function about(Request $request)
-    {
-
-        $test= ['message' => 'Entest'];
-        $form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
-          ->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']] */ )
-
-
-          ->add('send', SubmitType::class )
-          ->getForm();
-
-        $form->get('year')->setData($this->session->get('Bauer', 1960));
-
-
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $data= $form->getData();
-            $this->session->set('Bauer', $data['year']);
-
-             return $this->redirectToRoute('calendar');
-
-                  $this->addFlash('notice', $data['year']);
-
-        }
-
-
-        return $this->render('about/index.html.twig', [
-            'controller_name' => 'CalendarController', 'our_form' => $form, 'our_form' => $form->createView(),
-        ]);
-
-    }
-
-
 
     /**
      * @Route("/calendar/{aarstal}", name="calendar1")
