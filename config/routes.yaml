@@ -3,4 +3,4 @@ index:
     controller:     App\Controller\DefaultController::index
     locale:         da
     requirements:
-        _locale:    da|en|no|la
+        _locale:    da|en|no|se|la

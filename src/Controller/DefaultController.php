@@ -22,27 +22,41 @@ class DefaultController extends AbstractController
 		$this->session = $session;
 	}
 
+
+
 	/**
-	 * @Route("/default", name="default")
-	 *
-	 **/
+	* @Route("/default", name="default")
+	*
+	**/
 
 	public function index(Request $request)
 	{
-		$request->getSession()->set('_locale', 'da');
-
-	  $url = $this->generateUrl('calendar1', ['aarstal' => 1735]);
-
-    return $this->redirectToRoute('calendar1', ['aarstal' => 1736]);
-
-    return $this->redirectToRoute('calendar1');
-
-		$response = new RedirectResponse('calendar');
-		$response->send();
+		$aarstal= $this->session->get('aarstal', 1737);
+		$_locale= $this->session->get('_locale', 'da');
 
 
-		return $this->render('default/index.html.twig', [
-		'controller_name' => 'DefaultController',
-		]);
+		$request->getSession()->set('_locale', 'en');
+
+
+		return $this->redirectToRoute('calendar1', ['_locale' => $_locale, 'aarstal' => $aarstal]);
+
 	}
+
+
+		/**
+     * @Route("/setLocale", name="setLocale")
+     */
+
+
+	public function setLocale(Request $request)
+	{
+		$session= $request->getSession();
+		$locale = $request->attributes->get('_locale');
+		$session->set('_locale', $locale);
+
+    return $this->redirectToRoute('default');
+	}
+
+
+
 }
