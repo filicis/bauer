@@ -1,22 +1,59 @@
-﻿# Oversaettelse til Latin
-#
-#
-Ma: Lu
-Ti: Ma
-On: Me
-To: Io
-Fr: Ve
-Lø: Sa
-Sø: So
-Januar: Ianuarius
-Februar: Februarius
-Marts: Martius
-April: Aprilis
-Maj: Maius
-Juni: Iunius
-Juli: Iulii
-August: Augustus
-September: September
-Oktober: Octobris
-November:
-December:
+---
+# Ugedagene
+bauer.mandag: lunae
+bauer.tirsdag: martis
+bauer.onsdag: mercurii
+bauer.torsdag: iovis
+bauer.fredag: veneris
+bauer.lørdag: saturni
+bauer.søndag: solis
+# Månederne
+bauer.januar: ianuarius
+bauer.februar: februarius
+bauer.marts: martius
+bauer.april: aprilis
+bauer.maj: maius
+bauer.juni: iunius
+bauer.juli: iulii
+bauer.august: augustus
+bauer.september: september
+bauer.oktober: octobris
+bauer.november: november
+bauer.december: december
+# Faste datoer
+bauer.nytår: Circumcisio Christi
+bauer.nytårTT:
+bauer.h3k: Dom Epiphanias
+bauer.h3kTT:
+bauer.h3k1: Dom 1 p Epiph
+bauer.h3k2: Dom 2 p Epiph
+bauer.h3k3: Dom 3 p Epiph
+bauer.h3k4: Dom 4 p Epiph
+bauer.h3k5: Dom 5 p Epiph
+bauer.h3k6: Dom 6 p Epiph
+bauer.paulus: Dies Pauli
+bauer.kyndelmisse: Purificatio Mariae
+bauer.1maj: " "
+bauer.mariæbebud: Annuntiatio Mariae Virginis
+bauer.grundlovsdag: " "
+bauer.sankthans: Fest Nat St Johs Baptistae"
+bauer.syvsoverdag: 7 dormientes
+bauer.mariæbesøg: Visitationes Mariae
+bauer.dominicus: Dies Donatus
+bauer.donatus: Dies Donatus
+bauer.mikkelsdag: Fest Gratiarum 1725
+bauer.taksigelse: Fest Gratiarum 1725
+bauer.allehelgen: Fest omnium sanctorum
+bauer.allesjæle: Com omnium fidel defunct
+bauer.mortensdag: Martinus ep. conf
+
+# Adventsdagene
+bauer.advent1: Dom Adventus
+bauer.advent2: Dom Populus Sion
+bauer.advent3: Dom Gaudete in domino
+bauer.advent4: Dom Memento
+# Juledagene
+bauer.juleaften: " "
+bauer.juledag: Natalis Domini
+bauer.2juledag: Fest St Stephanus Promartyris
+bauer.3juledag: Fest St. Johannis Evangelistae

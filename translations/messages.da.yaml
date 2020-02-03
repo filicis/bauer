@@ -1,0 +1,70 @@
+---
+bauer.mandag: mandag
+bauer.tirsdag: tirsdag
+bauer.onsdag: onsdag
+bauer.torsdag: torsdag
+bauer.fredag: fredag
+bauer.lørdag: lørdag
+bauer.søndag: søndag
+# Månederne
+bauer.januar: januar
+bauer.februar: februar
+bauer.marts: marts
+bauer.april: april
+bauer.maj: maj
+bauer.juni: juni
+bauer.juli: juli
+bauer.august: august
+bauer.september: september
+bauer.oktober: oktober
+bauer.november: november
+bauer.december: december
+# Faste datoer
+bauer.nytår: Nytårsdag
+bauer.nytårTT: <h6>Nytårsdag</h6><p class='text-left'>Kristi omskærelsesdag<br>Festum Novi Anni<br>Festum Circumcisionis Domini</p>
+bauer.h3k: Hellig 3 konger
+bauer.h3kTT: <h6>Helligtrekonger</h6><p>Dom. Baptismus Christi<br>Dom. Ephiphania</p><p>Helligdag indtil 1770<p>
+bauer.h3k1: 1. S efter H3K
+bauer.h3k2: 2. S efter H3K
+bauer.h3k3: 3. S efter H3K
+bauer.h3k4: 4. S efter H3K
+bauer.h3k5: 5. S efter H3K
+bauer.h3k6: 6. S efter H3K
+bauer.paulus: Paulus' omvendelse
+bauer.kyndelmisse: Kyndelmisse
+bauer.kyndelmisseTT: <h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>
+bauer.1maj: "1. Maj"
+bauer.mariæbebud: Maria bebudelse
+bauer.mariæbebudTT: <h6>Maria Bebudelse</h6><p class='text-left'>Annuntiatio Mariae Virginis<br>Dies Evangelismi<br>Dies Incarnationis<br>Dies Salutationis</p><p>Helligdag indtil 1770</p>
+bauer.grundlovsdag: Grundlovsdag
+bauer.sankthans: Sct Hans
+bauer.sankthansTT: <h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>
+bauer.syvsoverdag: Syvsoverdag
+bauer.mariæbesøg: Mariæ besøgelsesdag
+bauer.mariæbesøgTT: <h6>Mariæ besøgelsesdag</h6><p class='text-left'>Fruedag<br>Visitationes Mariae</p><p>Helligdag indtil 1770</p>
+bauer.dominicus: Dominicusdag
+bauer.donatus: Donatusdag
+bauer.mikkelsdag: Mikkelsdag
+bauer.mikkelsdagTT: <h6>Mikkelsdag</h6><p>Michaelisdag<br>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>
+bauer.taksigelse: Taksigelsesdag
+bauer.taksigelseTT: Taksigelse for afslutningen af Københavns brand 1728
+bauer.allehelgen: Allehelgensdag
+bauer.allehelgenTT: <h6>Allehelgensdag</h6><p>Festum omnium sanctorum</p><p>Helligdag indtil 1770</p>
+bauer.allesjæle: Allesjælesdag
+bauer.allesjæleTT: <h6>Allesjælesdag</h6><p>Commemoratio omnium fidelium defunctorum</p>
+bauer.mortensdag: Mortensdag
+bauer.mortensdagTT: <h6>Mortens dag</h6><p class='text-left'>Morten Bisp<br>Martinus ep. conf.</p><p>Helligdag indtil 1770</p>
+# Adventsdagene
+bauer.advent1: 1. S i Advent
+bauer.advent1TT: <h6>1. Søndag i Advent</h6><p class= 'text-left'>Dom. Adventus<br>Dom. Adventus Domini<br>Dom. Ad. te Levavi</p>
+bauer.advent2: 2. S i Advent
+bauer.advent3: 3. S i Advent
+bauer.advent4: 4. S i Advent
+# Juledagene
+bauer.juleaften: Juleaftensdag
+bauer.juledag: Juledag
+bauer.2juledag: 2. Juledag
+bauer.3juledag: 3. Juledag
+bauer.3juledagTT: <h6>3. Juledag</h6><p>Festum St. Johannis Evangelistae</p><p>Helligdag indtil 1770</p>
+
+

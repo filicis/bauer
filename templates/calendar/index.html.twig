@@ -22,7 +22,7 @@
     			<thead class="table-success">
     				<tr>
       				{% for i in (bauer.months())|slice(nn,6) %}
-        				<th colspan='3' scope='col' class='text-center'>  {{i}}  </th>
+        				<th colspan='3' scope='col' class='text-center'>  {{ i|trans()|capitalize }}  </th>
       				{% endfor %}
     				</tr>
   				</thead>
@@ -38,17 +38,17 @@
             	   				- Ugyldig dag (f.eks 31. Juli) #}
 
               		{% if bauer.setDato(d, mm) and bauer.getAdatoClass() == 1 %}
-                		<th scope="row">{{ bauer.getUgedag() }}  </th>
+                		<th scope="row">{{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }}  </th>
                 		<td class="text-right">{{ d }}</td>
-                		<td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                		<td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
               		{% elseif bauer.getAdatoClass() == 2 %}
-                		<th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th>
+                		<th class= "alert-secondary" scope="row"> {{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }} </th>
                 		<td class="text-right">{{ d }}</td>
-                		<td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                		<td style='width: 160px' class="text-left text-truncate" data-toggle="tooltip" data-placement="top" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
               		{% elseif bauer.getAdatoClass() == 3 %}
-                		<th class= "alert-secondary" scope="row"> {{ bauer.getUgedag() }} </th>
+                		<th class= "alert-secondary" scope="row"> {{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }} </th>
                 		<td class="text-right alert-secondary">{{ d }}</td>
-                		<td style='width: 160px' class="text-left text-truncate alert-secondary" data-animation="true" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ bauer.getTooltip() }}"> {{ bauer.getDescription() }} </td>
+                		<td style='width: 160px' class="text-left text-truncate alert-secondary" data-animation="true" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
               		{% else %}
                 		<td colspan= 3 />
               		{% endif %}

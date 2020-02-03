@@ -4,14 +4,20 @@ namespace App\Utils;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
 
+use	App\Entity\KalenderTekst;
+use App\Repository\KalenderTekstRepository;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Persistence\ManagerRegistry;
+
 
 class Bauer
 {
-	const MONTHS_DA= ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
-	const MONTHS_LA= ["Ianuarius", "Februarius", "Martius", "Aprilis", "Maius", "Iunius", "Iulius", "Augustus", "September", "Oktober", "November", "December"];
+	const MONTHS_DA= ["bauer.januar", "bauer.februar", "bauer.marts", "bauer.april", "bauer.maj", "bauer.juni", "bauer.juli", "bauer.august", "bauer.september", "bauer.oktober", "bauer.november", "bauer.december"];
 
-	const UGEDAG_DA= ["Ma", "Ti", "On", "To", "Fr", "Lø", "Sø"];
-	const UGEDAG_LA= ["Lu", "Ma", "Me", "Io", "Ve", "Sa", "So"];
+	const UGEDAG_DA= ["bauer.mandag", "bauer.tirsdag", "bauer.onsdag", "bauer.torsdag", "bauer.fredag", "bauer.lørdag", "bauer.søndag"];
 
 	const MINAAR= 600;
 	const MAXAAR= 3199;
@@ -28,7 +34,8 @@ class Bauer
 	);
 
 
-	protected $latin= False;
+	protected $_locale;
+	protected $repository;
 
 
   protected $aar= 0;
@@ -58,10 +65,10 @@ class Bauer
 	private $adatoClass;
 
 
-  public function __construct($nytaar, $latin)
+  public function __construct(KalenderTekstRepository $repository)
 	{
-		$this->setAar($nytaar);
-		$this->latin= $latin;
+		$this->repository= $repository;
+
 	}
 
 
@@ -283,8 +290,7 @@ class Bauer
 
   public function months() : iterable
   {
-  	return $this->isLatin() ? self::MONTHS_LA : self::MONTHS_DA;
-
+  	return self::MONTHS_DA;
   }
 
 
@@ -315,7 +321,11 @@ class Bauer
 
   public function getDescription() : String
   {
-  	return $this->isLatin() ? $this->description[1] : $this->description[0];
+  	switch($this->_locale)
+  	{
+  		case 'la': return $this->description[1];
+  		default:     	return $this->description[0];
+  	}
   }
 
   public function getTooltip() : String
@@ -331,19 +341,27 @@ class Bauer
 
   public function getUgedag() : String
   {
-  	return $this->isLatin() ? self::UGEDAG_LA[$this->_getUgedag()] : self::UGEDAG_DA[$this->_getUgedag()];
+  	return self::UGEDAG_DA[$this->_getUgedag()];
+
+  	switch($this->_locale)
+  	{
+  		case 'la': return self::UGEDAG_LA[$this->_getUgedag()];
+  		default:   return self::UGEDAG_DA[$this->_getUgedag()];
+  	}
+
   }
 
-
-  public function isLatin(): bool
-  {
-  	return $this->latin;
-  }
 
 
   public function isValid() : bool
   {
   	return ($this->aartype != 0);
+  }
+
+
+  public function setLocale($_locale)
+  {
+  	$this->_locale= $_locale;
   }
 
 
@@ -407,22 +425,22 @@ class Bauer
 
   	  switch (intdiv(($this->dagiaar - 5), 7))
   	  {
-  	    case 0: $this->description= ["1. S e H3K", "Dom 1 p Epiph", ""];
+  	    case 0: $this->description= ["bauer.h3k1", "bauer.h3k1", ""];
   	            break;
 
-  	    case 1: $this->description= ["2. S e H3K", "Dom 2 p Epiph", ""];
+  	    case 1: $this->description= ["bauer.h3k2", "bauer.h3k2", ""];
   	            break;
 
-  	    case 2: $this->description= ["3. S e H3K", "Dom 3 p Epiph", ""];
+  	    case 2: $this->description= ["bauer.h3k3", "bauer.h3k3", ""];
   	            break;
 
-  	    case 3: $this->description= ["4. S e H3K", "Dom 4 p Epiph", ""];
+  	    case 3: $this->description= ["bauer.h3k4", "bauer.h3k4", ""];
   	            break;
 
-  	    case 4: $this->description= ["5. S e H3K", "Dom 5 p Epiph", ""];
+  	    case 4: $this->description= ["bauer.h3k5", "bauer.h3k5", ""];
   	            break;
 
-  	    case 5: $this->description= ["6. S e H3K", "Dom 6 p Epiph", ""];
+  	    case 5: $this->description= ["bauer.h3k6", "bauer.h3k6", ""];
   	            break;
 
   	  }
@@ -630,77 +648,77 @@ class Bauer
 
   	switch ($d * 100 + $m )
   	{
-  		case  101: $this->description = ["Nytår", "Circumcisio Christi", "<h6>Nytårsdag</h6><p class='text-left'>Kristi omskærelsesdag<br>Festum Novi Anni<br>Festum Circumcisionis Domini</p>"];
+  		case  101: $this->description = ["bauer.nytår", "bauer.nytår", "bauer.nytårTT"];
   		           $this->adatoClass=3;
   		           break;
 
-  		case  501: $this->description = ["Hellig 3 konger", "Dom Epiphanias", "<h6>Helligtrekonger</h6><p>Dom. Baptismus Christi<br>Dom. Ephiphania</p><p>Helligdag indtil 1770<p>"];
+  		case  501: $this->description = ["bauer.h3k", "bauer.h3k", "bauer.h3kTT"];
   				   if ($this->aar < 1771)
   		             $this->adatoClass=3;
   		           break;
 
-  		case 2501: $this->description = ["Paulus' omvendelse", "Dies Pauli", ""];
+  		case 2501: $this->description = ["bauer.paulus", "bauer.paulus", ""];
   		           break;
 
-  		case  202: $this->description = ["Kyndelmisse", "Purificatio Mariae", "<h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>"];
+  		case  202: $this->description = ["bauer.kyndelmisse", "bauer.kyndelmisse", "bauer.kyndelmisseTT"];
   		           if ($this->aar < 1771)
   		             $this->adatoClass=3;
   		           break;
 
   		case  105: if (1890 < $this->aar)
   		           {
-  								 $this->description = ["1. Maj", "", ""];
+  								 $this->description = ["bauer.1maj", "", ""];
   							 }
   		           break;
 
   		case 2503: if ($this->aar < 1771)
-  		            $this->description = ["Maria bebudelse", "Annuntiatio Mariae Virginis", "<h6>Maria Bebudelse</h6><p class='text-left'>Annuntiatio Mariae Virginis<br>Dies Evangelismi<br>Dies Incarnationis<br>Dies Salutationis</p><p>Helligdag indtil 1770</p>"];
+  		            $this->description = ["bauer.mariæbebud", "bauer.mariæbebud", "bauer.mariæbebudTT"];
   		            $this->adatoClass=3;
   		           break;
 
   		case  506: if (1848 < $this->aar)
   		           {
-  		             $this->description = ["Grundlovsdag", "", ""];
+  		             $this->description = ["bauer.grundlovsdag", "", ""];
   		           }
   		           break;
 
-  		case 2406: $this->description = ["Sct Hans", "Fest Nat St Johs Baptistae", "<h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>"];
+  		case 2406: $this->description = ["bauer.sankthans", "bauer.sankthans", "bauer.sankthansTT"];
   							 if ($this->aar < 1771)
   		             $this->adatoClass=3;
   		           break;
 
-  		case 2706: $this->description = ["Syvsoverdag", "7 dormientes", ""];
+  		case 2706: $this->description = ["bauer.syvsoverdag", "bauer.syvsoverdag", ""];
 								 break;
 
   		case  207: if ($this->aar < 1771)
   		           {
-  								 $this->description = ["Mariæ besøgelsesdag", "Visitationes Mariae", "<h6>Mariæ besøgelsesdag</h6><p class='text-left'>Fruedag<br>Visitationes Mariae</p><p>Helligdag indtil 1770</p>"];
+  								 $this->description = ["bauer.mariæbesøg", "bauer.mariæbesøg",  "bauer.mariæbesøgTT"];
   		             $this->adatoClass=3;
   		           }
   		           break;
 
-  		case  408: $this->description = ["Dominicusdag", "Dies Dominicus", ""];
+  		case  408: $this->description = ["bauer.dominicus", "bauer.dominicus", ""];
 								 break;
 
-  		case  708: $this->description = ["Donatusdag", "Dies Donatus", ""];
+  		case  708: $this->description = ["bauer.donatus", "bauer.donatus", ""];
 								 break;
 
 
   		case 2909: if ($this->aar < 1771)
   		           {
-  								 $this->description = ["Mikkelsdag", "Festum archangeli Michaelis", "<h6>Mikkelsdag</h6><p>Michaelisdag<br>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>"];
+  								 $this->description = ["bauer.mikkelsdag", "bauer.mikkelsdag", "bauer.mikkelsdagTT"];
   		             $this->adatoClass=3;
   		           }
   		           break;
 
   		case 2310: if (1728 < $this->aar && $this->aar < 1771)
   		           {
-  								 $this->description = ["Taksigelsesdag", "Festum Gratiarum 1725", "Taksigelse for afslutningen af Københavns brand 1728"];
+  								 $this->description = ["bauer.taksigelse", "bauer.taksigelse", "bauer.taksigelseTT"];
   		             $this->adatoClass=3;
   		           }
   		           break;
 
-  		case  111: $this->description = ["Allehelgensdag", "Festum omnium sanctorum", "<h6>Allehelgensdag</h6><p>Festum omnium sanctorum</p><p>Helligdag indtil 1770</p>"];
+  		case  111: $this->description = ["bauer.allehelgen", "bauer.allehelgen", "bauer.allehelgenTT"];
 								 if ($this->aar < 1771)
   		           {
   								 $this->adatoClass=3;
@@ -709,17 +727,17 @@ class Bauer
 
   		case  211: if ($this->_getUgedag() != 6)
   							 {
-  							 	 $this->description = ["Allesjælesdag", "Com omnium fidel defunct", "<h6>Allesjælesdag</h6><p>Commemoratio omnium fidelium defunctorum</p>"];
+  							 	 $this->description = ["bauer.allesjæle", "bauer.allesjæle", "bauer.allesjæleTT"];
   							 }
   							 break;
 
   		case  311: if ($this->_getUgedag() == 0)
   							 {
-  							 	 $this->description = ["Allesjælesdag", "Com omnium fidel defunct", "<h6>Allesjælesdag</h6><p>Commemoratio omnium fidelium defunctorum</p>"];
+  							 	 $this->description = ["bauer.allesjæle", "bauer.allesjæle", "bauer.allesjæleTT"];
   							 }
   							 break;
 
-  		case 1111: $this->description = ["Mortensdag", "Martinus ep. conf", "<h6>Mortens dag</h6><p class='text-left'>Morten Bisp<br>Martinus ep. conf.</p><p>Helligdag indtil 1770</p>"];
+  		case 1111: $this->description = ["bauer.mortensdag", "bauer.mortensdag", "bauer.mortensdagTT"];
 								 if ($this->aar < 1771)
   		           {
   								 $this->adatoClass=3;
@@ -727,20 +745,20 @@ class Bauer
   		           break;
 
 
-  		case 2412: $this->description = ["Juleaftensdag", "", ""];
+  		case 2412: $this->description = ["bauer.juleaften", "bauer.juleaften", ""];
   		           break;
 
-  		case 2512: $this->description = ["Juledag", "Natalis Domini", ""];
+  		case 2512: $this->description = ["bauer.juledag", "bauer.juledag", ""];
   		           $this->adatoClass=3;
   		           break;
 
-  		case 2612: $this->description = ["2. Juledag", "Fest St Stephanus Promartyris", ""];
+  		case 2612: $this->description = ["bauer.2juledag", "bauer.2juledag", ""];
   		           $this->adatoClass=3;
   		           break;
 
   		case 2712: if ($this->aar < 1771)
   		           {
-  								 $this->description = ["3. Juledag", "Fest St. Johannis Evangelistae", "<h6>3. Juledag</h6><p>Festum St. Johannis Evangelistae</p><p>Helligdag indtil 1770</p>"];
+  								 $this->description = ["bauer.3juledag", "bauer.3juledag", "bauer.3juledagTT"];
   		             $this->adatoClass=3;
   		           }
   		           break;
@@ -756,16 +774,16 @@ class Bauer
   		  switch(intdiv($dummy, 7))
   		  {
 
-  			  case 0: $this->description= ["4. S i Advent", "Dom Memento", ""];
+  			  case 0: $this->description= ["bauer.advent4", "bauer.advent4", ""];
   			          break;
 
-  			  case 1: $this->description= ["3. S i Advent", "Dom. Gaudete in domino", ""];
+  			  case 1: $this->description= ["bauer.advent3", "bauer.advent3", ""];
   			          break;
 
-  			  case 2: $this->description= ["2. S i Advent", "Dom Populus Sion", ""];
+  			  case 2: $this->description= ["bauer.advent2", "bauer.advent2", ""];
   			          break;
 
-  			  case 3: $this->description= ["1. S i Advent", "Dom Adventus", "<h6>1. Søndag i Advent</h6><p class= 'text-left'>Dom. Adventus<br>Dom. Adventus Domini<br>Dom. Ad. te Levavi</p>"];
+  			  case 3: $this->description= ["bauer.advent1", "bauer.advent1", "bauer.advent1TT"];
   			          break;
   		  }
   	  }
