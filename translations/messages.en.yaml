@@ -35,7 +35,6 @@ bauer.paulus: Paulus' omvendelse
 bauer.kyndelmisse: Kyndelmisse
 bauer.kyndelmisseTT: <h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>
 bauer.1maj: "1. Maj"
-bauer.1majTT: Arbejdernes Internationale Kampdag
 bauer.mariæbebud: Maria bebudelse
 bauer.mariæbebudTT: <h6>Maria Bebudelse</h6><p class='text-left'>Annuntiatio Mariae Virginis<br>Dies Evangelismi<br>Dies Incarnationis<br>Dies Salutationis</p><p>Helligdag indtil 1770</p>
 bauer.grundlovsdag: Grundlovsdag
@@ -56,7 +55,6 @@ bauer.allesjæle: Allesjælesdag
 bauer.allesjæleTT: <h6>Allesjælesdag</h6><p>Commemoratio omnium fidelium defunctorum</p>
 bauer.mortensdag: Mortensdag
 bauer.mortensdagTT: <h6>Mortens dag</h6><p class='text-left'>Morten Bisp<br>Martinus ep. conf.</p><p>Helligdag indtil 1770</p>
-bauer.lucia: Santa Lucia
 # Forskydelige dage i forhold til Påskedag
 bauer.septuagesima: 2. S f Fastelavn
 bauer.sexagesima: 1. S f Fastelavn
@@ -75,7 +73,6 @@ bauer.laetare: 4. S i Fasten
 bauer.laetareTT: <h6>4. Søndag i Fasten</h6><p class='text-left'>Midfaste<br>Dom. de Fontanis<br>Dom. Laetare</p>
 bauer.magniscrut: Onsdag e midfaste
 bauer.judica: 5 S i Fasten
-bauer.judicaTT: <h6>5. Søndag i Fasten</h6><p class='text-left'>Dom. iste sunt Dies<br>Dom. Judica<br>Dom. Mediana<br>Dom. Nigra<br>Dom. Passionis</p>
 bauer.palmesøndag: Palmesøndag
 bauer.palmesøndagTT: <h6>Palmesøndag</h6><p class='text-left'>Dom. Capitalavii<br>Dom. Competentium<br>Dom. de Rosa<br>Dom. Florum et Ramorum<br>Dom. Indulgentiae<br>Dies Olivarum<br>Dies Osanna (Hosanna)<br>Dom. Palmarum</p>
 bauer.skærtorsdag: Skærtorsdag

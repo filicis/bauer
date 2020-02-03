@@ -54,21 +54,21 @@
           <div class= 'nav-item dropdown'>
           	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown02" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sprog</a>
           	<div class="dropdown-menu" aria-labelledby="navbarDropdown02">
-            	<a class="dropdown-item" href="/da/setLocale">Dansk</a>
-            	<a class="dropdown-item" href="/sv/setLocale">Svensk</a>
-            	<a class="dropdown-item" href="/no/setLocale">Norsk</a>
-            	<a class="dropdown-item" href="/en/setLocale">Engelsk</a>
-            	<a class="dropdown-item" href="/la/setLocale">Latin</a>
+            	<a class="dropdown-item {% if locale == 'da' %} active {% endif %}" href="/da/setLocale">Dansk</a>
+            	<a class="dropdown-item {% if locale == 'sv' %} active {% endif %}" href="/sv/setLocale">Svensk</a>
+            	<a class="dropdown-item {% if locale == 'no' %} active {% endif %}" href="/no/setLocale">Norsk</a>
+            	<a class="dropdown-item {% if locale == 'en' %} active {% endif %}" href="/en/setLocale">Engelsk</a>
+            	<a class="dropdown-item {% if locale == 'la' %} active {% endif %}" href="/la/setLocale">Latin</a>
             	<div class="dropdown-divider"></div>
           	</div>
           </div>
           <div class= 'nav-item dropdown'>
           	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown03" role="button"	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hjælp</a>
           	<div class="dropdown-menu" aria-labelledby="navbarDropdown03">
-            	<a class="dropdown-item" href="#">Action</a>
-            	<a class="dropdown-item" href="#">Baggrunds materiale</a>
+            	<a class="dropdown-item disabled" href="#">Action</a>
+            	<a class="dropdown-item disabled" href="#">Baggrunds materiale</a>
             	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" href="about">Om..</a>
+            	<a class="dropdown-item" href="/da/about">Om..</a>
           	</div>
           </div>
       	</div>
@@ -85,7 +85,7 @@
     		</div>
 #}
     		{{ form_widget(our_form.year, {'attr': {'class': 'form-control mr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
-        {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'btn btn-outline-primary my-2 my-sm-0'} })}}
+        {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'd-none btn btn-outline-primary my-2 my-sm-0'} })}}
    			{{ form_rest(our_form) }}
       {{ form_end(our_form )}}
       {% endif %}

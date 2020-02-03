@@ -14,119 +14,102 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Persistence\ManagerRegistry;
+//use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+//use Doctrine\Common\Persistence\ManagerRegistry;
 
 
 use App\Utils\Bauer;
-use App\Entity\Bid;
-use App\Entity\Kalender;
-use App\Entity\KalenderTekst;
-use App\Entity\Locale;
 
-use App\Repository\KalenderTekstRepository;
+
+  /**
+   * CalendarController
+   *
+   * Håndterer indtil videre kun Dansk/Norsk Kalender
+   *
+   **/
 
 class CalendarController extends AbstractController
 {
-    private $session;
-	  public $aarstal= 1850;
+	private $session;
+	public $aarstal= 1850;
 
 
 	public function __construct(SessionInterface $session)
-    {
-        $this->session = $session;
-    }
+	{
+		$this->session = $session;
+	}
 
 
 
-    /**
-     * @Route("/calendar/{aarstal}", name="calendar1")
-     */
+	/**
+	* function index()
+	*
+	* @Route("/calendar1/{aarstal}", name="calendar1")
+	*/
 
-    public function index($aarstal, Request $request)
-    {
-/**
-     $entityManager = $this->getDoctrine()->getManager();
-
-     $bid= $this->getDoctrine()->getRepository(Bid::class)->find(2);
-     $kalender= $this->getDoctrine()->getRepository(Kalender::class)->find(1);
-     $locale= $this->getDoctrine()->getRepository(Locale::class)->find(1);
-
-
-     $product = new KalenderTekst;
-     $product->setLocale($locale);
-     $product->setKalender($kalender);
-     $product->setBid($bid);
-
-     $product->setTekst(["Ma", "Ti", "On", "To", "Fr", "Lo", "So", ]);
-
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
-     $entityManager->persist($product);
-
-        // actually executes the queries (i.e. the INSERT query)
-     $entityManager->flush();
-**/
+	public function index1($aarstal, Request $request)
+	{
+		$this->session->set('Bauer', $aarstal);
+		$bauer= new Bauer();
+		$bauer->setAar($aarstal);
 
 
-
-        $this->session->set('Bauer', $aarstal);
-    	$bauer= new Bauer($this->getDoctrine()->getRepository(KalenderTekst::class));
-      $bauer->setAar($aarstal);
-      $bauer->setLocale($request->attributes->get('_locale'));
-
-
-        return $this->render('calendar/index.html.twig', [
-            'controller_name' => 'CalendarController',
-            'bauer' => $bauer,
-        ]);
-    }
+		return $this->render('calendar/index.html.twig', [
+		'controller_name' => 'CalendarController',
+		'bauer' => $bauer,
+		]);
+	}
 
 
-    /**
-     * @Route("/", name="calendar")
-     */
+	/**
+	* @Route("/calendar/{aarstal}", name="calendar")
+	*/
 
-    public function index1(TranslatorInterface $translator, Request $request)
-    {
-        $translator->setLocale('la');
-    	$bauer= new Bauer($this->getDoctrine()->getRepository(KalenderTekst::class));
-    	$bauer->setAar($this->session->get('Bauer', 1960));
-    	$bauer->setLocale($request->attributes->get('_locale') );
-    	if ($bauer->isValid() == False)
-        return $this->redirectToRoute('about');
+	public function index($aarstal, Request $request)
+	{
 
+		$locale= $request->getLocale();
+		$bauer= new Bauer();
+		$bauer->setAar($aarstal);
+		if ($bauer->isValid() == False)
+		return $this->redirectToRoute('calendar', ['aarstal' => 1700]);
 
-        $test= ['message' => 'Entest'];
-        $form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
-          ->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']]*/ )
-          ->add('send', SubmitType::class , ['attr' => ['label' => 'Vælg']] )
-          ->getForm();
-
-        $form->get('year')->setData($this->session->get('Bauer', 1960));
+		$this->session->set('aarstal', $aarstal);
 
 
-    	$form->handleRequest($request);
+		$test= ['message' => 'Entest'];
+		$form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
+		->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']]*/ )
+		->add('send', SubmitType::class , ['attr' => ['label' => 'Vælg']] )
+		->getForm();
+
+		// $form->get('year')->setData($this->session->get('Bauer', 1960));
+
+
+		$form->handleRequest($request);
 
 
 
-    	if($form->isSubmitted() /* && $form->isValid() */ )
-    	{
-            $data= $form->getData();
-            $this->session->set('Bauer', $data['year']);
+		if($form->isSubmitted() /* && $form->isValid() */ )
+		{
+			$data= $form->getData();
+			$aarstal= $data['year'];
 
-             return $this->redirectToRoute('calendar');
+			return $this->redirectToRoute('calendar', ['aarstal' => $aarstal, ]);
+		  return $this->redirectToRoute('calendar1', ['_locale' => $_locale, 'aarstal' => $aarstal]);
 
-    	}
+		}
 
 
 
-        return $this->render('calendar/index.html.twig', [
-            'controller_name' => 'CalendarController',
-            'bauer' => $bauer,
-            'our_form' => $form,
-            'our_form' => $form->createView(),
-        ]);
-    }
+		return $this->render('calendar/index.html.twig', [
+		'controller_name' => 'CalendarController',
+		'locale' => $locale,
+		'bauer' => $bauer,
+		'our_form' => $form,
+		'our_form' => $form->createView(),
+		]);
+	}
 
 
 

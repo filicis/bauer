@@ -41,11 +41,18 @@ bauer.syvsoverdag: 7 dormientes
 bauer.mariæbesøg: Visitationes Mariae
 bauer.dominicus: Dies Donatus
 bauer.donatus: Dies Donatus
-bauer.mikkelsdag: Fest Gratiarum 1725
+bauer.mikkelsdag: Fest archangeli Michaelis
 bauer.taksigelse: Fest Gratiarum 1725
 bauer.allehelgen: Fest omnium sanctorum
 bauer.allesjæle: Com omnium fidel defunct
 bauer.mortensdag: Martinus ep. conf
+# Forskydelige dage i forhold til Påskedag
+bauer.septuagesima: Septuagesima
+bauer.sexagesima: Sexagesima
+bauer.fastelavn: Dom Esto Mihi
+bauer.fastelavnTT:
+bauer.askeonsdag: Dies Pulveris
+
 
 # Adventsdagene
 bauer.advent1: Dom Adventus

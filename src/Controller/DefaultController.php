@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
+	private $session;
 
 	public function __construct(SessionInterface $session)
 	{
@@ -38,25 +39,25 @@ class DefaultController extends AbstractController
 		$request->getSession()->set('_locale', 'en');
 
 
-		return $this->redirectToRoute('calendar1', ['_locale' => $_locale, 'aarstal' => $aarstal]);
+		return $this->redirectToRoute('calendar', ['_locale' => $_locale, 'aarstal' => $aarstal]);
 
 	}
 
 
-		/**
-     * @Route("/setLocale", name="setLocale")
-     */
+	/**
+	* @Route("/setLocale", name="setLocale")
+	*/
 
 
 	public function setLocale(Request $request)
 	{
-		$session= $request->getSession();
 		$locale = $request->attributes->get('_locale');
-		$session->set('_locale', $locale);
+		$this->session->set('_locale', $locale);
+		$aarstal= $this->session->get('aarstal', 1700);
 
-    return $this->redirectToRoute('default');
+		return $this->redirectToRoute('calendar', ['aarstal' => $aarstal, ]);
+
+		return $this->redirectToRoute('default');
 	}
-
-
 
 }

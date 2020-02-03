@@ -1,0 +1,155 @@
+---
+# Ugedagene
+bauer.mandag: måndag
+bauer.tirsdag: tirsdag
+bauer.onsdag: onsdag
+bauer.torsdag: torsdag
+bauer.fredag: fredag
+bauer.lørdag: lördag
+bauer.søndag: söndag
+# Månederne
+bauer.januar: januari
+bauer.februar: februari
+bauer.marts: mars
+bauer.april: april
+bauer.maj: maj
+bauer.juni: juni
+bauer.juli: juli
+bauer.august: augusti
+bauer.september: september
+bauer.oktober: oktober
+bauer.november: november
+bauer.december: december
+# Faste datoer
+bauer.nytår: Nyårsdagen
+bauer.nytårTT:
+bauer.h3k: Trettondedag jul
+bauer.h3kTT:
+bauer.h3k1:
+bauer.h3k2:
+bauer.h3k3: 
+bauer.h3k4:
+bauer.h3k5:
+bauer.h3k6:
+bauer.paulus: 
+bauer.kyndelmisse: 
+bauer.kyndelmisseTT:
+bauer.1maj: "1. Maj"
+bauer.1majTT: Arbetarrörelsens internationella högtidsdag
+bauer.mariæbebud:
+bauer.mariæbebudTT:
+bauer.grundlovsdag: Grundlovsdag
+bauer.sankthans: Sct Hans
+bauer.sankthansTT: <h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>
+bauer.syvsoverdag: Syvsoverdag
+bauer.mariæbesøg: Mariæ besøgelsesdag
+bauer.mariæbesøgTT: <h6>Mariæ besøgelsesdag</h6><p class='text-left'>Fruedag<br>Visitationes Mariae</p><p>Helligdag indtil 1770</p>
+bauer.dominicus: Dominicusdag
+bauer.donatus: Donatusdag
+bauer.mikkelsdag: Mikkelsdag
+bauer.mikkelsdagTT: <h6>Mikkelsdag</h6><p>Michaelisdag<br>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>
+bauer.taksigelse: Taksigelsesdag
+bauer.taksigelseTT: Taksigelse for afslutningen af Københavns brand 1728
+bauer.allehelgen: Alla helgons dag
+bauer.allehelgenTT:
+bauer.allesjæle: Allesjælesdag
+bauer.allesjæleTT:
+bauer.mortensdag:
+bauer.mortensdagTT:
+# Forskydelige dage i forhold til Påskedag
+bauer.septuagesima:
+bauer.sexagesima:
+bauer.fastelavn:
+bauer.fastelavnTT:
+bauer.askeonsdag:
+bauer.askeonsdagTT:
+
+bauer.invocavit: 1. S i Fasten
+bauer.invocavitTT: <h6>1. Søndag i Fasten</h6><p class='text-left'>Dom. Brandonum<br>Dom. de Lignis Orditis<br>Dies Focorum<br>Dom. Invocavit<br>Dom. Quadragesima<br>Dom. Quintana<br>Dom. Refugium</p>
+bauer.reminiscere: 2. S i Fasten
+bauer.reminiscereTT: <h6>2, Søndag i Fasten</h6><p class='text-left'>Dom. Cananaea<br>Dom. Reminiscere</p>
+bauer.oculi: 3. S i Fasten
+bauer.oculiTT: <h6>3. Søndag i Fasten</h6><p class='text-left'>Dom. ante mediam Quadragesimam<br>Dom. Oculi</p>
+bauer.laetare: 4. S i Fasten
+bauer.laetareTT: <h6>4. Søndag i Fasten</h6><p class='text-left'>Midfaste<br>Dom. de Fontanis<br>Dom. Laetare</p>
+bauer.magniscrut: Onsdag e midfaste
+bauer.judica: 5 S i Fasten
+bauer.palmesøndag: Palmesøndag
+bauer.palmesøndagTT: <h6>Palmesøndag</h6><p class='text-left'>Dom. Capitalavii<br>Dom. Competentium<br>Dom. de Rosa<br>Dom. Florum et Ramorum<br>Dom. Indulgentiae<br>Dies Olivarum<br>Dies Osanna (Hosanna)<br>Dom. Palmarum</p>
+bauer.skærtorsdag: Skærtorsdag
+bauer.skærtorsdagTT: <h6>Skærtorsdag</h6><p class='text-left'>(Feria V in) Coena Domini<br>Dies Indulgentiae<br>Dies Magnae Festivitatis<br>Dies Reconciliationis<br>Dies Viridium</p>
+bauer.langfredag: Långfredag
+bauer.langfredagTT: <h6>Langfredag</h6><p class='text-left'>Feria VI in Parascheve Domini<br>(Feria VI in) Passionis Domini<br>Soteris</p>
+bauer.påskedag: Påskdagen
+bauer.påskedagTT: <h6>Påskedag</h6><p class='text-left'>Dies Felicissimus<br>Dies Magnus<br>Dies Sanctus</p>
+bauer.påskedag2: Annandag Påsk
+bauer.påskedag3: 3. Påskedag
+bauer.påskedag3TT: <h6>3. Påskedag<h6><p>Helligdag indtil 1770</p>
+
+bauer.quasimodogeniti: 1. S e Påske
+bauer.quasimodogenitiTT: <h6>1. Søndag e Påske</h6><p class='text-left'>Hvide Søndag<br>Dom Quasimodogeniti<br>Dom. in Albis</p><p>I Oldkirken blev dåben ofte henlagt til påskenat, hvorefter de nydøbte bar deres hvide dåbsklædning hele påskeugen, og derefter, nemlig til hvide søndag, aflagde den.</p><p>I ældre tid fast konfirmations dag</p>
+bauer.misericordia: 2. S e Påske
+bauer.misericordiaTT: <h6>2. Søndag e Påske</h6><p class='text-left'>Dom Mapparum Albarum<br>Dom. Misericordia</p>
+bauer.jubilate: 3. S e Påske
+bauer.storebededag: Store Bededag
+bauer.storebededagTT: <h6>Store bededag</h6><p>Indført 1686</p>
+bauer.cantate: 4. S e Påske
+bauer.rogate: 5. S e Påske
+bauer.rogateTT: <h6>5. Søndag e Påske</h6><p class='text-left'>Dom. ante litanis<br>Dom. Rogate<br>Dom. Vocem jucunditatis</p>
+bauer.kristihimmelfart: Kristi Himmelfärdsdag
+bauer.exaudi: 6. S e Påske
+bauer.pinsedag: Pingstdagen
+bauer.pinsedagTT: <h6>Pinsedag</h6><p class=''text-left>Dom. Pentecostes<br>Festum Sancti Spritii</p>
+bauer.pinsedag2: 2. Pinsedag
+bauer.pinsedag2TT: <h6>2. Pinsedag</h6><p class=''text-left>Dies Pentecostes<br>Dies S. Spiritus</p>
+bauer.pinsedag3: 3. Pinsedag
+bauer.pinsedag3TT: <h6>3. Pinsedag</h6><p>Helligdag indtil 1770</p>
+
+bauer.trinitatis: Trinitatis
+bauer.trinitatisTT: <h6>Trinitatis Søndag</h6><p class='text-left'>Dom. Benedicta<br>Dom Duplex<br>Dom. in tua Misericordia<br>Dom. Trinitatis</p>
+bauer.trinitatis01: 1. S e Trin
+bauer.kristilegemsfest: Kristi Legemsfest
+bauer.trinitatis02: 2. S e Trin
+bauer.trinitatis03: 3. S e Trin
+bauer.trinitatis04: 4. S e Trin
+bauer.trinitatis05: 5. S e Trin
+bauer.trinitatis06: 6. S e Trin
+bauer.trinitatis07: 7. S e Trin
+bauer.trinitatis08: 8. S e Trin
+bauer.trinitatis09: 9. S e Trin
+bauer.trinitatis10: 10. S e Trin
+
+bauer.trinitatis11: 11. S e Trin
+bauer.trinitatis12: 12. S e Trin
+bauer.trinitatis13: 13. S e Trin
+bauer.trinitatis14: 14. S e Trin
+bauer.trinitatis15: 15. S e Trin
+bauer.trinitatis16: 16. S e Trin
+bauer.trinitatis17: 17. S e Trin
+bauer.trinitatis18: 18. S e Trin
+bauer.trinitatis19: 19. S e Trin
+bauer.trinitatis20: 20. S e Trin
+
+bauer.trinitatis21: 21. S e Trin
+bauer.trinitatis22: 22. S e Trin
+bauer.trinitatis23: 23. S e Trin
+bauer.trinitatis24: 24. S e Trin
+bauer.trinitatis25: 25. S e Trin
+bauer.trinitatis26: 26. S e Trin
+bauer.trinitatis27: 27. S e Trin
+
+
+# Adventsdagene
+bauer.advent1: 1. S i Advent
+bauer.advent1TT:
+bauer.advent2:
+bauer.advent3:
+bauer.advent4:
+# Juledagene
+bauer.juleaften: Juleaftensdag
+bauer.juledag: Juldagen
+bauer.2juledag: Annandag Jul
+bauer.3juledag:
+bauer.3juledagTT:
+
+
