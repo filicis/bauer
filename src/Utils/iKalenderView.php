@@ -25,6 +25,8 @@ interface iKalenderView
   public function setYear(): bool;
   public function getYear(): int;
 
+  public function getMonths(): array;
+
 	public function getDayMax() : int;
 	public function getMonthMax() : int;
 
