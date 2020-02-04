@@ -21,8 +21,8 @@ bauer.oktober: oktober
 bauer.november: november
 bauer.december: december
 # Faste datoer
-bauer.nytår: Nytårsdag
-bauer.nytårTT: <h6>Nytårsdag</h6><p class='text-left'>Kristi omskærelsesdag<br>Festum Novi Anni<br>Festum Circumcisionis Domini</p>
+bauer.nytår: 1.Nyttårsdag
+bauer.nytårTT:
 bauer.h3k: Hellig 3 konger
 bauer.h3kTT: <h6>Helligtrekonger</h6><p>Dom. Baptismus Christi<br>Dom. Ephiphania</p><p>Helligdag indtil 1770<p>
 bauer.h3k1: 1. S efter H3K
@@ -34,11 +34,13 @@ bauer.h3k6: 6. S efter H3K
 bauer.paulus: Paulus' omvendelse
 bauer.kyndelmisse: Kyndelmisse
 bauer.kyndelmisseTT: <h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>
-bauer.1maj: "1. Maj"
+bauer.1maj: Første Mai
+bauer.1majTT: Den internasjonale arbeiderdagen
 bauer.mariæbebud: Maria bebudelse
-bauer.mariæbebudTT: <h6>Maria Bebudelse</h6><p class='text-left'>Annuntiatio Mariae Virginis<br>Dies Evangelismi<br>Dies Incarnationis<br>Dies Salutationis</p><p>Helligdag indtil 1770</p>
-bauer.grundlovsdag: Grundlovsdag
-bauer.sankthans: Sct Hans
+bauer.mariæbebudTT:
+bauer.assumptio: Maria Himmelfærd
+bauer.grundlovsdag:
+bauer.sankthans:
 bauer.sankthansTT:
 bauer.syvsoverdag:
 bauer.mariæbesøg:
@@ -75,13 +77,13 @@ bauer.laetareTT: <h6>4. Søndag i Fasten</h6><p class='text-left'>Midfaste<br>Do
 bauer.magniscrut: Onsdag e midfaste
 bauer.judica: 5 S i Fasten
 bauer.palmesøndag: Palmesøndag
-bauer.palmesøndagTT: <h6>Palmesøndag</h6><p class='text-left'>Dom. Capitalavii<br>Dom. Competentium<br>Dom. de Rosa<br>Dom. Florum et Ramorum<br>Dom. Indulgentiae<br>Dies Olivarum<br>Dies Osanna (Hosanna)<br>Dom. Palmarum</p>
-bauer.skærtorsdag: Skærtorsdag
-bauer.skærtorsdagTT: <h6>Skærtorsdag</h6><p class='text-left'>(Feria V in) Coena Domini<br>Dies Indulgentiae<br>Dies Magnae Festivitatis<br>Dies Reconciliationis<br>Dies Viridium</p>
+bauer.palmesøndagTT:
+bauer.skærtorsdag: Skjærtorsdag
+bauer.skærtorsdagTT:
 bauer.langfredag: langfredag
-bauer.langfredagTT: <h6>Langfredag</h6><p class='text-left'>Feria VI in Parascheve Domini<br>(Feria VI in) Passionis Domini<br>Soteris</p>
-bauer.påskedag: Påskedag
-bauer.påskedagTT: <h6>Påskedag</h6><p class='text-left'>Dies Felicissimus<br>Dies Magnus<br>Dies Sanctus</p>
+bauer.langfredagTT:
+bauer.påskedag: 1. Påskedag
+bauer.påskedagTT:
 bauer.påskedag2: 2. Påskedag
 bauer.påskedag3: 3. Påskedag
 bauer.påskedag3TT: <h6>3. Påskedag<h6><p>Helligdag indtil 1770</p>
@@ -91,7 +93,7 @@ bauer.quasimodogenitiTT: <h6>1. Søndag e Påske</h6><p class='text-left'>Hvide 
 bauer.misericordia: 2. S e Påske
 bauer.misericordiaTT: <h6>2. Søndag e Påske</h6><p class='text-left'>Dom Mapparum Albarum<br>Dom. Misericordia</p>
 bauer.jubilate: 3. S e Påske
-bauer.storebededag: Store Bededag
+bauer.storebededag: Bods- og Bededag
 bauer.storebededagTT: <h6>Store bededag</h6><p>Indført 1686</p>
 bauer.cantate: 4. S e Påske
 bauer.rogate: 5. S e Påske
@@ -105,8 +107,8 @@ bauer.pinsedag2TT: <h6>2. Pinsedag</h6><p class=''text-left>Dies Pentecostes<br>
 bauer.pinsedag3: 3. Pinsedag
 bauer.pinsedag3TT: <h6>3. Pinsedag</h6><p>Helligdag indtil 1770</p>
 
-bauer.trinitatis: Trinitatis
-bauer.trinitatisTT: <h6>Trinitatis Søndag</h6><p class='text-left'>Dom. Benedicta<br>Dom Duplex<br>Dom. in tua Misericordia<br>Dom. Trinitatis</p>
+bauer.trinitatis: Trefoldighetsdagen
+bauer.trinitatisTT:
 bauer.trinitatis01: 1. S e Trin
 bauer.kristilegemsfest: Kristi Legemsfest
 bauer.trinitatis02: 2. S e Trin

@@ -1,3 +1,17 @@
+{#
+  	Skabelon for den julianske kalender og kalendere afledt herfra
+
+  	Forudsætter
+  	  - Året har 12 måneder.
+  	  - En måned har op til 31 dage.
+
+  	Forventer et object 'bauer' som implementerer iKalenderView med functionerne:
+  	  - getKalenderNavn()
+  		- getAar()
+  		- getMonths() : Array med månedernes navne.
+#}
+
+
 
 {% extends 'base.html.twig' %}
 
@@ -6,9 +20,9 @@
 {% block body %}
 
 
-	<h1 class="h1 text-center">
-    {{ bauer.getAar() }}
-  </h1>
+	<!-- h1 class="h1 text-center">
+    Danmark - {{ bauer.getAar() }}
+  </h1  -->
 
   <!-- p>
     Påsken falder på: {{ bauer.testDay()}} / {{ bauer.testMonth()}} - Påske Jtal: {{ bauer.getPjtal() }} - {{ bauer.jtaltest() }}
@@ -18,6 +32,13 @@
   <div class='container-flex d-flex justify-content-center'>
 		<div class="table-responsive-xl">
     	<table class="table table-fixed table-light table-sm" >
+    	  <caption class='' style="caption-side:top">
+					<div class="row">
+    				<div class= 'col-sm'><h3>{{ bauer.getKalenderNavn() }}</h3></div>
+    				<div class= 'col-sm'><h1 class='text-center'>{{ bauer.getAar() }}</h1></div>
+    				<div class= 'col-sm'></div>
+  				</div>
+    	  </caption>
   			{% for nn in [0, 6] %}
     			<thead class="table-success">
     				<tr>
@@ -36,7 +57,7 @@
             	   				- Lørdag
             	   				- Søn eller helligdag
             	   				- Ugyldig dag (f.eks 31. Juli) #}
-
+{#
               		{% if bauer.setDato(d, mm) and bauer.getAdatoClass() == 1 %}
                 		<th scope="row">{{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }}  </th>
                 		<td class="text-right">{{ d }}</td>
@@ -49,6 +70,15 @@
                 		<th class= "alert-secondary" scope="row"> {{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }} </th>
                 		<td class="text-right alert-secondary">{{ d }}</td>
                 		<td style='width: 160px' class="text-left text-truncate alert-secondary" data-animation="true" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
+#}
+{# Testes af #}
+              		{% if bauer.setDato(d, mm) %}
+                		<th scope="row" {% if bauer.getAdatoClass() > 1 %} class="alert-secondary" {% endif %}>{{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }}  </th>
+                		<td class="text-right {% if bauer.getAdatoClass() == 3 %} alert-secondary {% endif %}">{{ d }}</td>
+                		<td style='width: 160px' class="text-left text-truncate {% if bauer.getAdatoClass() == 3 %} alert-secondary {% endif %}" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
+
+
+{# #}
               		{% else %}
                 		<td colspan= 3 />
               		{% endif %}

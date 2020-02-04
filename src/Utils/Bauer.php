@@ -677,6 +677,9 @@ class Bauer
   		case  708: $this->description = ["bauer.donatus", "", ""];
 								 break;
 
+  		case  1508: $this->description = ["bauer.assumptio", "", ""];
+								 break;
+
 
   		case 2909: if ($this->aar < 1771)
   		           {
@@ -806,6 +809,11 @@ class Bauer
 	    $y= $x->jday(new Dato($this->pdg, $this->pmd, $this->aar));
 	    return $y->getJd();
 	    //return 252525;
+	}
+
+	public function getKalenderNavn() : String
+	{
+		return 'Danmark';
 	}
 
 

@@ -36,14 +36,15 @@ bauer.kyndelmisse: Kyndelmisse
 bauer.kyndelmisseTT: <h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>
 bauer.1maj: "1. Maj"
 bauer.1majTT: Arbejdernes Internationale Kampdag
-bauer.mariæbebud: Maria bebudelse
-bauer.mariæbebudTT: <h6>Maria Bebudelse</h6><p class='text-left'>Annuntiatio Mariae Virginis<br>Dies Evangelismi<br>Dies Incarnationis<br>Dies Salutationis</p><p>Helligdag indtil 1770</p>
+bauer.mariæbebud: Maria Budskapsdag
+bauer.mariæbebudTT:
 bauer.grundlovsdag: Grundlovsdag
 bauer.sankthans: Sct Hans
 bauer.sankthansTT: <h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>
 bauer.syvsoverdag: Syvsoverdag
 bauer.mariæbesøg: Mariæ besøgelsesdag
 bauer.mariæbesøgTT: <h6>Mariæ besøgelsesdag</h6><p class='text-left'>Fruedag<br>Visitationes Mariae</p><p>Helligdag indtil 1770</p>
+bauer.assumptio: Maria Himmelfærd
 bauer.dominicus: Dominicusdag
 bauer.donatus: Donatusdag
 bauer.mikkelsdag: Mikkelsdag

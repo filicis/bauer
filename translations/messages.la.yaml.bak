@@ -46,13 +46,82 @@ bauer.taksigelse: Fest Gratiarum 1725
 bauer.allehelgen: Fest omnium sanctorum
 bauer.allesjæle: Com omnium fidel defunct
 bauer.mortensdag: Martinus ep. conf
+
 # Forskydelige dage i forhold til Påskedag
 bauer.septuagesima: Septuagesima
 bauer.sexagesima: Sexagesima
 bauer.fastelavn: Dom Esto Mihi
 bauer.fastelavnTT:
 bauer.askeonsdag: Dies Pulveris
-
+bauer.invocavit: Dom Invocavit
+bauer.invocavitTT:
+bauer.reminiscere: Dom Reminiscere
+bauer.reminiscereTT:
+bauer.oculi: Dom Oculi
+bauer.oculiTT:
+bauer.laetare: Dom Laetare
+bauer.laetareTT:
+bauer.magniscrut: Dies Magni Scrutinii
+bauer.judica: Dom Judica
+bauer.palmesøndag: Dom Palmares
+bauer.palmesøndagTT:
+bauer.skærtorsdag: Dom Viridium
+bauer.skærtorsdagTT:
+bauer.langfredag: Soteris
+bauer.langfredagTT:
+bauer.påskedag: Dom Pasces
+bauer.påskedagTT:
+bauer.påskedag2:
+bauer.påskedag3:
+bauer.påskedag3TT:
+bauer.quasimodogeniti: Dom Quasimodogeniti
+bauer.quasimodogenitiTT:
+bauer.misericordia: Dom Misericordia
+bauer.misericordiaTT:
+bauer.jubilate: Dom Jubilate
+bauer.storebededag: Feria Precat Extraord
+bauer.storebededagTT:
+bauer.cantate: Dom Cantate
+bauer.rogate: Dom Rogate
+bauer.rogateTT:
+bauer.kristihimmelfart: Fest Ascensio Christi
+bauer.exaudi: 6. Dom. Exaudi
+bauer.pinsedag: Dom. Pentecostes
+bauer.pinsedagTT:
+bauer.pinsedag2: Dies Pentecostes
+bauer.pinsedag2TT:
+bauer.pinsedag3:
+bauer.pinsedag3TT:
+bauer.trinitatis: Dom. Trinitatis
+bauer.trinitatisTT:
+bauer.trinitatis01: Dom. 1. p. Trin.
+bauer.kristilegemsfest: Festo Eucharistio
+bauer.trinitatis02: Dom. 2. p. Trin.
+bauer.trinitatis03: Dom. 3. p. Trin.
+bauer.trinitatis04: Dom. 4. p. Trin.
+bauer.trinitatis05: Dom. 5. p. Trin.
+bauer.trinitatis06: Dom. 6. p. Trin.
+bauer.trinitatis07: Dom. 7. p. Trin.
+bauer.trinitatis08: Dom. 8. p. Trin.
+bauer.trinitatis09: Dom. 9. p. Trin.
+bauer.trinitatis10: Dom. 10. p. Trin.
+bauer.trinitatis11: Dom. 11. p. Trin.
+bauer.trinitatis12: Dom. 12. p. Trin.
+bauer.trinitatis13: Dom. 13. p. Trin.
+bauer.trinitatis14: Dom. 14. p. Trin.
+bauer.trinitatis15: Dom. 15. p. Trin.
+bauer.trinitatis16: Dom. 16. p. Trin.
+bauer.trinitatis17: Dom. 17. p. Trin.
+bauer.trinitatis18: Dom. 18. p. Trin.
+bauer.trinitatis19: Dom. 19. p. Trin.
+bauer.trinitatis20: Dom. 20. p. Trin.
+bauer.trinitatis21: Dom. 21. p. Trin.
+bauer.trinitatis22: Dom. 22. p. Trin.
+bauer.trinitatis23: Dom. 23. p. Trin.
+bauer.trinitatis24: Dom. 24. p. Trin.
+bauer.trinitatis25: Dom. 25. p. Trin.
+bauer.trinitatis26: Dom. 26. p. Trin.
+bauer.trinitatis27: Dom. 27. p. Trin.
 
 # Adventsdagene
 bauer.advent1: Dom Adventus
