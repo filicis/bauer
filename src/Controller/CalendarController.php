@@ -51,7 +51,7 @@ class CalendarController extends AbstractController
 	{
 		$this->session->set('Bauer', $aarstal);
 		$bauer= new Bauer();
-		$bauer->setAar($aarstal);
+		$bauer->setYear($aarstal);
 
 
 		return $this->render('calendar/index.html.twig', [
@@ -70,7 +70,7 @@ class CalendarController extends AbstractController
 
 		$locale= $request->getLocale();
 		$bauer= new Bauer();
-		$bauer->setAar($aarstal);
+		$bauer->setYear($aarstal);
 		if ($bauer->isValid() == False)
 		return $this->redirectToRoute('calendar', ['aarstal' => 1700]);
 

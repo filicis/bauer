@@ -14,16 +14,6 @@ class Bauer
 	const MAXAAR= 3199;
 
 
-	const _NYTAAR=    0;
-	const _H3KONG=    1;
-
-
-
-	public $nytarray = array (
-	'_NYTAAR' => ["Nytår", "", "" ],
-	'_H3KONG' => ["Hellig 3 Konger", "", ""],
-	);
-
 
 
 	/**
@@ -50,11 +40,6 @@ class Bauer
 	private $description= "Midsommer";
 	private $augedag;
 
-	/**
-	*	adgClass
-	*
-	*
-	*/
 
 	private $adatoClass;
 
@@ -182,7 +167,7 @@ class Bauer
 
 
 	/**
-	*	static _yearClass()											** Parallel til Algoritme 1 **
+	*	private _yearClass()											** Parallel til Algoritme 1 **
 	*
 	*	0: Ugyldigt år
 	*	1: Almindeligt år med 365 dage
@@ -190,31 +175,31 @@ class Bauer
 	*	3: Overgangsåret 1700 med 355 dage
 	*/
 
-	public static function _yearClass($aar) : int
+	private function _yearClass($year) : int
 	{
-		$yearClass= 0;
+		$this->yearClass= 0;
 
-		if (self::MINAAR <= $aar && $aar <= self::MAXAAR)
+		if (self::MINAAR <= $year && $year <= self::MAXAAR)
 		{
-			if (1700 < $aar)
+			if (1700 < $year)
 			{
-				$yearClass= ($aar % 4) ? 1 : ($aar % 100) ? 2 : ($aar % 400) ? 1 : 2;
+				$this->yearClass= ($year % 4) ? 1 : ($year % 100) ? 2 : ($year % 400) ? 1 : 2;
 
 			}
 			else
 			{
-				if ($aar < 1700)
+				if ($year < 1700)
 				{
-					$yearClass= ($aar % 4) ? 1 : 2;
+					$this->yearClass= ($year % 4) ? 1 : 2;
 				}
 				else
 				{
-					$yearClass= 3;
+					$this->yearClass= 3;
 				}
 			}
 		}
 
-		return $yearClass;
+		return $this->yearClass;
 	}
 
 
@@ -363,19 +348,26 @@ class Bauer
 
 
 	/**
-	*	setAar()
+	*	setYear()
 	*
 	*	- Checker at året ligger i intervalle 600-3200
 	*	- Finder datoen for påskesøndag (som bestemmer de øvrige helligdage i  kirkeåret
 	*/
 
-	public function setAar($nytaar) : int
+	public function setYear($year) : bool
 	{
-		$this->yearClass= self::_yearClass($nytaar);
+		if (! $this->isValid() || $this->year != $year)
+		{
+			$this->year= $year;
+		  switch($this->_yearClass($year))
+		  {
+		 		case 0:  return False;
+				default: $this->_pascha();
 
-		$this->year= (($this->yearClass != 0) ? $nytaar : 0);
-		$this->_pascha();
-		return $this->year;
+			}
+	  }
+
+		return true;
 	}
 
 	/**
