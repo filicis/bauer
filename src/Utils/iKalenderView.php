@@ -22,22 +22,11 @@ interface iKalenderView
 {
 	public function getCalendarName(): String;
 
-  public function setYear(): bool;
+  public function setYear($year): bool;
   public function getYear(): int;
 
-  public function getMonths(): array;
-
-	public function getDayMax() : int;
-	public function getMonthMax() : int;
-
-	public function getDagType() : int;
-	public function getDagBetegnelse() : String;
-	public function getDagTooltip() : String;
-	public function getUgedag() : String;
-
-
 		/**
-		 *	getAarType()
+		 *	getAarClass()
 		 *
 		 * 	0: betyder ugyldigt år, men iøvrigt defineres parameteren individuelt for hver kalender
 		 * 		 For den Dansk/Norske kalender f.eks:
@@ -47,8 +36,8 @@ interface iKalenderView
      *
 		 **/
 
-  public function getAarType() : int;
-
+  public function getYearClass() : int;
+  public function getMonths(): array;
 
 		/**
 		 *	isValid();
@@ -60,6 +49,18 @@ interface iKalenderView
 	public function isValid() : bool;
 
 
-	public function selectYear($y) : bool;
+
+
+	public function getDayMax() : int;
+	public function getMonthMax() : int;
+
+	public function getDagType() : int;
+	public function getDagBetegnelse() : String;
+	public function getDagTooltip() : String;
+	public function getUgedag() : String;
+
+
 	public function selectDate($d, $m) : bool;
+
+	public function getDateInfo($d, $m, $y) : array;
 }

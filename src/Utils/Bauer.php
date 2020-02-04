@@ -338,6 +338,23 @@ class Bauer
 	}
 
 
+	/**
+	 *	getYearClass()
+	 *
+	 **/
+
+	 public function getYearCLass() : int
+	 {
+	 	 return $this->yearClass;
+	 }
+
+
+	/**
+	 *	isValid()
+	 *
+	 *	- checker kun om der er indlæst et gyldigt år
+   *
+   **/
 
 	public function isValid() : bool
 	{
@@ -345,13 +362,11 @@ class Bauer
 	}
 
 
-
-
 	/**
 	*	setYear()
 	*
 	*	- Checker at året ligger i intervalle 600-3200
-	*	- Finder datoen for påskesøndag (som bestemmer de øvrige helligdage i  kirkeåret
+	*	- Finder datoen for påskesøndag (som bestemmer de øvrige helligdage i kirkeåret
 	*/
 
 	public function setYear($year) : bool
@@ -369,6 +384,26 @@ class Bauer
 
 		return true;
 	}
+
+
+	/**
+	 *	getDateInfo()
+	 *
+   *
+   **/
+
+   public function getDateInfo($d, $m, $y) : array
+   {
+   	 $info= array('test' => 'holger',);
+
+   	 if ($this->setYear($y) == true && $this->setDato($d, $m) == true)
+   	 {
+       $info1= array(
+         'test' => 'holger',
+       );
+   	 }
+   	 return $info;
+   }
 
 	/**
 	* setDato()
