@@ -58,10 +58,12 @@
             	   				- Søn eller helligdag
             	   				- Ugyldig dag (f.eks 31. Juli) #}
 
-              		{% if bauer.setDato(d, mm) %}
-                		<th scope= "col" {% if bauer.getAdatoClass() > 1 %} class="alert-secondary" {% endif %}>{{ bauer.getUgedag()|trans()|slice(0,2)|capitalize }}  </th>
-                		<td scope= "col" class="text-right {% if bauer.getAdatoClass() == 3 %} alert-secondary {% endif %}">{{ d }}</td>
-                		<td scope= "col" style='width: 160px' class="text-truncate {% if bauer.getAdatoClass() == 3 %} alert-secondary {% endif %}" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ bauer.getTooltip()|trans }}"> {{ bauer.getDescription()|trans }} </td>
+									{% set info= bauer.getDateInfo(d, mm, bauer.getYear()) %}
+              		{# % if bauer.setDato(d, mm) % #}
+              		{% if info['class'] > 0 %}
+                		<th scope= "col" {% if info['class'] > 1 %} class="alert-secondary" {% endif %}>{{ info['ugedag']|trans()|slice(0,2)|capitalize }}  </th>
+                		<td scope= "col" class="text-right {% if info['class'] == 3 %} alert-secondary {% endif %}">{{ d }}</td>
+                		<td scope= "col" style='width: 160px' class="text-truncate {% if info['class'] == 3 %} alert-secondary {% endif %}" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ info['tooltip']|trans }}"> {{ info['description']|trans }} </td>
 
               		{% else %}
                 		<td colspan= 3 />

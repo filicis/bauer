@@ -166,85 +166,6 @@ class Bauer
 	}
 
 
-	/**
-	*	private _yearClass()											** Parallel til Algoritme 1 **
-	*
-	*	0: Ugyldigt år
-	*	1: Almindeligt år med 365 dage
-	*	2: Skudår med 366 dage
-	*	3: Overgangsåret 1700 med 355 dage
-	*/
-
-	private function _yearClass($year) : int
-	{
-		$this->yearClass= 0;
-
-		if (self::MINAAR <= $year && $year <= self::MAXAAR)
-		{
-			if (1700 < $year)
-			{
-				$this->yearClass= ($year % 4) ? 1 : ($year % 100) ? 2 : ($year % 400) ? 1 : 2;
-
-			}
-			else
-			{
-				if ($year < 1700)
-				{
-					$this->yearClass= ($year % 4) ? 1 : 2;
-				}
-				else
-				{
-					$this->yearClass= 3;
-				}
-			}
-		}
-
-		return $this->yearClass;
-	}
-
-
-	/**
-	*	_validDato()														** Parallel til Algorime 2 **
-	*
-	*	Forudsætter at vi har et gyldigt år
-	*/
-
-	public function _validDato($d, $mmm) : bool
-	{
-		if ($this->yearClass != 0)
-		{
-			if (0 < $mmm && $mmm < 13)
-			{
-				if (0 < $d && $d < 32)
-				{
-					switch($mmm)
-					{
-						case 2: switch ($this->yearClass)
-						{
-							case 1: if (28 < $d) return false;
-							break;
-
-							case 2: if (29 < $d) return false;
-							break;
-
-							case 3: if (18 < $d) return false;
-						}
-						break;
-
-						case 4:
-						case 6:
-						case 9:
-						case 11: if (30 < $d) return false;
-
-					}
-					return true;
-
-				}
-			}
-
-		}
-		return false;
-	}
 
 
 	/**
@@ -392,15 +313,16 @@ class Bauer
    *
    **/
 
-   public function getDateInfo($d, $m, $y) : array
+   public function getDateInfo($d, $m, $y): array
    {
-   	 $info= array('test' => 'holger',);
+     $info['class']= 0;
 
    	 if ($this->setYear($y) == true && $this->setDato($d, $m) == true)
    	 {
-       $info1= array(
-         'test' => 'holger',
-       );
+   	 	 $info['class']= $this->getAdatoClass();
+   	 	 $info['ugedag']= $this->getUgedag();
+   	 	 $info['description']= $this->getDescription();
+       $info['tooltip']= $this->getToolTip();
    	 }
    	 return $info;
    }
@@ -871,6 +793,88 @@ class Bauer
 	{
 		return 'Danmark';
 	}
+
+
+		/**
+	*	_validDato()														** Parallel til Algorime 2 **
+	*
+	*	Forudsætter at vi har et gyldigt år
+	*/
+
+	public function _validDato($d, $mmm) : bool
+	{
+		if ($this->yearClass != 0)
+		{
+			if (0 < $mmm && $mmm < 13)
+			{
+				if (0 < $d && $d < 32)
+				{
+					switch($mmm)
+					{
+						case 2: switch ($this->yearClass)
+						{
+							case 1: if (28 < $d) return false;
+							break;
+
+							case 2: if (29 < $d) return false;
+							break;
+
+							case 3: if (18 < $d) return false;
+						}
+						break;
+
+						case 4:
+						case 6:
+						case 9:
+						case 11: if (30 < $d) return false;
+
+					}
+					return true;
+
+				}
+			}
+
+		}
+		return false;
+	}
+
+
+	/**
+	*	private _yearClass()											** Parallel til Algoritme 1 **
+	*
+	*	0: Ugyldigt år
+	*	1: Almindeligt år med 365 dage
+	*	2: Skudår med 366 dage
+	*	3: Overgangsåret 1700 med 355 dage
+	*/
+
+	private function _yearClass($year) : int
+	{
+		$this->yearClass= 0;
+
+		if (self::MINAAR <= $year && $year <= self::MAXAAR)
+		{
+			if (1700 < $year)
+			{
+				$this->yearClass= ($year % 4) ? 1 : ($year % 100) ? 2 : ($year % 400) ? 1 : 2;
+			}
+			else
+			{
+				if ($year < 1700)
+				{
+					$this->yearClass= ($year % 4) ? 1 : 2;
+				}
+				else
+				{
+					$this->yearClass= 3;
+				}
+			}
+		}
+
+		return $this->yearClass;
+	}
+
+
 
 
 }
