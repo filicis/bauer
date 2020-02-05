@@ -3,7 +3,7 @@
 namespace App\Utils;
 
 /**
- *	interface iKalenderView
+ *	interface iCalendarView
  *
  *	Generisk klasse for års kalendere ifb udskrivning
  *
@@ -18,7 +18,7 @@ namespace App\Utils;
  * 	Såvel dage som måneder nummereres fra 1..nn
  */
 
-interface iKalenderView
+interface iCalendarView
 {
 	public function getCalendarName(): String;
 

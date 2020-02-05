@@ -6,7 +6,7 @@ use App\Utils\Jday;
 use App\Utils\Dato;
 
 /**
- *	interface iKalender
+ *	interface iCalendar
  *
  *	Generisk klasse for alle kalendere
  *  - En kalender er inddelt i dage, uger, måneder og år
@@ -16,7 +16,7 @@ use App\Utils\Dato;
  *
  */
 
-interface iKalender
+interface iCalendar
 {
   public function dato(Jday $param) : Dato;
   public function jday(Dato $param) : Jday;

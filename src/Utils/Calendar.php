@@ -8,13 +8,11 @@ namespace App\Utils;
  *	Beskriver den grænseflade som alle Kalendere skal tilbyde.
  */
 
-abstract class Kalender implements iKalender, iKalenderaar
+abstract class Calendar implements iCalendar
 {
 	private const DAYMAX= 7;
 	private const MONTHMAX= 12;
 
-	const MONTHS= ["Januar", "Februar", "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober", "November", "December"];
-	const WEEKDAYS= ["Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag", "Søndag"];
 
 	protected const YEARINVALID= 0;
 	protected const YEARNORMAL= 1;
