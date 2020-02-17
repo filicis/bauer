@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccordionController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/home/michael/php/bauer/src/Controller/AccordionController.php'|file_link(0) }}">src/Controller/AccordionController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/home/michael/php/bauer/templates/accordion/index.html.twig'|file_link(0) }}">templates/accordion/index.html.twig</a></code></li>
+    </ul>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" id="my-sidebar">
+      <ul id="mysidebar" class="nav">
+        <li class="sidebarTitle">Picis 8.6</li>
+  			<li>
+      		<a title="Overview" href="#">Overview</a>
+      		<ul>
+      		  <li><a title="Get started" href="#">Get started</a></li>
+						<li><a title="Introduction" href="#">Introduction</a></li>
+						<li><a title="Supported features" href="#">Supported features</a></li>
+						<li><a title="About the theme author" href="#">About the theme author</a></li>
+						<li><a title="Support" href="#">Support</a></li>
+					</ul>
+   			</li>
+				<li>
+      		<a title="Customize" href="#">Customize</a>
+      		<ul>
+						<li><a title="Indtroduktion01" href="#">Indtroduktion01</a></li>
+						<li class="subfolders">
+              <a title="Indtroduktion02" href="#">Indtroduktion02</a>
+              <ul>
+								<li><a title="Product 1 home" href="#">Product 1 home</a></li>
+                <li><a title="Sample 1" href="#">Sample 1</a></li>
+                <li><a title="Sample 2" href="#">Sample 2</a></li>
+                <li><a title="Sample 3" href="#">Sample 3</a></li>
+              </ul>
+	          </li>
+            <li><a title="Arbejdsstation01" href="#">Arbejdsstation01</a></li>
+	          <li class="subfolders">
+              <a title="Arbejdsstation02" href="#">Arbejdsstation02</a>
+              <ul>
+                <li><a title="Sample 4" href="#">Sample 4</a></li>
+                <li><a title="Sample 5" href="#">Sample 5</a></li>
+                <li><a title="Sample 6" href="#">Sample 6</a></li>
+                <li><a title="Sample 7" href="#">Sample 7</a></li>
+              </ul>
+	          </li>
+	          <li><a title="Og så til noget helt andet" href="#">Og så til noget helt andet</a></li>
+	          <li class="subfolders">
+              <a title="Menu Skabelon" href="#">Menu Skabelon</a>
+              <ul>
+                <li><a title="Konfigurationsparametre" href="#">Konfigurationsparametre</a></li>
+                  <li><a title="Fysiologiske parametre" href="#">Fysiologiske parametre</a></li>
+                  <li><a title="Ordinationssæt" href="#">Ordinationssæt</a></li>
+                  <li><a title="Hændelser" href="#">Hændelser</a></li>
+                  <li><a title="Væskebalance" href="#">Væskebalance</a></li>
+                  <li><a title="Patient resume" href="#">Patient resume</a></li>
+                  <li><a title="Behandlings resume" href="#">Behandlings resume</a></li>
+                  <li><a title="Obligatoriske felter" href="#">Obligatoriske felter</a></li>
+                  <li><a title="Patientoplysningseditor" href="#">Patientoplysningseditor</a></li>
+                  <li><a title="Kurvefelter" href="#">Kurvefelter</a></li>
+                  <li><a title="Skemaer" href="#">Skemaer</a></li>
+                  <li><a title="Stopure" href="#">Stopure</a></li>
+                  <li><a title="Tilføjelsesprogrammer" href="#">Tilføjelsesprogrammer</a></li>
+                  <li><a title="Menuer og værktøjslinie" href="#">Menuer og værktøjslinie</a></li>
+              	</ul>
+          		</li>
+      			</ul>
+   				</li>
+  			<li>
+      			<a title="DB Editor" href="#">DB Editor</a>
+      			<ul>
+		      	</ul>
+   			</li>
+  			<li>
+      		<a title="Pritouts Builder" href="#">Pritouts Builder</a>
+      		<ul>
+      		</ul>
+   			</li>
+  			<li>
+      			<a title="HowTo" href="#">HowTo</a>
+      		<ul>
+          		<li><a title="Opsætning af Hændelser" href="#">Opsætning af Hændelser</a></li>
+     			</ul>
+   			</li>
+			</ul>
+    </div>
+  	<div class="col-md-99" id="my-content">
+      	<p>Her er lidt indhold</p>
+   	</div>
+ 	</div>
+</div>
+
+{% endblock %}
