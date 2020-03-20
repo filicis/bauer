@@ -369,7 +369,7 @@ class Bauer
 		{
 			/* Søndagene efter Hellig 3 Konger */
 
-			switch (intdiv(($this->dagiaar - 5), 7))
+			switch (intdiv(($this->dagiaar - 7), 7))
 			{
 				case 0: $this->description= ["bauer.h3k1", "", ""];
 				break;
@@ -598,7 +598,7 @@ class Bauer
 			$this->adatoClass=3;
 			break;
 
-			case  501: $this->description = ["bauer.h3k", "", "bauer.h3kTT"];
+			case  601: $this->description = ["bauer.h3k", "", "bauer.h3kTT"];
 			if ($this->year < 1771)
 			$this->adatoClass=3;
 			break;
