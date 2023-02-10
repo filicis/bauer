@@ -6,7 +6,7 @@ namespace App\Utils;
  *	CLass KalenderGrg 
  *
  *	Gregoriansk kalender
- *	- Gyldig fra årene 600 - 	
+ *	- Gyldig fra ï¿½rene 600 - 	
  */
 
 class KalenderGrg extends KalenderJul
@@ -21,8 +21,8 @@ class KalenderGrg extends KalenderJul
   	  /**
 	   *	epaktGrg()
 	   *
-	   *	Betegner for en dato Månens alder, dvs hvor mange dage der er gået fra sidste nymåne til den pågældende dato.
-	   *	Værdier mellem 1 og 30.
+	   *	Betegner for en dato Mï¿½nens alder, dvs hvor mange dage der er gï¿½et fra sidste nymï¿½ne til den pï¿½gï¿½ldende dato.
+	   *	Vï¿½rdier mellem 1 og 30.
 	   **/ 
 	
 	protected function epaktGrg($y) : int
@@ -71,7 +71,7 @@ class KalenderGrg extends KalenderJul
   	  /**
 	   *	pascha()
 	   *
-	   *	Beregner Påskedag for det givne årstal - Og her efter den Julianske kalender. 
+	   *	Beregner Pï¿½skedag for det givne ï¿½rstal - Og her efter den Julianske kalender. 
 	   **/ 
 	
 	public function pascha($y) : Dato
@@ -83,7 +83,7 @@ class KalenderGrg extends KalenderJul
 		  /**
 	   *	_pascha()
 	   *
-	   *	Beregner Påskedag for det givne årstal - Og her efter den Gregorianske kalender. 
+	   *	Beregner Pï¿½skedag for det givne ï¿½rstal - Og her efter den Gregorianske kalender. 
 	   **/ 
 	
 	public function _paschaGrg($y) : Dato
@@ -123,7 +123,7 @@ class KalenderGrg extends KalenderJul
     /**
      *	_sekel()
      *
-     *	Beregner århundrede
+     *	Beregner ï¿½rhundrede
      *
      **/
   
@@ -136,7 +136,7 @@ class KalenderGrg extends KalenderJul
     /**
      *	_moon()
      *
-     *	Beregner månejævning
+     *	Beregner mï¿½nejï¿½vning
      *
      **/
   
@@ -149,7 +149,7 @@ class KalenderGrg extends KalenderJul
     /**
      *	_sun()
      *
-     *	Beregner soljævning
+     *	Beregner soljï¿½vning
      *
      **/
   
@@ -168,7 +168,7 @@ class KalenderGrg extends KalenderJul
 	   
   public function validateYear($y) : int
   {  
-    return ($y % 4) ? Kalender::YEARNORMAL : ($y % 100) ? Kalender::YEARLEAP : ($y % 400) ? YEARNORMAL : YEARLEAP;
+    return (($y % 4) ? Kalender::YEARNORMAL : (($y % 100) ? Kalender::YEARLEAP : (($y % 400) ? YEARNORMAL : YEARLEAP)));
   }
 
 

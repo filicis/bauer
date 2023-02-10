@@ -856,7 +856,7 @@ class Bauer
 		{
 			if (1700 < $year)
 			{
-				$this->yearClass= ($year % 4) ? 1 : ($year % 100) ? 2 : ($year % 400) ? 1 : 2;
+				$this->yearClass= (($year % 4) ? 1 : (($year % 100) ? 2 : (($year % 400) ? 1 : 2)));
 			}
 			else
 			{
