@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+//use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 //use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 //use Doctrine\Common\Persistence\ManagerRegistry;
@@ -24,7 +24,7 @@ use App\Utils\Bauer;
   /**
    * CalendarController
    *
-   * Håndterer indtil videre kun Dansk/Norsk Kalender
+   * H?ndterer indtil videre kun Dansk/Norsk Kalender
    *
    **/
 
@@ -33,20 +33,22 @@ class CalendarController extends AbstractController
 	private $session;
 	public $aarstal= 1850;
 
-
+/*
 	public function __construct(SessionInterface $session)
 	{
 		$this->session = $session;
 	}
 
+*/
 
 
 	/**
 	* function index()
 	*
-	* @Route("/calendar1/{aarstal}", name="calendar1")
+	* @ Route("/calendar1/{aarstal}", name="calendar1")
 	*/
 
+  #[Route('/calendar1/{aarstal}', name: 'calendar1')]
 	public function index1($aarstal, Request $request)
 	{
 		$this->session->set('Bauer', $aarstal);
@@ -62,9 +64,10 @@ class CalendarController extends AbstractController
 
 
 	/**
-	* @Route("/calendar/{aarstal}", name="calendar")
+	* @ Route("/calendar/{aarstal}", name="calendar")
 	*/
 
+   #[Route('/calendar/{aarstal}', name: 'calendar')]
 	public function index($aarstal, Request $request)
 	{
 
@@ -79,8 +82,8 @@ class CalendarController extends AbstractController
 
 		$test= ['message' => 'Entest'];
 		$form= $this->createFormBuilder($test /*, ['attr' => ['class' => 'form-inline']] */ )
-		->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => 'Årstal', 'aria-label' => 'Search']]*/ )
-		->add('send', SubmitType::class , ['attr' => ['label' => 'Vælg']] )
+		->add('year', TextType::class /*, ['attr' => ['class' => 'form-control mr-sm-2', 'type' => 'number', 'placeholder' => '?rstal', 'aria-label' => 'Search']]*/ )
+		->add('send', SubmitType::class , ['attr' => ['label' => 'V?lg']] )
 		->getForm();
 
 		// $form->get('year')->setData($this->session->get('Bauer', 1960));

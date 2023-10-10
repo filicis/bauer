@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-// use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Annotation\Route;
 
   /**
    *	DefaultController
@@ -27,11 +27,10 @@ class DefaultController extends AbstractController
 
 
 	/**
-	* @ Route("/default", name="default")
+	* @Route("/default", name="default")
 	*
 	**/
 
-  #[Route('/default', name: 'default')]
 	public function index(Request $request)
 	{
 		$aarstal= $this->session->get('aarstal', 1737);
@@ -47,11 +46,10 @@ class DefaultController extends AbstractController
 
 
 	/**
-	* @ Route("/setLocale", name="setLocale")
+	* @Route("/setLocale", name="setLocale")
 	*/
 
 
-  #[Route('/setLocale', name: 'setLocale')]
 	public function setLocale(Request $request)
 	{
 		$locale = $request->attributes->get('_locale');
