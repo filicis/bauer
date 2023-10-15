@@ -2,7 +2,11 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+<<<<<<< ours
 /*.bak
+=======
+/config/secrets/prod/prod.decrypt.private.php
+>>>>>>> theirs
 /public/bundles/
 /var/
 /vendor/
