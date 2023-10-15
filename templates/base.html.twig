@@ -1,136 +1,137 @@
 <!doctype html>
-<html lang="da">
-	<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Bauers Kalender for årene 600 til 3199 gældende for Danmark og Norge - Et værktøj til slægtsforskere, og andre der arbejde med de gamle kirkebøger">
-    <meta name="keywords" content="Bauers Kalender, Bauers Calendar, Slægtsforskning, Kikrebøger">
-    <meta name="author" content="Michael Lindhardt Rasmussen">
-
+<html lang="da"  data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="application-name" content="{{ product }}"/>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="Bauers Kalender, Bauers Calendar, Slægtsforskning, Kirkebøger"/>
+    <meta name="author" content="{{ author }}"/>
+    <meta name="generator" content="PHP, Symfony 6.3, Bootstrap 5.3.2"/>
     <meta name="google-site-verification" content="xHLmgP5L_DvNjXQsmjCphySJEljc62J2Gt9qdse7sBc" />
 
 
-    <title>{% block title %}Bauers Kalender{% endblock %}</title>
+    <title>{% block title %}{{ product }}{% endblock %}</title>
 
     {% block stylesheets %}
 
-			<!-- Vi benytter os af Bootstrap -->
+      <!-- Vi benytter os af Bootstrap -->
 
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		  	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     {% endblock %}
 
   </head>
   <body
-  	style='padding-top: 25px;'
-  	>
+    style='padding-top: 25px;'
+    >
 
       <!-- Programmets Hovedmenu -->
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light text-info">
-    	<button class="navbar-toggler" type="button" data-toggle="collapse"
-        	data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      	<span class="navbar-toggler-icon"></span>
-    	</button>
+    <nav class="navbar navbar-expand-lg fixed-top nnavbar-dark bg-dark text-info" data-bs-theme="dark" >
+  <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-   		<!-- Selve menu strukturen -->
+       <!-- Selve menu strukturen -->
 
-    	<div class="collapse navbar-collapse" id="navbarNav">
-    		<a class="navbar-brand" href="https://github.com/filicis">Filicis</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand" href="https://github.com/filicis">Filicis</a>
 
-      	<div class="navbar-nav mr-auto">
+        <div class="navbar-nav mr-auto">
           <!-- a class="nav-item nav-link" href="/about">Hjem<span class="sr-only">(current)</span></a -->
           <div class= 'nav-item dropdown'>
-          	<a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown01" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
-          	<div class="dropdown-menu" aria-labelledby="navbarDropdown01">
-            	<a class="dropdown-item active" href="#">Danmark</a>
-            	<a class="dropdown-item disabled" href="#">Norge</a>
-            	<a class="dropdown-item disabled" href="#">Sverige</a>
-            	<a class="dropdown-item disabled" href="#">Italien</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item disabled" href="#">Juliansk</a>
-            	<a class="dropdown-item disabled" href="#">Gregoriansk</a>
-          	</div>
+            <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown01" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown01">
+              <a class="dropdown-item active" href="#">Danmark</a>
+              <a class="dropdown-item disabled" href="#">Norge</a>
+              <a class="dropdown-item disabled" href="#">Sverige</a>
+              <a class="dropdown-item disabled" href="#">Italien</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item disabled" href="#">Juliansk</a>
+              <a class="dropdown-item disabled" href="#">Gregoriansk</a>
+            </div>
           </div>
           <div class= 'nav-item dropdown'>
-          	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown02" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sprog</a>
-          	<div class="dropdown-menu" aria-labelledby="navbarDropdown02">
-            	<a class="dropdown-item {% if locale == 'da' %} active {% endif %}" href="/da/setLocale">Dansk</a>
-            	<a class="dropdown-item {% if locale == 'sv' %} active {% endif %}" href="/sv/setLocale">Svensk</a>
-            	<a class="dropdown-item {% if locale == 'no' %} active {% endif %}" href="/no/setLocale">Norsk</a>
-            	<a class="dropdown-item {% if locale == 'en' %} active {% endif %}" href="/en/setLocale">Engelsk</a>
-            	<a class="dropdown-item {% if locale == 'la' %} active {% endif %}" href="/la/setLocale">Latin</a>
-            	<div class="dropdown-divider"></div>
-          	</div>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown02" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sprog</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown02">
+              {% set myval= app.current_route_parameters|merge([{'_locale': 'da',}]) %}
+              <a class="dropdown-item {% if locale == 'da' %} active {% endif %}" href="{{ url(app.current_route, app.current_route_parameters) }}">Dansk</a>
+            
+              <a class="dropdown-item {% if locale == 'sv' %} active {% endif %}" href="/sv/setLocale">Svensk</a>
+              <a class="dropdown-item {% if locale == 'no' %} active {% endif %}" href="/no/setLocale">Norsk</a>
+              <a class="dropdown-item {% if locale == 'en' %} active {% endif %}" href="/en/setLocale">Engelsk</a>
+              <a class="dropdown-item {% if locale == 'la' %} active {% endif %}" href="{{ url('tilLatin') }}">Latin</a>
+              <div class="dropdown-divider"></div>
+            </div>
           </div>
           <div class= 'nav-item dropdown'>
-          	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown03" role="button"	data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hjælp</a>
-          	<div class="dropdown-menu" aria-labelledby="navbarDropdown03">
-            	<a class="dropdown-item disabled" href="#">Action</a>
-            	<a class="dropdown-item disabled" href="#">Baggrunds materiale</a>
-            	<div class="dropdown-divider"></div>
-            	<a class="dropdown-item" href="/da/accordion">Accordion</a>
-            	<a class="dropdown-item" href="/da/about">Om..</a>
-          	</div>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown03" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hjælp</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown03">
+              <a class="dropdown-item disabled" href="#">Action</a>
+              <a class="dropdown-item disabled" href="#">Baggrunds materiale</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/da/accordion">Accordion</a>
+              <a class="dropdown-item" href="/da/about">Om..</a>
+            </div>
           </div>
-      	</div>
-    	</div>
+        </div>
+    </div>
+      </div>
 
-    	{% if our_form is defined %}
+      {% if our_form is defined %}
 
 
       {{ form_start(our_form, {'attr': {'class': 'form-inline  my-2 my-lg-0'} }) }}
 {#
-    		<div class="custom-control custom-switch px-3" >
-      		{{ form_widget(our_form.latin, {'type': 'checkbox', 'attr': {'class': 'custom-control-input', type: 'checkbox', empty_data: 'false'  }}) }}
-      		<label class="custom-control-label" for="form_latin">Latin</label>
-    		</div>
+        <div class="custom-control custom-switch px-3" >
+          {{ form_widget(our_form.latin, {'type': 'checkbox', 'attr': {'class': 'custom-control-input', type: 'checkbox', empty_data: 'false'  }}) }}
+          <label class="custom-control-label" for="form_latin">Latin</label>
+        </div>
 #}
-    		{{ form_widget(our_form.year, {'attr': {'class': 'form-control mr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
+        {{ form_widget(our_form.year, {'attr': {'class': 'form-control mr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
         {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'd-none btn btn-outline-primary my-2 my-sm-0'} })}}
-   			{{ form_rest(our_form) }}
+         {{ form_rest(our_form) }}
       {{ form_end(our_form )}}
       {% endif %}
     </div>
-      		<div class="navbar-expand d-flex flex-row-reverse" id="navbarNavAltMarkup" >
-  		<!-- div class="navbar-expand justify-content-end" id="navbarNavAltMarkup" -->
-    		<div class="navbar-nav mr_auto">
-					{% if is_granted('IS_AUTHENTICATED_FULLY') or is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-     				<span class= "navbar-text">Bruger: {{ app.user.username }} </span>
-        		<a class="nav-item nav-link" href="{{ path('app_logout') }}">Logout</a>
- 					{% else %}
-      			<a class="nav-item nav-link" href="{{ path('app_login') }}">Login</a>
-					{% endif %}
-				</div>
-  		</div>
+          <div class="navbar-expand d-flex flex-row-reverse" id="navbarNavAltMarkup" >
+      <!-- div class="navbar-expand justify-content-end" id="navbarNavAltMarkup" -->
+        <div class="navbar-nav mr_auto">
+          {% if is_granted('IS_AUTHENTICATED_FULLY') or is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+             <span class= "navbar-text">Bruger: {{ app.user.username }} </span>
+            <a class="nav-item nav-link" href="{{ path('app_default') }}">Logout</a>
+           {% else %}
+            <a class="nav-item nav-link" href="{{ path('app_default') }}">Login</a>
+          {% endif %}
+        </div>
+      </div>
   </nav>
 
   {% include 'about.html.twig' %}
 
-
-
-
-    {% block body %}{% endblock %}
-
-
+  {% block body %}{% endblock %}
 
   {% block javascripts %}
 
-			<!-- Bootstrap relaterede scripts -->
+    <!-- Bootstrap relaterede scripts -->
 
-			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-					integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-					integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-					integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <!-- Aktiverer Tooltip -->
-  <script> $(document).ready(function() { $("body").tooltip({ selector: '[data-toggle=tooltip]' }); }); </script >
+    <!-- Slut på Bootstrap relaterede scripts -->
 
+    <!-- Aktiverer Tooltip -->
+    <script> 
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script >
 
+    <!-- endblock javascripts -->
   {% endblock %}
 
 </body>
-</ihtml>
+</html>

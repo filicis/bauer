@@ -6,14 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DefaultController extends AbstractController
+class About1Controller extends AbstractController
 {
-    #[Route('/', name: 'app_default')]
+    #[Route('/about1', name: 'app_about1')]
     public function index(): Response
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-            'locale' => 'DA'
+        return $this->render('about1/index.html.twig', [
+            'controller_name' => 'About1Controller',
         ]);
     }
+
+
 }
+

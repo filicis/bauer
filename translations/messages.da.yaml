@@ -37,7 +37,7 @@ bauer.kyndelmisseTT: <h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag
 bauer.1maj: "1. Maj"
 bauer.1majTT: Arbejdernes Internationale Kampdag
 bauer.mariæbebud: Maria Budskapsdag
-bauer.mariæbebudTT:
+bauer.mariæbebudTT: Mangler  
 bauer.grundlovsdag: Grundlovsdag
 bauer.sankthans: Sct Hans
 bauer.sankthansTT: <h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>
@@ -154,5 +154,6 @@ bauer.juledag: Juledag
 bauer.2juledag: 2. Juledag
 bauer.3juledag: 3. Juledag
 bauer.3juledagTT: <h6>3. Juledag</h6><p>Festum St. Johannis Evangelistae</p><p>Helligdag indtil 1770</p>
+
 
 
