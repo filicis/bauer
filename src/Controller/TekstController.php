@@ -11,9 +11,6 @@ use App\Entity\KalenderTekst;
 
 class TekstController extends AbstractController
 {
-	/**
-	* @ Route("/admin/tekst", name="tekst")
-	*/
 
   #[Route('/admin/tekst', name: 'tekst')]
 	public function index(Request $request)

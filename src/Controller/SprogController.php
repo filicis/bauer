@@ -4,8 +4,10 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-// use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+// use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Translation\LocaleSwitcher;
 
 
 class SprogController extends AbstractController
@@ -18,10 +20,6 @@ class SprogController extends AbstractController
     }
 
 */
-
-    /**
-     * @ Route("/sprog", name="sprog")
-     */
 
     #[Route('/sprog', name: 'sprog')]
     public function index()
@@ -36,14 +34,12 @@ class SprogController extends AbstractController
     }
 
 
-    /**
-     * @ Route("/sprog/dansk", name="tilDansk")
-     */
 
     #[Route('/sprog/dansk', name: 'tilDansk')]
     public function dansk(Request $request)
     {
-    	 $this->session->set('isLatin', false);
+        $session= $request->getSession();
+    	 $session->set('isLatin', false);
 
         return $this->redirectToRoute('calendar');
         return $this->render('sprog/index.html.twig', [
@@ -52,19 +48,20 @@ class SprogController extends AbstractController
     }
 
 
-    /**
-     * @ Route("/sprog/latin", name="tilLatin")
-     */
 
     #[Route('/sprog/latin', name: 'tilLatin')]
-    public function latin(Request $request)
+    public function latin(Request $request, LocaleSwitcher $localeSwitcher)
     {
-    	 $this->session->set('isLatin', true);
+        //$session= $request->getSession();
+    	//$session->set('isLatin', true);
+
+        $localeSwitcher->setLocale('la');
+        //return $this;
 
        return $this->redirectToRoute('calendar');
-        return $this->render('sprog/index.html.twig', [
-            'controller_name' => 'SprogController',
-        ]);
+       // return $this->render('sprog/index.html.twig', [
+       //     'controller_name' => 'SprogController',
+       // ]);
     }
 
 

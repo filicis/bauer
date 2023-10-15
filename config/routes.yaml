@@ -1,14 +1,8 @@
-<<<<<<< ours
-index:
-    path:           /{_locale}
-    controller:     App\Controller\DefaultController::index
-    locale:         da
-    requirements:
-        _locale:    da|en|no|sv|la
-=======
 controllers:
     resource:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
->>>>>>> theirs
+    prefix: /{_locale}
+    requirements:
+        _locale: '%app_locales%'

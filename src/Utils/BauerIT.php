@@ -11,7 +11,6 @@
 * file that was distributed with this source code.
 */
 
-
 namespace App\Utils;
 
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -19,15 +18,22 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 use App\Utils\BauerAbstract;
 
 
-class Bauer extends BauerAbstract
+class BauerIT extends BauerAbstract
 {
 	const UGEDAG_DA= ["bauer.mandag", "bauer.tirsdag", "bauer.onsdag", "bauer.torsdag", "bauer.fredag", "bauer.lørdag", "bauer.søndag"];
 
 	const MINAAR= 600;
 	const MAXAAR= 3199;
 
-	public $pmd= 3;
-	public $pdg= 12;
+
+
+
+
+	protected $jtal= 0;
+
+
+//	public $pmd= 3;
+//	public $pdg= 12;
 	public $pjtal;
 
 	/* Variable der relaterer sig til aktuelle dato */
@@ -73,7 +79,7 @@ class Bauer extends BauerAbstract
 		$totdato= ($a * 100) + $m;
 		$cal= ($totdato > 170002) ? self::GREGORIANSK : self::JULIANSK; 
 		return parent::jdag($cal, $a, $m, $d);
-
+	
 	}
 
 	/**
@@ -84,15 +90,8 @@ class Bauer extends BauerAbstract
 
 	protected function _pascha()
 	{
-		switch($this->getYear())
-		{
-			case 1744:
-				$this->pjtal= self::_jdag(1744, 3, 29);	
-				break;	
-			default:
-				$cal= (1699 < $this->year) ? self::GREGORIANSK : self::JULIANSK;
-				return $this->__pascha($cal);
-		}
+		$cal= (1699 < $this->getYear()) ? self::GREGORIANSK : self::JULIANSK;
+		return $this->__pascha($cal);
 
 	}
 
@@ -120,6 +119,7 @@ class Bauer extends BauerAbstract
 		return (($dagiaar + $korr) > 61) ? $dagiaar - $korr : $dagiaar;
 
 	}
+
 
 
 
@@ -167,8 +167,6 @@ class Bauer extends BauerAbstract
 
 
 
-	
-
 
 	/**
 	 *	getDateInfo()
@@ -185,9 +183,9 @@ class Bauer extends BauerAbstract
    	 	 $info['class']= $this->getAdatoClass();
    	 	 $info['ugedag']= $this->getUgedag();
    	 	 $info['description']= $this->getDescription();
-       $info['tooltip']= $this->getToolTip();
-	   $info['jdag']= self::_jdag($y, $m, $d);
-	}
+         $info['tooltip']= $this->getToolTip();
+		 $info['jdag']= self::_jdag($y, $m, $d);
+   	 }
    	 return $info;
    }
 
@@ -208,8 +206,10 @@ class Bauer extends BauerAbstract
 
 		// this->index();
 
-		if (self::_validDato($d, $m))
-		{
+		$this->adatoClass= 0;
+		if (! self::_validDato($d, $m))
+		  return false;
+		
 			switch($this->_getUgedag())
 			{
 				case 5:
@@ -224,8 +224,9 @@ class Bauer extends BauerAbstract
 				$this->adatoClass=1;
 				break;
 			}
-		}
-		else $this->adatoClass= 0;
+
+
+
 
 		/* Søndagene efter Hellig 3 Konger */
 
@@ -605,7 +606,7 @@ class Bauer extends BauerAbstract
 			}
 		}
 
-		return $this->_validDato($d, $m);
+		return true;
 	}
 
 
@@ -615,9 +616,6 @@ class Bauer extends BauerAbstract
 		return $this->pjtal;
 	}
 
-
-
-
 	/**
 	*	getCalendarName()
 	*
@@ -626,7 +624,7 @@ class Bauer extends BauerAbstract
 
 	public function getCalendarName() : String
 	{
-		return 'Danmark';
+		return 'Romersk-katolske kirke';
 	}
 
 
@@ -675,7 +673,7 @@ class Bauer extends BauerAbstract
 
 
 	/**
-	*	protedted yearClass()											** Parallel til Algoritme 1 **
+	*	protected yearClass()											** Parallel til Algoritme 1 **
 	*
 	*	0: Ugyldigt år
 	*	1: Almindeligt år med 365 dage

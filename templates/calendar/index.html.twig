@@ -6,8 +6,8 @@
   	  - En måned har op til 31 dage.
 
   	Forventer et object 'bauer' som implementerer iKalenderView med functionerne:
-  	  - getKalenderNavn()
-  		- getAar()
+  	  	- getKalenderNavn()
+  		- getYear()
   		- getMonths() : Array med månedernes navne.
 #}
 
@@ -23,10 +23,6 @@
 	<!-- h1 class="h1 text-center">
     Danmark - {{ bauer.getYear() }}
   </h1  -->
-
-  <!-- p>
-    Påsken falder på: {{ bauer.testDay()}} / {{ bauer.testMonth()}} - Påske Jtal: {{ bauer.getPjtal() }} - {{ bauer.jtaltest() }}
-  </p -->
 
 
   <div class='container-flex d-flex justify-content-center'>
@@ -58,16 +54,18 @@
             	   				- Søn eller helligdag
             	   				- Ugyldig dag (f.eks 31. Juli) #}
 
-									{% set info= bauer.getDateInfo(d, mm, bauer.getYear()) %}
-              		{# % if bauer.setDato(d, mm) % #}
-              		{% if info['class'] > 0 %}
-                		<th scope= "col" {% if info['class'] > 1 %} class="alert-secondary" {% endif %}>{{ info['ugedag']|trans()|slice(0,2)|capitalize }}  </th>
-                		<td scope= "col" class="text-right {% if info['class'] == 3 %} alert-secondary {% endif %}">{{ d }}</td>
-                		<td scope= "col" style='width: 160px' class="text-truncate {% if info['class'] == 3 %} alert-secondary {% endif %}" data-toggle="tooltip" data-placement="auto" data-html="true" title="{{ info['tooltip']|trans }}"> {{ info['description']|trans }} </td>
+						{% set info= bauer.getDateInfo(d, mm, bauer.getYear()) %}
+              			{# % if bauer.setDato(d, mm) % #}
+              			{% if info['class'] > 0 %}
+                			<th scope= "col" {% if info['class'] > 1 %} class="text-bg-secondary bg-opacity-50" {% endif %}>{{ info['ugedag']|trans()|slice(0,2)|capitalize }}  </th>
+                			<td scope= "col" class="text-right {% if info['class'] == 3 %} text-bgg-secondary {% endif %}">{{ d }}</td>
+                			<td scope= "col" style='width: 160px' class="text-truncate {% if info['class'] == 3 %} text-bgg-secondary {% endif %}" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="{{ info['tooltip']|trans }}">
+						  		{{ info['description']|trans }} 
+							</td>
 
-              		{% else %}
-                		<td colspan= 3 />
-              		{% endif %}
+              			{% else %}
+                			<td colspan= 3 />
+              			{% endif %}
           			{% endfor %}
         			</tr>
       			{% endfor %}
