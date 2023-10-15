@@ -13,7 +13,10 @@
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
+<<<<<<< ours
 .phpunit
+=======
+>>>>>>> theirs
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
