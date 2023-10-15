@@ -3,6 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+<<<<<<< ours
     prefix: /{_locale}
     requirements:
         _locale: '%app_locales%'
+=======
+>>>>>>> theirs
