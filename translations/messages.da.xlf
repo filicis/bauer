@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="da" target-language="da" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="V1bCA2u" resname="bauer.mandag">
+        <source>bauer.mandag</source>
+        <target>mandag</target>
+      </trans-unit>
+      <trans-unit id="zoKndiq" resname="bauer.tirsdag">
+        <source>bauer.tirsdag</source>
+        <target>tirsdag</target>
+      </trans-unit>
+      <trans-unit id="nmTp1TT" resname="bauer.onsdag">
+        <source>bauer.onsdag</source>
+        <target>onsdag</target>
+      </trans-unit>
+      <trans-unit id="UUYud7N" resname="bauer.torsdag">
+        <source>bauer.torsdag</source>
+        <target>torsdag</target>
+      </trans-unit>
+      <trans-unit id="dLXkJUP" resname="bauer.fredag">
+        <source>bauer.fredag</source>
+        <target>fredag</target>
+      </trans-unit>
+      <trans-unit id="SbhPceW" resname="bauer.lørdag">
+        <source>bauer.lørdag</source>
+        <target>lørdag</target>
+      </trans-unit>
+      <trans-unit id="T6sZz1p" resname="bauer.søndag">
+        <source>bauer.søndag</source>
+        <target>søndag</target>
+      </trans-unit>
+      <trans-unit id="ueuYv71" resname="bauer.januar">
+        <source>bauer.januar</source>
+        <target>januar</target>
+      </trans-unit>
+      <trans-unit id="sra6dkk" resname="bauer.februar">
+        <source>bauer.februar</source>
+        <target>februar</target>
+      </trans-unit>
+      <trans-unit id="cpZApLq" resname="bauer.marts">
+        <source>bauer.marts</source>
+        <target>marts</target>
+      </trans-unit>
+      <trans-unit id="SfZE0Tg" resname="bauer.april">
+        <source>bauer.april</source>
+        <target>april</target>
+      </trans-unit>
+      <trans-unit id="L7iX1LJ" resname="bauer.maj">
+        <source>bauer.maj</source>
+        <target>maj</target>
+      </trans-unit>
+      <trans-unit id="vfvvmjM" resname="bauer.juni">
+        <source>bauer.juni</source>
+        <target>juni</target>
+      </trans-unit>
+      <trans-unit id="ltlLVwq" resname="bauer.juli">
+        <source>bauer.juli</source>
+        <target>juli</target>
+      </trans-unit>
+      <trans-unit id="XsR9a97" resname="bauer.august">
+        <source>bauer.august</source>
+        <target>august</target>
+      </trans-unit>
+      <trans-unit id="mpr1wr7" resname="bauer.september">
+        <source>bauer.september</source>
+        <target>september</target>
+      </trans-unit>
+      <trans-unit id="O.3s1ir" resname="bauer.oktober">
+        <source>bauer.oktober</source>
+        <target>oktober</target>
+      </trans-unit>
+      <trans-unit id="LJMIyXb" resname="bauer.november">
+        <source>bauer.november</source>
+        <target>november</target>
+      </trans-unit>
+      <trans-unit id="G9N63Kb" resname="bauer.december">
+        <source>bauer.december</source>
+        <target>december</target>
+      </trans-unit>
+      <trans-unit id="Wa9mE1N" resname="bauer.nytår">
+        <source>bauer.nytår</source>
+        <target>Nytårsdag</target>
+      </trans-unit>
+      <trans-unit id="fWfFXzj" resname="bauer.nytårTT">
+        <source>bauer.nytårTT</source>
+        <target><![CDATA[<h6>Nytårsdag</h6><p class='text-left'>Kristi omskærelsesdag<br>Festum Novi Anni<br>Festum Circumcisionis Domini</p>]]></target>
+      </trans-unit>
+      <trans-unit id="X6jPdcP" resname="bauer.h3k">
+        <source>bauer.h3k</source>
+        <target>Hellig 3 konger</target>
+      </trans-unit>
+      <trans-unit id="8OAGILM" resname="bauer.h3kTT">
+        <source>bauer.h3kTT</source>
+        <target><![CDATA[<h6>Helligtrekonger</h6><p>Dom. Baptismus Christi<br>Dom. Ephiphania</p><p>Helligdag indtil 1770<p>]]></target>
+      </trans-unit>
+      <trans-unit id="15IidTc" resname="bauer.h3k1">
+        <source>bauer.h3k1</source>
+        <target>1. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="TrkGDoA" resname="bauer.h3k2">
+        <source>bauer.h3k2</source>
+        <target>2. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="9fdz4Op" resname="bauer.h3k3">
+        <source>bauer.h3k3</source>
+        <target>3. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="uoO_4U5" resname="bauer.h3k4">
+        <source>bauer.h3k4</source>
+        <target>4. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="SJ5rgbL" resname="bauer.h3k5">
+        <source>bauer.h3k5</source>
+        <target>5. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="r3TmW.L" resname="bauer.h3k6">
+        <source>bauer.h3k6</source>
+        <target>6. S efter H3K</target>
+      </trans-unit>
+      <trans-unit id="L3bqv5H" resname="bauer.paulus">
+        <source>bauer.paulus</source>
+        <target>Paulus' omvendelse</target>
+      </trans-unit>
+      <trans-unit id="RX5akMz" resname="bauer.kyndelmisse">
+        <source>bauer.kyndelmisse</source>
+        <target>Kyndelmisse</target>
+      </trans-unit>
+      <trans-unit id="GmbMz0F" resname="bauer.kyndelmisseTT">
+        <source>bauer.kyndelmisseTT</source>
+        <target><![CDATA[<h6>Kyndelmisse</h6><p class='text-left'>Maria renselsesdag<br>Dies Mariae Cerealis<br>Dies Praesentatio Domini<br>Dom. Purificatio Mariae Virginis</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="FSjmDaz" resname="bauer.1maj">
+        <source>bauer.1maj</source>
+        <target>1. Maj</target>
+      </trans-unit>
+      <trans-unit id="f4bAalK" resname="bauer.1majTT">
+        <source>bauer.1majTT</source>
+        <target>Arbejdernes Internationale Kampdag</target>
+      </trans-unit>
+      <trans-unit id="HovIZKD" resname="bauer.mariæbebud">
+        <source>bauer.mariæbebud</source>
+        <target>Maria Budskapsdag</target>
+      </trans-unit>
+      <trans-unit id="rePpTpK" resname="bauer.mariæbebudTT">
+        <source>bauer.mariæbebudTT</source>
+        <target>Mangler</target>
+      </trans-unit>
+      <trans-unit id="Bx5aOZW" resname="bauer.grundlovsdag">
+        <source>bauer.grundlovsdag</source>
+        <target>Grundlovsdag</target>
+      </trans-unit>
+      <trans-unit id="gqS22Nu" resname="bauer.sankthans">
+        <source>bauer.sankthans</source>
+        <target>Sct Hans</target>
+      </trans-unit>
+      <trans-unit id="FsRzMHn" resname="bauer.sankthansTT">
+        <source>bauer.sankthansTT</source>
+        <target><![CDATA[<h6>Sct Hans</h6><p class='text-left'>Midsommer<br>Festum Nativitas St. Johannis Baptistae</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="n1K3i4B" resname="bauer.syvsoverdag">
+        <source>bauer.syvsoverdag</source>
+        <target>Syvsoverdag</target>
+      </trans-unit>
+      <trans-unit id="kkC.bu_" resname="bauer.mariæbesøg">
+        <source>bauer.mariæbesøg</source>
+        <target>Mariæ besøgelsesdag</target>
+      </trans-unit>
+      <trans-unit id="rxdt4_Q" resname="bauer.mariæbesøgTT">
+        <source>bauer.mariæbesøgTT</source>
+        <target><![CDATA[<h6>Mariæ besøgelsesdag</h6><p class='text-left'>Fruedag<br>Visitationes Mariae</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="KAbiaAO" resname="bauer.assumptio">
+        <source>bauer.assumptio</source>
+        <target>Maria Himmelfærd</target>
+      </trans-unit>
+      <trans-unit id="kitC_gX" resname="bauer.dominicus">
+        <source>bauer.dominicus</source>
+        <target>Dominicusdag</target>
+      </trans-unit>
+      <trans-unit id="sWTKqB9" resname="bauer.donatus">
+        <source>bauer.donatus</source>
+        <target>Donatusdag</target>
+      </trans-unit>
+      <trans-unit id="e8Ls0b6" resname="bauer.mikkelsdag">
+        <source>bauer.mikkelsdag</source>
+        <target>Mikkelsdag</target>
+      </trans-unit>
+      <trans-unit id="lvaSgk3" resname="bauer.mikkelsdagTT">
+        <source>bauer.mikkelsdagTT</source>
+        <target><![CDATA[<h6>Mikkelsdag</h6><p>Michaelisdag<br>Festum archangeli Michaelis</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="cJJG_Nf" resname="bauer.taksigelse">
+        <source>bauer.taksigelse</source>
+        <target>Taksigelsesdag</target>
+      </trans-unit>
+      <trans-unit id="QUKkE8J" resname="bauer.taksigelseTT">
+        <source>bauer.taksigelseTT</source>
+        <target>Taksigelse for afslutningen af Københavns brand 1728</target>
+      </trans-unit>
+      <trans-unit id="NH4Qj25" resname="bauer.allehelgen">
+        <source>bauer.allehelgen</source>
+        <target>Allehelgensdag</target>
+      </trans-unit>
+      <trans-unit id="NLbJUVu" resname="bauer.allehelgenTT">
+        <source>bauer.allehelgenTT</source>
+        <target><![CDATA[<h6>Allehelgensdag</h6><p>Festum omnium sanctorum</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="TCFo7iM" resname="bauer.allesjæle">
+        <source>bauer.allesjæle</source>
+        <target>Allesjælesdag</target>
+      </trans-unit>
+      <trans-unit id="jmXqvxv" resname="bauer.allesjæleTT">
+        <source>bauer.allesjæleTT</source>
+        <target><![CDATA[<h6>Allesjælesdag</h6><p>Commemoratio omnium fidelium defunctorum</p>]]></target>
+      </trans-unit>
+      <trans-unit id="6Nr4U2o" resname="bauer.mortensdag">
+        <source>bauer.mortensdag</source>
+        <target>Mortensdag</target>
+      </trans-unit>
+      <trans-unit id="g3PCTrY" resname="bauer.mortensdagTT">
+        <source>bauer.mortensdagTT</source>
+        <target><![CDATA[<h6>Mortens dag</h6><p class='text-left'>Morten Bisp<br>Martinus ep. conf.</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="S6A5GsO" resname="bauer.lucia">
+        <source>bauer.lucia</source>
+        <target>Santa Lucia</target>
+      </trans-unit>
+      <trans-unit id="ltyTSSY" resname="bauer.septuagesima">
+        <source>bauer.septuagesima</source>
+        <target>2. S f Fastelavn</target>
+      </trans-unit>
+      <trans-unit id="5oIbfxy" resname="bauer.sexagesima">
+        <source>bauer.sexagesima</source>
+        <target>1. S f Fastelavn</target>
+      </trans-unit>
+      <trans-unit id="EEGxT6l" resname="bauer.fastelavn">
+        <source>bauer.fastelavn</source>
+        <target>Fastelavn</target>
+      </trans-unit>
+      <trans-unit id="IgD_OjU" resname="bauer.fastelavnTT">
+        <source>bauer.fastelavnTT</source>
+        <target><![CDATA[<h6>Fastelavn</h6><p class='text-left'>Dom. Esto mihi<br>Dom. ad Carnes Lavandes<br>Dom. Quinquagesima</p>]]></target>
+      </trans-unit>
+      <trans-unit id="tyHJn8U" resname="bauer.askeonsdag">
+        <source>bauer.askeonsdag</source>
+        <target>Askeonsdag</target>
+      </trans-unit>
+      <trans-unit id="ymY4K1p" resname="bauer.askeonsdagTT">
+        <source>bauer.askeonsdagTT</source>
+        <target><![CDATA[<h6>Askeonsdag</h6><p class='text-left'>Dies Ater<br/>Dies Cinerum<br/>Dies Pulveris</p><p>Markerer begyndelsen på de 40 dages faste op til påske</p>]]></target>
+      </trans-unit>
+      <trans-unit id="IVzX0h6" resname="bauer.invocavit">
+        <source>bauer.invocavit</source>
+        <target>1. S i Fasten</target>
+      </trans-unit>
+      <trans-unit id="IOFH8ar" resname="bauer.invocavitTT">
+        <source>bauer.invocavitTT</source>
+        <target><![CDATA[<h6>1. Søndag i Fasten</h6><p class='text-left'>Dom. Brandonum<br>Dom. de Lignis Orditis<br>Dies Focorum<br>Dom. Invocavit<br>Dom. Quadragesima<br>Dom. Quintana<br>Dom. Refugium</p>]]></target>
+      </trans-unit>
+      <trans-unit id="6jhgRHu" resname="bauer.reminiscere">
+        <source>bauer.reminiscere</source>
+        <target>2. S i Fasten</target>
+      </trans-unit>
+      <trans-unit id="l3ZEvqW" resname="bauer.reminiscereTT">
+        <source>bauer.reminiscereTT</source>
+        <target><![CDATA[<h6>2, Søndag i Fasten</h6><p class='text-left'>Dom. Cananaea<br>Dom. Reminiscere</p>]]></target>
+      </trans-unit>
+      <trans-unit id="LGXLh3r" resname="bauer.oculi">
+        <source>bauer.oculi</source>
+        <target>3. S i Fasten</target>
+      </trans-unit>
+      <trans-unit id="n21yX1s" resname="bauer.oculiTT">
+        <source>bauer.oculiTT</source>
+        <target><![CDATA[<h6>3. Søndag i Fasten</h6><p class='text-left'>Dom. ante mediam Quadragesimam<br>Dom. Oculi</p>]]></target>
+      </trans-unit>
+      <trans-unit id="v2_PZka" resname="bauer.laetare">
+        <source>bauer.laetare</source>
+        <target>4. S i Fasten</target>
+      </trans-unit>
+      <trans-unit id="PN2OAci" resname="bauer.laetareTT">
+        <source>bauer.laetareTT</source>
+        <target><![CDATA[<h6>4. Søndag i Fasten</h6><p class='text-left'>Midfaste<br>Dom. de Fontanis<br>Dom. Laetare</p>]]></target>
+      </trans-unit>
+      <trans-unit id="lbTyb0l" resname="bauer.magniscrut">
+        <source>bauer.magniscrut</source>
+        <target>Onsdag e midfaste</target>
+      </trans-unit>
+      <trans-unit id="zQba4.V" resname="bauer.judica">
+        <source>bauer.judica</source>
+        <target>5 S i Fasten</target>
+      </trans-unit>
+      <trans-unit id="c6mUD_O" resname="bauer.judicaTT">
+        <source>bauer.judicaTT</source>
+        <target><![CDATA[<h6>5. Søndag i Fasten</h6><p class='text-left'>Dom. iste sunt Dies<br>Dom. Judica<br>Dom. Mediana<br>Dom. Nigra<br>Dom. Passionis</p>]]></target>
+      </trans-unit>
+      <trans-unit id="IGLI0Zu" resname="bauer.palmesøndag">
+        <source>bauer.palmesøndag</source>
+        <target>Palmesøndag</target>
+      </trans-unit>
+      <trans-unit id="3nCfBwF" resname="bauer.palmesøndagTT">
+        <source>bauer.palmesøndagTT</source>
+        <target><![CDATA[<h6>Palmesøndag</h6><p class='text-left'>Dom. Capitalavii<br>Dom. Competentium<br>Dom. de Rosa<br>Dom. Florum et Ramorum<br>Dom. Indulgentiae<br>Dies Olivarum<br>Dies Osanna (Hosanna)<br>Dom. Palmarum</p>]]></target>
+      </trans-unit>
+      <trans-unit id="Sc0md1A" resname="bauer.skærtorsdag">
+        <source>bauer.skærtorsdag</source>
+        <target>Skærtorsdag</target>
+      </trans-unit>
+      <trans-unit id="DBoQM2Q" resname="bauer.skærtorsdagTT">
+        <source>bauer.skærtorsdagTT</source>
+        <target><![CDATA[<h6>Skærtorsdag</h6><p class='text-left'>(Feria V in) Coena Domini<br>Dies Indulgentiae<br>Dies Magnae Festivitatis<br>Dies Reconciliationis<br>Dies Viridium</p>]]></target>
+      </trans-unit>
+      <trans-unit id="lyWZ1y9" resname="bauer.langfredag">
+        <source>bauer.langfredag</source>
+        <target>langfredag</target>
+      </trans-unit>
+      <trans-unit id="KPloOBD" resname="bauer.langfredagTT">
+        <source>bauer.langfredagTT</source>
+        <target><![CDATA[<h6>Langfredag</h6><p class='text-left'>Feria VI in Parascheve Domini<br>(Feria VI in) Passionis Domini<br>Soteris</p>]]></target>
+      </trans-unit>
+      <trans-unit id="HD1ixtw" resname="bauer.påskedag">
+        <source>bauer.påskedag</source>
+        <target>Påskedag</target>
+      </trans-unit>
+      <trans-unit id="OVl714e" resname="bauer.påskedagTT">
+        <source>bauer.påskedagTT</source>
+        <target><![CDATA[<h6>Påskedag</h6><p class='text-left'>Dies Felicissimus<br>Dies Magnus<br>Dies Sanctus</p>]]></target>
+      </trans-unit>
+      <trans-unit id="r9ylnSK" resname="bauer.påskedag2">
+        <source>bauer.påskedag2</source>
+        <target>2. Påskedag</target>
+      </trans-unit>
+      <trans-unit id="LpJPsxE" resname="bauer.påskedag3">
+        <source>bauer.påskedag3</source>
+        <target>3. Påskedag</target>
+      </trans-unit>
+      <trans-unit id="xdtNdbu" resname="bauer.påskedag3TT">
+        <source>bauer.påskedag3TT</source>
+        <target><![CDATA[<h6>3. Påskedag<h6><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="nNjMTMd" resname="bauer.quasimodogeniti">
+        <source>bauer.quasimodogeniti</source>
+        <target>1. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="tCWWKy8" resname="bauer.quasimodogenitiTT">
+        <source>bauer.quasimodogenitiTT</source>
+        <target><![CDATA[<h6>1. Søndag e Påske</h6><p class='text-left'>Hvide Søndag<br>Dom Quasimodogeniti<br>Dom. in Albis</p><p>I Oldkirken blev dåben ofte henlagt til påskenat, hvorefter de nydøbte bar deres hvide dåbsklædning hele påskeugen, og derefter, nemlig til hvide søndag, aflagde den.</p><p>I ældre tid fast konfirmations dag</p>]]></target>
+      </trans-unit>
+      <trans-unit id="0Vvka1s" resname="bauer.misericordia">
+        <source>bauer.misericordia</source>
+        <target>2. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="sjudN94" resname="bauer.misericordiaTT">
+        <source>bauer.misericordiaTT</source>
+        <target><![CDATA[<h6>2. Søndag e Påske</h6><p class='text-left'>Dom Mapparum Albarum<br>Dom. Misericordia</p>]]></target>
+      </trans-unit>
+      <trans-unit id="91rzW9O" resname="bauer.jubilate">
+        <source>bauer.jubilate</source>
+        <target>3. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="z10BDQ8" resname="bauer.storebededag">
+        <source>bauer.storebededag</source>
+        <target>Store Bededag</target>
+      </trans-unit>
+      <trans-unit id="58pHg83" resname="bauer.storebededagTT">
+        <source>bauer.storebededagTT</source>
+        <target><![CDATA[<h6>Store bededag</h6><p>Indført 1686</p>]]></target>
+      </trans-unit>
+      <trans-unit id="55v.CKM" resname="bauer.cantate">
+        <source>bauer.cantate</source>
+        <target>4. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="_VvG7YQ" resname="bauer.rogate">
+        <source>bauer.rogate</source>
+        <target>5. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="bfESFJ_" resname="bauer.rogateTT">
+        <source>bauer.rogateTT</source>
+        <target><![CDATA[<h6>5. Søndag e Påske</h6><p class='text-left'>Dom. ante litanis<br>Dom. Rogate<br>Dom. Vocem jucunditatis</p>]]></target>
+      </trans-unit>
+      <trans-unit id="Zu5r37u" resname="bauer.kristihimmelfart">
+        <source>bauer.kristihimmelfart</source>
+        <target>Kristi Himmelfart</target>
+      </trans-unit>
+      <trans-unit id="lu7ND2x" resname="bauer.exaudi">
+        <source>bauer.exaudi</source>
+        <target>6. S e Påske</target>
+      </trans-unit>
+      <trans-unit id="8bklZy3" resname="bauer.pinsedag">
+        <source>bauer.pinsedag</source>
+        <target>Pinsedag</target>
+      </trans-unit>
+      <trans-unit id="x1IiC1X" resname="bauer.pinsedagTT">
+        <source>bauer.pinsedagTT</source>
+        <target><![CDATA[<h6>Pinsedag</h6><p class=''text-left>Dom. Pentecostes<br>Festum Sancti Spritii</p>]]></target>
+      </trans-unit>
+      <trans-unit id="Vc4Jqi1" resname="bauer.pinsedag2">
+        <source>bauer.pinsedag2</source>
+        <target>2. Pinsedag</target>
+      </trans-unit>
+      <trans-unit id="WQvNzpc" resname="bauer.pinsedag2TT">
+        <source>bauer.pinsedag2TT</source>
+        <target><![CDATA[<h6>2. Pinsedag</h6><p class=''text-left>Dies Pentecostes<br>Dies S. Spiritus</p>]]></target>
+      </trans-unit>
+      <trans-unit id="bkk7agU" resname="bauer.pinsedag3">
+        <source>bauer.pinsedag3</source>
+        <target>3. Pinsedag</target>
+      </trans-unit>
+      <trans-unit id="hxbye_B" resname="bauer.pinsedag3TT">
+        <source>bauer.pinsedag3TT</source>
+        <target><![CDATA[<h6>3. Pinsedag</h6><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="99B_Dwt" resname="bauer.trinitatis">
+        <source>bauer.trinitatis</source>
+        <target>Trinitatis</target>
+      </trans-unit>
+      <trans-unit id="MxkQfsW" resname="bauer.trinitatisTT">
+        <source>bauer.trinitatisTT</source>
+        <target><![CDATA[<h6>Trinitatis Søndag</h6><p class='text-left'>Dom. Benedicta<br>Dom Duplex<br>Dom. in tua Misericordia<br>Dom. Trinitatis</p>]]></target>
+      </trans-unit>
+      <trans-unit id="h3pxdQM" resname="bauer.trinitatis01">
+        <source>bauer.trinitatis01</source>
+        <target>1. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="vfmjfGQ" resname="bauer.kristilegemsfest">
+        <source>bauer.kristilegemsfest</source>
+        <target>Kristi Legemsfest</target>
+      </trans-unit>
+      <trans-unit id="War0BD8" resname="bauer.trinitatis02">
+        <source>bauer.trinitatis02</source>
+        <target>2. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="qwpThJk" resname="bauer.trinitatis03">
+        <source>bauer.trinitatis03</source>
+        <target>3. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="6iQaM1M" resname="bauer.trinitatis04">
+        <source>bauer.trinitatis04</source>
+        <target>4. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="6gPPwO1" resname="bauer.trinitatis05">
+        <source>bauer.trinitatis05</source>
+        <target>5. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="duSDM.Q" resname="bauer.trinitatis06">
+        <source>bauer.trinitatis06</source>
+        <target>6. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="fhuremc" resname="bauer.trinitatis07">
+        <source>bauer.trinitatis07</source>
+        <target>7. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="ByWyZf6" resname="bauer.trinitatis08">
+        <source>bauer.trinitatis08</source>
+        <target>8. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="nvvDnMc" resname="bauer.trinitatis09">
+        <source>bauer.trinitatis09</source>
+        <target>9. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="KIGXq6S" resname="bauer.trinitatis10">
+        <source>bauer.trinitatis10</source>
+        <target>10. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="gacz1JM" resname="bauer.trinitatis11">
+        <source>bauer.trinitatis11</source>
+        <target>11. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="Ig4wdXY" resname="bauer.trinitatis12">
+        <source>bauer.trinitatis12</source>
+        <target>12. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="9IzPXMA" resname="bauer.trinitatis13">
+        <source>bauer.trinitatis13</source>
+        <target>13. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="lm2xps3" resname="bauer.trinitatis14">
+        <source>bauer.trinitatis14</source>
+        <target>14. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="a1Ss6Yo" resname="bauer.trinitatis15">
+        <source>bauer.trinitatis15</source>
+        <target>15. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="XWXFoO3" resname="bauer.trinitatis16">
+        <source>bauer.trinitatis16</source>
+        <target>16. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="DzdA_RX" resname="bauer.trinitatis17">
+        <source>bauer.trinitatis17</source>
+        <target>17. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="OSTgKWW" resname="bauer.trinitatis18">
+        <source>bauer.trinitatis18</source>
+        <target>18. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="hMkgGFI" resname="bauer.trinitatis19">
+        <source>bauer.trinitatis19</source>
+        <target>19. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="9tnK3Gn" resname="bauer.trinitatis20">
+        <source>bauer.trinitatis20</source>
+        <target>20. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="ZvRXSTQ" resname="bauer.trinitatis21">
+        <source>bauer.trinitatis21</source>
+        <target>21. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="XWxjEve" resname="bauer.trinitatis22">
+        <source>bauer.trinitatis22</source>
+        <target>22. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="idnG_c6" resname="bauer.trinitatis23">
+        <source>bauer.trinitatis23</source>
+        <target>23. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="c6wudAg" resname="bauer.trinitatis24">
+        <source>bauer.trinitatis24</source>
+        <target>24. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="bDaofRu" resname="bauer.trinitatis25">
+        <source>bauer.trinitatis25</source>
+        <target>25. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="LsOZPmF" resname="bauer.trinitatis26">
+        <source>bauer.trinitatis26</source>
+        <target>26. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="s_Xf04k" resname="bauer.trinitatis27">
+        <source>bauer.trinitatis27</source>
+        <target>27. S e Trin</target>
+      </trans-unit>
+      <trans-unit id="SDCzX8r" resname="bauer.advent1">
+        <source>bauer.advent1</source>
+        <target>1. S i Advent</target>
+      </trans-unit>
+      <trans-unit id="ljugRIE" resname="bauer.advent1TT">
+        <source>bauer.advent1TT</source>
+        <target><![CDATA[<h6>1. Søndag i Advent</h6><p class= 'text-left'>Dom. Adventus<br>Dom. Adventus Domini<br>Dom. Ad. te Levavi</p>]]></target>
+      </trans-unit>
+      <trans-unit id="BFF0ELy" resname="bauer.advent2">
+        <source>bauer.advent2</source>
+        <target>2. S i Advent</target>
+      </trans-unit>
+      <trans-unit id="pgc_qHu" resname="bauer.advent3">
+        <source>bauer.advent3</source>
+        <target>3. S i Advent</target>
+      </trans-unit>
+      <trans-unit id="CkccWBu" resname="bauer.advent4">
+        <source>bauer.advent4</source>
+        <target>4. S i Advent</target>
+      </trans-unit>
+      <trans-unit id="SeD34gh" resname="bauer.juleaften">
+        <source>bauer.juleaften</source>
+        <target>Juleaftensdag</target>
+      </trans-unit>
+      <trans-unit id="CzQElV7" resname="bauer.juledag">
+        <source>bauer.juledag</source>
+        <target>Juledag</target>
+      </trans-unit>
+      <trans-unit id="6vWjoIN" resname="bauer.2juledag">
+        <source>bauer.2juledag</source>
+        <target>2. Juledag</target>
+      </trans-unit>
+      <trans-unit id="YLtGHc7" resname="bauer.3juledag">
+        <source>bauer.3juledag</source>
+        <target>3. Juledag</target>
+      </trans-unit>
+      <trans-unit id=".9PzRCA" resname="bauer.3juledagTT">
+        <source>bauer.3juledagTT</source>
+        <target><![CDATA[<h6>3. Juledag</h6><p>Festum St. Johannis Evangelistae</p><p>Helligdag indtil 1770</p>]]></target>
+      </trans-unit>
+      <trans-unit id="JMy.qxn" resname="bauer.norsk">
+        <source>bauer.norsk</source>
+        <target>Norsk</target>
+      </trans-unit>
+      <trans-unit id="su1S9L4" resname="bauer.svensk">
+        <source>bauer.svensk</source>
+        <target>Svensk</target>
+      </trans-unit>
+      <trans-unit id="nQuSazo" resname="bauer.engelsk">
+        <source>bauer.engelsk</source>
+        <target>Engelsk</target>
+      </trans-unit>
+      <trans-unit id="G4NneR6" resname="bauer.dansk">
+        <source>bauer.dansk</source>
+        <target>Dansk</target>
+      </trans-unit>
+      <trans-unit id="gRp5_OH" resname="bauer.romersk-katolsk">
+        <source>bauer.romersk-katolsk</source>
+        <target>Romersk-katolsk</target>
+      </trans-unit>
+      <trans-unit id="Q1S8BtK" resname="bauer.juliansk">
+        <source>bauer.juliansk</source>
+        <target>Juliansk</target>
+      </trans-unit>
+      <trans-unit id="rpYsuEy" resname="bauer.gregoriansk">
+        <source>bauer.gregoriansk</source>
+        <target>Gregoriansk</target>
+      </trans-unit>
+      <trans-unit id="4olq2_u" resname="bauer.kommer-snart">
+        <source>bauer.kommer-snart</source>
+        <target>På vej..,</target>
+      </trans-unit>
+      <trans-unit id="YIs1Wn6" resname="bauer.description">
+        <source>bauer.description</source>
+        <target>Kalenderværktøj til slægtsforskere og andet godtfolk der arbejder med gamle kirkebøger</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

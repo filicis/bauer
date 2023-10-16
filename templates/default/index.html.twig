@@ -11,19 +11,18 @@
     <h1>{{ product }}</h1>
   </div>
   <div class="card-body">
-    <h4>{{ description }}</h4>
+    <h4>{{ 'bauer.description' | trans }}</h4>
   </div>
   <div class="card-body">
     <h5 class="card-subtitle">Tilgængelige kalendere:</h5>
     <nav class="nav flex-column">
-      <a class="nav-link active" aria-current="page" href="{{ url('calendar') }}">Dansk</a>
-      <a class="nav-link" href="#">Norsk</a>
-      <a class="nav-link" href="#">Svensk</a>
-      <a class="nav-link" href="#">Engelsk</a>
-      <a class="nav-link" href="#">Romersk-katolsk</a>
-      <a class="nav-link" href="#">Juliansk</a>
-      <a class="nav-link" href="#">Gregoriansk</a>
-      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      <a class="nav-link active" aria-current="page" href="{{ url('calendar') }}">{{'bauer.dansk' | trans}}</a>
+      <a class="nav-link disabled" href="#">{{'bauer.norsk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
+      <a class="nav-link disabled" href="#">{{'bauer.svensk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
+      <a class="nav-link disabled" href="#">{{'bauer.engelsk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
+      <a class="nav-link disabled" href="#">{{'bauer.romersk-katolsk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
+      <a class="nav-link disabled" href="#">{{'bauer.juliansk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
+      <a class="nav-link disabled" href="#">{{'bauer.gregoriansk' | trans}} - <span class="badge bg-info">{{'bauer.kommer-snart' | trans}}</span></a>
     </nav>
   </div>
     <div class="card-footer text-body-secondary">

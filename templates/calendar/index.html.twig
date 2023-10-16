@@ -15,14 +15,13 @@
 
 {% extends 'base.html.twig' %}
 
-{% block title %}Bauers Kalender{% endblock %}
+{% block title %}{{ product }}{% endblock %}
 
 {% block body %}
 
 
-	<!-- h1 class="h1 text-center">
-    Danmark - {{ bauer.getYear() }}
-  </h1  -->
+
+	{% set aar= bauer.getYear() %}
 
 
   <div class='container-flex d-flex justify-content-center'>
@@ -35,9 +34,9 @@
 					</div>
     				<div class= 'col-sm'>
 						<h1 class="text-center">
-							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': 1709}) }}"><</a> 
-							{{ bauer.getYear() }} 
-							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': 1713}) }}">></a>
+							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': aar - 1}) }}"><</a> 
+							{{ aar }} 
+							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': aar + 1}) }}">></a>
 						</h1>
 					</div>
     				<div class= 'col-sm'></div>
