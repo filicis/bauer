@@ -26,7 +26,7 @@
 
   <div class='container-flex d-flex justify-content-center'>
 		<div class="table-responsive-xxl">
-    	<table class="table table-bordered table-light table-sm caption-top" >
+    	<table class="table table-bordered table-light table-sm caption-top">
     	  <caption>
 				<div class="row">
     				<div class= 'col-sm'> 
@@ -67,7 +67,7 @@
                 			<th {% if info['class'] > 1 %} class="text-bg-secondary bg-opacity-50" {% endif %}>{{ info['ugedag']|trans()|slice(0,2)|capitalize }}  </th>
                 			<td class="text-end" {% if info['class'] == 3 %} text-bgg-secondary {% endif %}>{{ d }}</td>
                 			<td style='width: 160px' class="text-truncate" {% if info['class'] == 3 %} text-bgg-secondary {% endif %} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="{{ info['tooltip']|trans }}">
-						  		{{ info['description']|trans }} 
+						  		<small>{{ info['description']|trans }}</small> 
 							</td>
 
               			{% else %}
