@@ -30,14 +30,14 @@
     <nav class="navbar navbar-expand-lg fixed-top nnavbar-dark bg-dark text-info" data-bs-theme="dark" >
       <div class="container-fluid">
         <a class="navbar-brand" href="https://github.com/filicis">Filicis</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Selve menu strukturen -->
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="navbar-nav me-auto mb-2 mb-lg-0">
+          <div class="navbar-nav me-auto mmb-2 mmb-lg-0">
             <!-- a class="nav-item nav-link" href="/about">Hjem<span class="sr-only">(current)</span></a -->
             <div class= 'nav-item dropdown'>
               <a class="nav-item nav-link dropdown-toggle" href="#" id="navbarDropdown01" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kalender</a>
@@ -77,20 +77,20 @@
           </div> <!-- navbar-nav -->
 
           {% if our_form is defined %}
-            {{ form_start(our_form, {'attr': {'class': 'form-inline me-auto my-2 my-lg-0'} }) }}
+            {{ form_start(our_form, {'attr': {'class': 'd-flex me-auto mmy-2 mmy-lg-0'} }) }}
             {#
               <div class="custom-control custom-switch px-3" >
                 {{ form_widget(our_form.latin, {'type': 'checkbox', 'attr': {'class': 'custom-control-input', type: 'checkbox', empty_data: 'false'  }}) }}
                 <label class="custom-control-label" for="form_latin">Latin</label>
               </div>
             #}
-            {{ form_widget(our_form.year, {'attr': {'class': 'form-control mr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
+            {{ form_widget(our_form.year, {'attr': {'class': 'form-control mmr-sm-2', 'placeholder': 'Årstal', 'type': 'number', 'aria-label': 'Search'} }) }}
             {{ form_widget(our_form.send, {'label': 'Vælg', 'attr': {'class': 'd-none btn btn-outline-primary my-2 my-sm-0'} })}}
             {{ form_rest(our_form) }}
             {{ form_end(our_form )}}
           {% endif %}
 
-      <div class="navbar-expand d-flex flex-row-reverse" id="navbarNavAltMarkup" >
+      <!-- div class="navbar-expand d-flex flex-row-reverse" id="navbarNavAltMarkup" -->
         <!-- div class="navbar-expand justify-content-end" id="navbarNavAltMarkup" -->
         <div class="navbar-nav mr_auto">
           {% if is_granted('IS_AUTHENTICATED_FULLY') or is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -100,7 +100,7 @@
             <a class="nav-item nav-link" href="{{ path('app_default') }}">Login</a>
           {% endif %}
         </div>
-      </div>
+      <!-- /div --->
 
 
         </div> <!-- Collapse -->
