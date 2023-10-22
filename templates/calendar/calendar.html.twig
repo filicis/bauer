@@ -1,0 +1,84 @@
+{#
+  	Skabelon for den julianske kalender og kalendere afledt herfra
+
+  	Forudsætter
+  	  - Året har 12 måneder.
+  	  - En måned har op til 31 dage.
+
+  	Forventer et object 'bauer' som implementerer iKalenderView med functionerne:
+  	  	- getKalenderNavn()
+  		- getYear()
+  		- getMonths() : Array med månedernes navne.
+#}
+
+
+
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product }}{% endblock %}
+
+{% block body %}
+
+
+
+	{% set aar= bauer.getYear() %}
+
+
+  <div class='container-flex d-flex justify-content-center'>
+		<div class="table-responsive-xxl">
+    	<table class="table table-bordered table-light table-sm caption-top">
+    	  <caption>
+				<div class="row">
+    				<div class= 'col-sm'> 
+						<h3 class="tesxt-left">{{ bauer.getCalendarName() }}</h3>
+					</div>
+    				<div class= 'col-sm'>
+						<h1 class="text-center">
+							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': aar - 1}) }}"><</a> 
+							{{ aar }} 
+							<a  style="text-decoration:none" href="{{ url('calendar', {'aarstal': aar + 1}) }}">></a>
+						</h1>
+					</div>
+    				<div class= 'col-sm'></div>
+  				</div>
+    	  </caption>
+    			<thead class="table-success">
+    				<tr>
+      				{% for i in (bauer.getMonths()) %}
+        				<th colspan='3' scope='col' class='text-center'>  {{ i|trans()|capitalize }}  </th>
+      				{% endfor %}
+    				</tr>
+  				</thead>
+				<tbody>
+        		{% for d in 1..31 %}
+          		<tr class='small'>
+            		{% for mm in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] %}
+
+            					{# Herfra er der 4 muligheder
+            	   				- Almindelig hverdag
+            	   				- Lørdag
+            	   				- Søn eller helligdag
+            	   				- Ugyldig dag (f.eks 31. Juli) #}
+
+						{% set info= bauer.getDateInfo(d, mm, bauer.getYear()) %}
+
+              			{% if info['class'] > 0 %}
+                			<th {% if info['class'] > 1 %} class="text-bg-secondary bg-opacity-50" {% endif %}>{{ info['ugedag']|trans()|slice(0,2)|capitalize }}  </th>
+                			<td class="text-end" {% if info['class'] == 3 %} text-bgg-secondary {% endif %}>{{ d }}</td>
+                			<td style='width: 160px' class="text-truncate" {% if info['class'] == 3 %} text-bgg-secondary {% endif %} data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" title="{{ info['tooltip']|trans }}">
+						  		<small>{{ info['description']|trans }}</small> 
+							</td>
+
+              			{% else %}
+                			<td colspan= 3 />
+              			{% endif %}
+          			{% endfor %}
+        			</tr>
+      			{% endfor %}
+    			</tbody>
+  		</table>
+  	</div>
+	</div>
+
+
+{% endblock %}

@@ -111,8 +111,7 @@ class CalendarController extends AbstractController
 
 
 
-		return $this->render('calendar/index.html.twig', [
-		'controller_name' => 'CalendarController',
+		return $this->render('calendar/calendar.html.twig', [
 		'locale' => $locale,
 		'bauer' => $bauer,
 		'our_form' => $form,
