@@ -1,21 +1,29 @@
-{% extends 'base.html.twig' %}
+{% extends 'card.html.twig' %}
 
 {% block title %}Om dette program{% endblock %}
 
-{% block body %}
 
-<div class= 'd-flex justify-content-center'>
+{% block cardheader %}
+<h5>Om Bauers</h5>
+{% endblock %}
+
+
+{% block cardbody %}
+
+<!--div class= 'd-flex justify-content-center'>
 	<div class= 'card w-50 bg-light mb-3 center'>
-  	<div class= 'card-body'>
-			<h6 class= 'card-title'>Om Bauers Kalender</h6>
-			<h1 class= 'card-subtitle text-center'>Bauers Kalender</h1>
-			<p class= 'card-text text-center'>Version 2020</p>
-			<hr>
-			<p class= 'card-text text-center'>(c) 2000 Michael Rasmussen</p>
+  	<div class= 'card-body' -->
+			<h1 class= 'card-title'>{{ product }}</h1>
+			<p class= 'card-text'>{{ version }}</p>
 
-		</div>
+
+		<!--/div>
 	</div>
-</div>
+</div-->
 
 
+{% endblock %}
+
+{% block cardfooter %}
+		{{ copyright }}
 {% endblock %}

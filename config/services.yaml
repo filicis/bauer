@@ -14,8 +14,8 @@ twig:
         author: "Michael Lindhardt Rasmussen"
         product: "Bauers"
         version: "Version: 2.0.1 alpha"
+        copyright: "© 2020-23 Filicis Software"
         description: "Kalenderværktøj til slægtsforskere, og andet godtfolk der arbejder med de gamle kirkebøger"
-        copyright: "© 2020-22 Filicis Software - Michael Lindhardt Rasmussen"
 
         app_btn_class:      btn btn-outline-dark btn-light shadow-lg m-auto
         app_btn_class_sm:   btn btn-outline-dark btn-light btn-sm shadow-lg m-auto

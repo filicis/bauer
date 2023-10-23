@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Om dette program{% endblock %}
+
+{% block body %}
+
+<div class= 'd-flex justify-content-center'>
+	<div class= 'card w-50 bg-light mb-3 text-center'>
+
+      <div class='card-header'>
+        {% block cardheader%}
+          En header
+        {% endblock cardheader%}  
+      </div>
+
+  		<div class= 'card-body'>
+			{% block cardbody %}
+				<h6 class= 'card-title'>Om Bauers Kalender</h6>
+			  <h1 class= 'card-subtitle text-center'>Bauers Kalender</h1>
+			  <p class= 'card-text text-center'>{{ version }}</p>
+			  <hr>
+			  <p class= 'card-text text-center'>{{ copyright }}</p>
+			{% endblock cardbody %}
+		</div>
+    <div class='card-footer'>
+      {% block cardfooter %}
+        en footer
+      {% endblock cardfooter %}
+    </div>
+
+	</div>
+</div>
+
+
+{% endblock body %}
